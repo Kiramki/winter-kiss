@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 1, in script
+    init python:
+  File "game/script.rpy", line 3, in <module>
+    import something
+ModuleNotFoundError: No module named 'something'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 1, in script
+    init python:
+  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 827, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 3, in <module>
+    import something
+ModuleNotFoundError: No module named 'something'
+
+macOS-15.2-arm64-arm-64bit arm64
+Ren'Py 8.3.4.24120703
+screen 1.0
+Mon Dec 30 06:32:32 2024
