@@ -1,0 +1,1 @@
+# This file is for encounters with the devil right before the ending of the game.
