@@ -7,16 +7,23 @@ init python:
     fortitude = 0
     empathy = 0
 
-    # Declare player's name
-    name = ""
+    # Declare character names
+    player_name = ""
+    duke_name = "Duke"
+    knight_name = "Holy Knight"
+    wizard_name = "Wizard"
+    devil_name = "Devil"
+
 
 # Declare the characters + sprites that will be used in the game.
 
 define narrate = Character('Narrator')
 define angel = Character('Angel')
-define devil = Character('Devil')
-define knight = Character('Holy Knight')
-define player = Character('[name]')
+define devil = Character('[devil_name]')
+define knight = Character('[knight_name]')
+define wizard = Character('[wizard_name]')
+define duke = Character('[duke_name]')
+define player = Character('[player_name]')
 
 # The game starts here.
 
@@ -60,11 +67,11 @@ label start:
     narrate "I will now refer to you as [p_subject]."
 
     narrate "tell me ur name"
-    $ name = renpy.input("Enter your name.").title().strip()
+    $ player_name = renpy.input("Enter your name.").title().strip()
 
-    narrate "I will now refer to you as [name]."
+    narrate "I will now refer to you as [player_name]."
 
-    angel "what do u want in life, [name]"
+    angel "what do u want in life, [player_name]"
 
     menu life_goals:
         "Leave my mark on the world":
