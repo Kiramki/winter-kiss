@@ -8,7 +8,7 @@ init python:
     empathy = 0
 
     # Declare character names
-    player_name = ""
+    player_name = "Stranger"
     duke_name = "Duke"
     knight_name = "Holy Knight"
     wizard_name = "Wizard"
@@ -67,9 +67,12 @@ label start:
     narrate "I will now refer to you as [p_subject]."
 
     narrate "tell me ur name"
-    $ player_name = renpy.input("Enter your name.").title().strip()
+    $ player_name = renpy.input("Enter your name.").title().strip() or __("Stranger")
 
-    narrate "I will now refer to you as [player_name]."
+    if player_name == "Stranger":
+        narrate "No? Alright, stranger."
+    else:
+        narrate "I will now refer to you as [player_name]."
 
     angel "what do u want in life, [player_name]"
 
