@@ -1,33 +1,132 @@
 ﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+# Initialize python code here.
+init python:
+    # Declare the stats
+    resolve = 0
+    fortitude = 0
+    empathy = 0
 
-define e = Character("Eileen")
+    # Declare player's name
+    name = ""
 
+# Declare the characters + sprites that will be used in the game.
+
+define narrate = Character('Narrator')
+define angel = Character('Angel')
+define devil = Character('Devil')
+define knight = Character('Holy Knight')
+define player = Character('[name]')
 
 # The game starts here.
 
 label start:
+    # THIS IS THE HOOK
+    scene black
+    narrate "this is SUCH a COOL INTRODUCTION SPACE"
+    narrate "WOW i am INTRODUCING EVERYTHING"
+    narrate "i hope you feel INTRODUCED!!!!"
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    narrate "tell me ur pronouns"
 
-    scene bg room
+    menu pronouns:
+        "he/him":
+            $ p_subject = "he"
+            $ p_object = "him"
+            $ p_possessive = "his"
+            $ p_possessive_adj = "his"
+            $ p_reflexive = "himself"
+            $ p_is = "he's"
+            $ p_be = "is"
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+        "she/her":
+            $ p_subject = "she"
+            $ p_object = "her"
+            $ p_possessive = "her"
+            $ p_possessive_adj = "her"
+            $ p_reflexive = "herself"
+            $ p_is = "she's"
+            $ p_be = "is"
 
-    show eileen happy
+        "they/them":
+            $ p_subject = "they"
+            $ p_object = "them"
+            $ p_possessive = "their"
+            $ p_possessive_adj = "theirs"
+            $ p_reflexive = "themself"
+            $ p_is = "they're"
+            $ p_be = "are"
 
-    # These display lines of dialogue.
+    narrate "I will now refer to you as [p_subject]."
 
-    e "You've created a new Ren'Py game."
+    narrate "tell me ur name"
+    $ name = renpy.input("Enter your name.").title().strip()
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    narrate "I will now refer to you as [name]."
 
-    # This ends the game.
+    angel "what do u want in life, [name]"
+
+    menu life_goals:
+        "Leave my mark on the world":
+            $ goal = "impact"
+
+        "Mean something to someone":
+            $ goal = "meaning"
+        
+        "Discover my true purpose":
+            $ goal = "purpose"
+
+        "Explore the world":
+            $ goal = "exploration"
+
+    if goal == "impact":
+        angel "I see that you want to make an impact on the world."
+    
+    elif goal == "meaning":
+        angel "I see that you want to mean something to someone."
+
+    elif goal == "purpose":
+        angel "I see that you want to discover your true purpose."
+
+    elif goal == "exploration":
+        angel "I see that you want to explore the world."
+
+    # ooooo scene change
+    scene black
+
+    narrate "(imagine a scene change to a REALLY cool portal)"
+    angel "hey this is parcae. ur gonna go here if u like. agree"
+    angel "but u need to pick something to sacrifice"
+        
+    menu sacrifice:
+        # Trust sacrifice
+        "Your trust":
+            $ fortitude = 10
+            $ empathy = 20
+            $ resolve = 5
+
+        # Courage sacrifice
+        "Your courage":
+            $ fortitude = 5
+            $ empathy = 10
+            $ resolve = 20
+
+        # Honesty
+        "Your honesty":
+            $ fortitude = 20
+            $ empathy = 5
+            $ resolve = 10
+
+    narrate "Your current stats are:\nFortitude: [fortitude]\nEmpathy: [empathy]\nResolve: [resolve]"
+
+    angel "very good :) now kiss me lol"
+
+    narrate "(kissing scene)"
+
+    devil "HAHA FUCK YOU"
+
+    narrate "(dying scene)"
+
+    jump event_0_start
 
     return

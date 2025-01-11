@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/events.rpy", line 41: expected 'image_name_component' not found.
+    scene "gui/map/map_default.png"
+          ^
+
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Fri Jan 10 22:43:49 2025

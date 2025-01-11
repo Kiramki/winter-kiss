@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 130, in script
+    jump event_0
+ScriptError: could not find label 'event_0'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 130, in script
+    jump event_0
+  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 1705, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Users/kiramki/Downloads/renpy/renpy/script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'event_0'.
+
+macOS-15.2-arm64-arm-64bit arm64
+Ren'Py 8.3.4.24120703
+The World Ends in Winter 1.0
+Fri Jan 10 22:40:15 2025
