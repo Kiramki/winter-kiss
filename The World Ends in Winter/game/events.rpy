@@ -72,3 +72,8 @@ label event_0_idk:
 label event_0_continue:
     narrate "(continuing moment)"
 
+    narrate "ooo u event so hard"
+    narrate "u gotta save the world with three losers"
+    narrate "and now u go to wherever the player goes to contemplate how to start their week"
+
+    jump day_start

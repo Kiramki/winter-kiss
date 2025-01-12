@@ -1614,7 +1614,36 @@ style slider_slider:
 ################################################################################
 ## MAP
 ################################################################################
+screen map():
+    # Make it so that the screen is the only thing that can be interacted with.
+    modal True
 
+    # Add the background of the map.
+    add "images/map/map_default.png"
+
+    # Duke's mansion.
+    imagebutton:
+        idle "images/map/mansion_idle.png"
+        hover "images/map/mansion_hover.png"
+        action Jump("duke_check")
+        xalign 0.5
+        yalign 0.65
+
+    # Wizard's tower.
+    imagebutton:
+        idle "images/map/tower_idle.png"
+        hover "images/map/tower_hover.png"
+        action Jump("wizard_check")
+        xalign 0.8
+        yalign 0.75
+
+    # Knight.
+    imagebutton:
+        idle "images/map/knight_idle.png"
+        hover "images/map/knight_hover.png"
+        action Jump("knight_check")
+        xalign 0.15
+        yalign 0.75
 
 ################################################################################
 ## Trial 1

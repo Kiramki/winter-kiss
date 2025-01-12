@@ -25,6 +25,10 @@ define wizard = Character('[wizard_name]')
 define duke = Character('[duke_name]')
 define player = Character('[player_name]')
 
+# Define the images that will be used in the game.
+image knight bg small = "images/bg/knight_bg_small.PNG"
+image knight bg large = "images/bg/knight_bg_large.PNG"
+
 # The game starts here.
 
 label start:
@@ -139,4 +143,10 @@ label start:
 
     jump event_0_start
 
-    return
+label day_start:
+    narrate "you are now in the day_start label"
+
+    show screen map
+    window hide
+
+    pause

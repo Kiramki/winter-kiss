@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/events.rpy", line 41: expected 'image_name_component' not found.
-    scene "gui/map/map_default.png"
-          ^
+File "game/knight.rpy", line 4: expected '=' not found.
+    image knight_bg_small
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Fri Jan 10 22:43:49 2025
+Sat Jan 11 23:14:27 2025
