@@ -14,6 +14,15 @@ init python:
     wizard_name = "Wizard"
     devil_name = "Devil"
 
+    # Declare current week
+    week = 0
+
+# Define positions
+transform slight_left:
+    xalign 0.25
+
+transform slight_right:
+    xalign 0.75
 
 # Declare the characters + sprites that will be used in the game.
 
@@ -21,8 +30,18 @@ define narrate = Character('Narrator')
 define angel = Character('Angel')
 define devil = Character('[devil_name]')
 define knight = Character('[knight_name]')
+
 define wizard = Character('[wizard_name]')
+image wizard angry = "images/sprites/wizard_angry_cane.png"
+image wizard concerned = "images/sprites/wizard_concerned_cane.png"
+image wizard happy = "images/sprites/wizard_happy_cane.png"
+image wizard neutral = "images/sprites/wizard_neutral_cane.png"
+image wizard sad = "images/sprites/wizard_sad_cane.png"
+image wizard love = "images/sprites/wizard_love_cane.png"
+
 define duke = Character('[duke_name]')
+image duke angry = "images/sprites/duke_angry.png"
+
 define player = Character('[player_name]')
 
 # Define the images that will be used in the game.
@@ -37,6 +56,8 @@ label start:
     narrate "this is SUCH a COOL INTRODUCTION SPACE"
     narrate "WOW i am INTRODUCING EVERYTHING"
     narrate "i hope you feel INTRODUCED!!!!"
+
+    # Pronoun menus
 
     narrate "tell me ur pronouns"
 
@@ -70,9 +91,11 @@ label start:
 
     narrate "I will now refer to you as [p_subject]."
 
+    # Name input
     narrate "tell me ur name"
     $ player_name = renpy.input("Enter your name.").title().strip() or __("Stranger")
 
+    # If the player doesn't enter a name, they will be referred to as "Stranger"
     if player_name == "Stranger":
         narrate "No? Alright, stranger."
     else:
@@ -144,7 +167,9 @@ label start:
     jump event_0_start
 
 label day_start:
+    $ week += 1
     narrate "you are now in the day_start label"
+    narrate "It is currently week [week]."
 
     show screen map
     window hide
