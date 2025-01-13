@@ -1623,6 +1623,10 @@ screen map():
 
     # Duke's mansion.
     imagebutton:
+        if tutorial_stage == 1 or tutorial_stage == 2:
+            sensitive False
+        else:
+            sensitive True
         idle "images/map/mansion_idle.png"
         hover "images/map/mansion_hover.png"
         action Jump("duke_check")
@@ -1631,6 +1635,10 @@ screen map():
 
     # Wizard's tower.
     imagebutton:
+        if tutorial_stage == 0 or tutorial_stage == 2:
+            sensitive False
+        else:
+            sensitive True
         idle "images/map/tower_idle.png"
         hover "images/map/tower_hover.png"
         action Jump("wizard_check")
@@ -1639,6 +1647,12 @@ screen map():
 
     # Knight.
     imagebutton:
+        # Tutorial
+        if tutorial_stage == 0 or tutorial_stage == 1:
+            sensitive False
+        else:
+            sensitive True
+        
         idle "images/map/knight_idle.png"
         hover "images/map/knight_hover.png"
         action Jump("knight_check")

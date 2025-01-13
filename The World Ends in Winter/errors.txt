@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 172: end of line expected.
-    narrate "It is currently week [week]".
-                                         ^
+File "game/wizard.rpy", line 78: choice menuitem expects a non-empty block.
+    "ur like a leader":
+                       ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Jan 12 18:10:21 2025
+Mon Jan 13 00:18:28 2025

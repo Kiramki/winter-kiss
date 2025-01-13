@@ -14,3 +14,4 @@ def skill_check(difficulty, stat):
         return True
     else:
         return False
+    

@@ -9,17 +9,33 @@ init python:
 
     # Declare character names
     player_name = "Stranger"
-    duke_name = "Duke"
-    knight_name = "Holy Knight"
-    wizard_name = "Wizard"
-    devil_name = "Devil"
+
+    duke_name = "The Duke"
+
+    knight_name = "The Holy Knight"
+
+    wizard_name = "The Wizard"
+
+    devil_name = "The Devil"
 
     # Declare current week
     week = 0
 
+    # Declare number of encounters
+    wizard_encounters = 0
+    knight_encounters = 0
+    duke_encounters = 0
+
+    # Check if the player is currently in the tutorial.
+    tutorial_stage = 0
+
 # Define positions
 transform slight_left:
     xalign 0.25
+
+transform slight_left_from_center:
+    xalign 0.5
+    linear 0.5 xalign 0.25
 
 transform slight_right:
     xalign 0.75
@@ -44,10 +60,6 @@ image duke angry = "images/sprites/duke_angry.png"
 
 define player = Character('[player_name]')
 
-# Define the images that will be used in the game.
-image knight bg small = "images/bg/knight_bg_small.PNG"
-image knight bg large = "images/bg/knight_bg_large.PNG"
-
 # The game starts here.
 
 label start:
@@ -56,6 +68,15 @@ label start:
     narrate "this is SUCH a COOL INTRODUCTION SPACE"
     narrate "WOW i am INTRODUCING EVERYTHING"
     narrate "i hope you feel INTRODUCED!!!!"
+
+    # sprite shenanigans
+    narrate "sprite shenanigans"
+    show wizard happy
+    wizard "I've got a weapon, and I'm..."
+    show wizard concerned
+    wizard "I've got a weapon, and I'm... admittedly VERY afraid to use it!"
+
+    hide wizard
 
     # Pronoun menus
 
@@ -175,3 +196,7 @@ label day_start:
     window hide
 
     pause
+
+label day_end:
+    narrate "you are now in the day_end label. on certain weeks you might have a dream sequence or a main event."
+
