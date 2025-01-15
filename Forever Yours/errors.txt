@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 205: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Announce that you've already seen the number of study materials he's published as a knowledgeable mage."
-                                                                                                             ^
+File "game/wizard.rpy", line 10: Line with id wizard_check_d3d24a44 appears twice. The other line is game/mage.rpy:10
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Wed Jan 15 00:21:47 2025
+Wed Jan 15 01:27:59 2025

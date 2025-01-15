@@ -1,40 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 145, in script
-    show screen map
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 1618, in <module>
-    modal true
-NameError: name 'true' is not defined
+  File "game/script.rpy", line 251, in script
+    wizard "I've got a weapon, and I'm..."
+Exception: Sayer 'wizard' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 145, in script
-    show screen map
-  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 1980, in execute
-    self.call("execute")
-  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 1959, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "/Users/kiramki/Downloads/renpy/renpy/statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-  File "/Users/kiramki/Downloads/renpy/renpy/display/screen.py", line 1341, in show_screen
-    d = ScreenDisplayable(screen, _tag, _layer, _widget_properties, scope, transient=_transient)
-  File "/Users/kiramki/Downloads/renpy/renpy/display/screen.py", line 455, in __init__
-    self.modal = renpy.python.py_eval(self.screen.modal, locals=self.scope)
-  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/screens.rpy", line 1618, in <module>
-    modal true
-NameError: name 'true' is not defined
+  File "game/script.rpy", line 251, in script
+    wizard "I've got a weapon, and I'm..."
+  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 2579, in execute
+    Say.execute(self)
+  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 581, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 470, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'wizard' is not defined.
 
 macOS-15.2-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
-The World Ends in Winter 1.0
-Sat Jan 11 22:19:52 2025
+Forever Yours, The Devil 1.0
+Wed Jan 15 01:28:53 2025

@@ -2,6 +2,10 @@
 
 # Initialize python code here.
 init python:
+    # importing a module. fuck u
+    import time
+    import check
+
     # Declare the stats
     resolve = 0
     fortitude = 0
@@ -14,8 +18,6 @@ init python:
 
     knight_name = "The Holy Knight"
 
-    wizard_name = "The Wizard"
-
     mage_name = "The Mage"
 
     devil_name = "The Devil"
@@ -27,12 +29,16 @@ init python:
     week = 0
 
     # Declare number of encounters
-    wizard_encounters = 0
+    mage_encounters = 0
     knight_encounters = 0
     duke_encounters = 0
 
     # Check if the player is currently in the tutorial.
     tutorial_stage = 0
+
+    # yo... yo what time is it
+    year, month, day, hour, minute, second, dow, doy, dst = time.localtime() # stealing from the INTERNET idk how this works
+
 
 # Define positions
 transform slight_left:
@@ -49,20 +55,41 @@ transform slight_right:
 
 define narrate = Character('Narrator')
 define angel = Character('Angel')
-define devil = Character('[devil_name]')
-define knight = Character('[knight_name]')
-define mage = Character('[mage_name]')
 
-define wizard = Character('[wizard_name]')
-image wizard angry = "images/sprites/wizard_angry_cane.png"
-image wizard concerned = "images/sprites/wizard_concerned_cane.png"
-image wizard happy = "images/sprites/wizard_happy_cane.png"
-image wizard neutral = "images/sprites/wizard_neutral_cane.png"
-image wizard sad = "images/sprites/wizard_sad_cane.png"
-image wizard love = "images/sprites/wizard_love_cane.png"
+define devil = Character('[devil_name]')
+image devil angry = "images/sprites/devil_angry.png"
+image devil fear = "images/sprites/devil_fear.png"
+image devil happy = "images/sprites/devil_happy.png"
+image devil love = "images/sprites/devil_love.png"
+image devil malicious = "images/sprites/devil_malicious.png"
+image devil neutral = "images/sprites/devil_neutral.png"
+image devil pleading = "images/sprites/devil_pleading.png"
+image devil sad = "images/sprites/devil_sad.png"
+
+define knight = Character('[knight_name]')
+
+define mage = Character('[mage_name]')
+image mage angry = "images/sprites/Mage_Angry_WCane.png"
+image mage concerned = "images/sprites/Mage_Concerned_WCane.png"
+image mage happy = "images/sprites/Mage_Happy_WCane.png"
+image mage love = "images/sprites/Mage_Love_WCane.png"
+image mage neutral = "images/sprites/Mage_Neutral_WCane.png"
+image mage sad = "images/sprites/Mage_Sad_WCane.png"
+image mage angry nocane = "images/sprites/Mage_Angry_WOCane.png"
+image mage concerned nocane = "images/sprites/Mage_Concerned_WOCane.png"
+image mage happy nocane = "images/sprites/Mage_Happy_WOCane.png"
+image mage love nocane = "images/sprites/Mage_Love_WOCane.png"
+image mage neutral nocane = "images/sprites/Mage_Neutral_WOCane.png"
+image mage sad nocane = "images/sprites/Mage_Sad_WOCane.png"
+
 
 define duke = Character('[duke_name]')
-image duke angry = "images/sprites/duke_angry.png"
+image duke concern = "images/sprites/duke_Concern.png"
+image duke happy = "images/sprites/duke_Happy.png"
+image duke love = "images/sprites/duke_Love.png"
+image duke neutral = "images/sprites/duke_Neutral.png"
+image duke sad = "images/sprites/duke_Sad.png"
+image duke shock = "images/sprites/duke_Shock.png"
 
 define player = Character('[player_name]')
 
@@ -175,7 +202,7 @@ label start:
     narrate "Your stomach drops as the angelic figure before you morphs into something sinister."
     devil "Foolish human. There are no second chances."
     narrate "Everything shatters around you. The darkness consumes everything and swallows you whole."
-    doctor "Time of death: 2:45 pm" #insert actual time 
+    doctor "Time of death: 2:45 pm" #insert actual time # dear LORD
 
     narrate "WISP. THIS IS. FOR YOU!"
     narrate "Before you an ivory structure threatens to scrape the clouds that hang just above its highest peak; piercing the sky like the icy sun rays themselves. It is no wonder they call it The Mage Tower."
@@ -220,12 +247,12 @@ label start:
     
     # sprite shenanigans
     narrate "sprite shenanigans"
-    show wizard happy
-    wizard "I've got a weapon, and I'm..."
-    show wizard concerned
-    wizard "I've got a weapon, and I'm... admittedly VERY afraid to use it!"
+    show mage happy
+    mage "I've got a weapon, and I'm..."
+    show mage concerned
+    mage "I've got a weapon, and I'm... admittedly VERY afraid to use it!"
 
-    hide wizard
+    hide mage
 
     # Pronoun menus
 
