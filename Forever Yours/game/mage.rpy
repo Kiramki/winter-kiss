@@ -14,22 +14,26 @@ label mage_check:
         "Yes":
             # First encounter
             if mage_encounters == 0:
-                jump mage_encounter_1
+                jump mage_encounter_0
 
             # Second encounter
             elif mage_encounters == 1:
-                jump mage_encounter_2
+                jump mage_encounter_1
 
             # Third encounter
             elif mage_encounters == 2:
-                jump mage_encounter_3
+                jump mage_encounter_2
 
             # Fourth encounter
             elif mage_encounters == 3:
-                jump mage_encounter_4
+                jump mage_encounter_3
 
             # Fifth encounter
             elif mage_encounters == 4:
+                jump mage_encounter_4
+
+            # Sixth encounter
+            elif mage_encounters == 5:
                 jump mage_encounter_5
 
             # Subsequent encounters
@@ -40,12 +44,12 @@ label mage_check:
             show screen map with Dissolve(0.5)
             pause
 
-label mage_encounter_1:
+label mage_encounter_0:
     scene black with Dissolve(0.5)
     narrate "ur prophecy says that you gotta be recruiting some like, wizard guy right now. better get on that"
     
-    scene wizard_bg_1 with Dissolve(0.5)
-    narrate "Well. This place looks. Wizard-y"
+    scene mage_bg_1 with Dissolve(0.5)
+    narrate "Well. This place looks. magic-y"
 
     show mage neutral with Dissolve(0.5)
     mage "hello........ what are u doing in my house"
@@ -89,9 +93,17 @@ label mage_encounter_1:
 
     narrate "{b}N I C E{/b}"
 
+    scene black with Dissolve(0.5)
+
     narrate "You decide to leave [mage_name]'s tower."
+    narrate "The last person you need to meet is the duke guy......"
+    narrate "hope that recruiting this guy goes better than with the other two!! man, who woulda thought that trying to convince people that they're part of a prophecy where the world hangs in the balance would be so DIFFICULT"
 
     $ mage_encounters += 1
+    $ mage_available = False
+    $ duke_available = True
 
-    jump day_end
+    show screen map with Dissolve(0.5)
+    hide window
+    pause
 

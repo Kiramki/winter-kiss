@@ -77,3 +77,20 @@ label event_0_continue:
     narrate "and now u go to wherever the player goes to contemplate how to start their week"
 
     jump tutorial_start
+
+label event_1_start:
+    scene mage_bg_large with Dissolve(0.5)
+    narrate "GOOD JOB TEAM. YOUVE ASSEMBLED THE... prophecy guys???"
+    narrate "(fuck. this doesnt look like a great team at all)"
+
+    duke "ok so like the world is literally going to end. we need to do this shit fast we all have things to do"
+    mage "um. no. uh. im pretty sure we need to like.... prepare"
+    duke "so like actually. fuck you"
+    knight "ha HA HA GUYS what if we like DONT be mean to each other and"
+    player "AAAA CAN WE FOCUS"
+
+    narrate "my god. we have our work cut out for us."
+
+    narrate "something something, a super appropriate transition to everyone going home after agreeing...."
+    scene black with Dissolve(0.5)
+    jump day_start

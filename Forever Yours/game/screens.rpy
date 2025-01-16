@@ -1623,54 +1623,61 @@ screen map():
 
     # Duke's mansion.
     imagebutton:
-        if tutorial_stage == 1 or tutorial_stage == 2:
-            sensitive False
-        else:
+
+        # Check if the location can be visited.
+        if duke_available:
             sensitive True
+        else:
+            sensitive False
+
+        # If the location can't be visited, show insensitive image.
+        insensitive "images/map/mansion_insensitive.png"
         idle "images/map/mansion_idle.png"
         hover "images/map/mansion_hover.png"
+
+        # Jump to the duke_check label on click.
         action Jump("duke_check")
+
+        # Position the image.
         xalign 0.5
         yalign 0.65
 
-    # Wizard's tower.
+    # Mage's tower.
     imagebutton:
-        if tutorial_stage == 0 or tutorial_stage == 2:
-            sensitive False
-        else:
+        # Check if the location can be visited.
+        if mage_available:
             sensitive True
+        else:
+            sensitive False
+
+        # If the location can't be visited, show insensitive image.
+        insensitive "images/map/tower_insensitive.png"
         idle "images/map/tower_idle.png"
         hover "images/map/tower_hover.png"
-        action Jump("wizard_check")
+
+        # Jump to the mage_check label on click.
+        action Jump("mage_check")
+
+        # Position the image.
         xalign 0.8
         yalign 0.75
 
     # Knight.
     imagebutton:
-        # Tutorial
-        if tutorial_stage == 0 or tutorial_stage == 1:
-            sensitive False
-        else:
+        # Check if the location can be visited.
+        if knight_available:
             sensitive True
+        else:
+            sensitive False
         
+        # If the location can't be visited, show insensitive image.
+        insensitive "images/map/knight_insensitive.png"
         idle "images/map/knight_idle.png"
         hover "images/map/knight_hover.png"
+    
+        # Jump to the knight_check label on click.
         action Jump("knight_check")
+
+        # Position the image.
         xalign 0.15
         yalign 0.75
-
-################################################################################
-## Trial 1
-################################################################################
-
-################################################################################
-## Trial 2
-################################################################################
-
-################################################################################
-## Trial 3
-################################################################################
-
-################################################################################
-## Final Trial
-################################################################################

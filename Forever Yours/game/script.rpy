@@ -15,11 +15,8 @@ init python:
     player_name = "Stranger"
 
     duke_name = "The Duke"
-
     knight_name = "The Holy Knight"
-
     mage_name = "The Mage"
-
     devil_name = "The Devil"
 
     nurse = "Nurse"
@@ -34,6 +31,9 @@ init python:
     duke_encounters = 0
 
     # Flags for areas of the map that are available
+    duke_available = False
+    mage_available = False
+    knight_available = False
 
     # yo... yo what time is it
     year, month, day, hour, minute, second, dow, doy, dst = time.localtime() # stealing from the INTERNET idk how this works
@@ -329,11 +329,20 @@ label tutorial_start:
     player "oh damn. what do i do now."
     player "that knight guy said that like. i could visit him. maybe i should do that....."
     player "tryna figure out what the hell to do with this prophecy is like kinda daunting actually."
+    player "yeah. yeah lets go visit that knight and see what hes got to say."
+
+    $ knight_available = True
+    show screen map
+    window hide
+
+    pause
 
 label day_start:
     $ week += 1
-    narrate "you are now in the day_start label"
+    narrate "u like wake up. you have [13 - week] weeks left to save the world. (this is the day_start label)"
     narrate "It is currently week [week]."
+
+    narrate "(pls god nothings implemented past this point u WILL run into an error if u interact with that map)"
 
     show screen map
     window hide
