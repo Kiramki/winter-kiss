@@ -2,23 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 259: Line with id mage_tutorial_82bbae59 appears twice. The other line is game/mage.rpy:49
-
-File "game/script.rpy", line 260: Line with id mage_tutorial_8c04861f appears twice. The other line is game/mage.rpy:50
-
-File "game/script.rpy", line 261: Line with id mage_tutorial_51d4d8fa appears twice. The other line is game/mage.rpy:51
-
-File "game/script.rpy", line 263: Line with id mage_tutorial_f3005b58 appears twice. The other line is game/mage.rpy:53
-
-File "game/script.rpy", line 264: Line with id mage_tutorial_5e76c786 appears twice. The other line is game/mage.rpy:54
-
-File "game/script.rpy", line 266: Line with id mage_tutorial_bee832fc appears twice. The other line is game/mage.rpy:56
-
-File "game/script.rpy", line 267: Line with id mage_tutorial_42345b1a appears twice. The other line is game/mage.rpy:57
-
-File "game/script.rpy", line 268: Line with id mage_tutorial_911355c9 appears twice. The other line is game/mage.rpy:58
-
-File "game/script.rpy", line 269: Line with id mage_tutorial_0dc534aa appears twice. The other line is game/mage.rpy:59
+File "game/script.rpy", line 305: end of line expected.
+    scene black with fade 1.0
+                          ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Thu Jan 16 01:11:18 2025
+Thu Jan 16 02:07:56 2025

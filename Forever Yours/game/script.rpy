@@ -21,6 +21,8 @@ init python:
 
     nurse = "Nurse"
     doctor = "Doctor"
+    unknown = "???"
+    priest = "Priest"
 
     # Declare affection levels
     duke_affection = 0
@@ -76,6 +78,8 @@ transform slight_right:
 # Declare the characters + sprites that will be used in the game.
 
 define narrate = Character('Narrator')
+define prophecy = Character('', kind=nvl, color="#c8ffc8")
+
 define angel = Character('Angel')
 
 define devil = Character('[devil_name]')
@@ -205,16 +209,16 @@ label start:
             $ resolve = 10
     narrate "Your current stats are:\nFortitude: [fortitude]\nEmpathy: [empathy]\nResolve: [resolve]"
 
-    # INPUT NAME
-    angel "So you've decided to join this new world?"
-    angel "Then, tell me. What did they call you here on earth?"
-    $ player_name = renpy.input("Enter your name.").title().strip() or __("Stranger")
+    # # IM CHANGING THIS, YOU INPUT IN TUTORIAL - EMILY; INPUT NAME
+    # angel "So you've decided to join this new world?"
+    # angel "Then, tell me. What did they call you here on earth?"
+    # $ player_name = renpy.input("Enter your name.").title().strip() or __("Stranger")
 
-    # If the player doesn't enter a name, they will be referred to as "Stranger"
-    if player_name == "Stranger":
-        narrate "No? Alright, then you are a stranger."
-    else:
-        angel "Then, [player_name]. There is one last thing you have to do."
+    # # If the player doesn't enter a name, they will be referred to as "Stranger"
+    # if player_name == "Stranger":
+    #     narrate "No? Alright, then you are a stranger."
+    # else:
+    #     angel "Then, [player_name]. There is one last thing you have to do."
 
     narrate "She smiles prettily and leans in towards you."
     angel "Touch your lips to mine, and seal your choice."
@@ -228,6 +232,8 @@ label start:
     devil "Foolish human. There are no second chances."
     narrate "Everything shatters around you. The darkness consumes everything and swallows you whole."
 
+    jump tutorial_start #MIA. COMMENT THIS OUT. IF YOU WANT TO DO YOUR TESTING. 
+
     # Current
     doctor "Time of death: [current_hour]:[minute] [ampm]." #insert actual time
 
@@ -240,9 +246,91 @@ label start:
 
     hide mage
 
-    # Pronoun menus
+    # # Pronoun menus - IM MOVING THIS TOO
 
-    narrate "tell me ur pronouns"
+    # narrate "tell me ur pronouns"
+
+    # menu pronouns:
+    #     "he/him":
+    #         $ p_subject = "he"
+    #         $ p_object = "him"
+    #         $ p_possessive = "his"
+    #         $ p_possessive_adj = "his"
+    #         $ p_reflexive = "himself"
+    #         $ p_is = "he's"
+    #         $ p_be = "is"
+
+    #     "she/her":
+    #         $ p_subject = "she"
+    #         $ p_object = "her"
+    #         $ p_possessive = "her"
+    #         $ p_possessive_adj = "her"
+    #         $ p_reflexive = "herself"
+    #         $ p_is = "she's"
+    #         $ p_be = "is"
+
+    #     "they/them":
+    #         $ p_subject = "they"
+    #         $ p_object = "them"
+    #         $ p_possessive = "their"
+    #         $ p_possessive_adj = "theirs"
+    #         $ p_reflexive = "themself"
+    #         $ p_is = "they're"
+    #         $ p_be = "are"
+
+    # narrate "I will now refer to you as [p_subject]."
+        
+    # menu sacrifice:
+    #     # Trust sacrifice
+    #     "Your trust":
+    #         $ fortitude = 10
+    #         $ empathy = 20
+    #         $ resolve = 5
+
+    #     # Courage sacrifice
+    #     "Your courage":
+    #         $ fortitude = 5
+    #         $ empathy = 10
+    #         $ resolve = 20
+
+    #     # Honesty
+    #     "Your honesty":
+    #         $ fortitude = 20
+    #         $ empathy = 5
+    #         $ resolve = 10
+
+
+    jump event_0_start
+
+# hurgles. tutorial
+label tutorial_start:
+    scene black 
+    narrate "(i forgot how to do the fadein effect help ill just use dots)"
+    narrate "..."
+    narrate "Somewhere, not here, there is music. Everything in front of you shifts like a kaleidoscope held up to the sun."
+    narrate "Your body sludges through the fractured colors, towards the light before you, until you fall through the miasma, into somewhere else."
+    narrate "You are somewhere you have never existed before."
+    narrate "The sounds that ring in your ears vibrate like waves but they are not."
+    narrate "The floor beneath you looks like wood but it is not wood."
+    narrate "Like a newborn thrust into cold air for the first time, you are lost."
+    unknown "Let them rest a moment..."
+    unknown "Be at ease, you are in the Temple of Amari. Welcome to Parcae."
+    narrate "Your vision clears. When you look up, your eyes scan across a grand hall bathed in candlelight."
+    narrate "Then, your eyes land on two figures, one fine armor is dressed in fine armor and stands at attention beside someone in ceremonial robes."
+    priest "Chosen One, blessed by our great deity Amari, we are so glad you've come to us."
+    priest "Your arrival is a gift to the Empire. The Holy Order welcomes you."
+    narrate "The knight beside him takes a step towards you and bows deeply."
+    knight "I know this must be overwhelming, but... you're here. We are honored to meet you."
+    narrate "No. You shouldn't be here. You know that much. You shouldn't be here because... because..."
+    narrate "You try to remember, reaching back to a time before this. Your head throbs."
+    priest "Tell us, what name should we call you by?"
+    $ player_name = renpy.input("Enter your name.").title().strip() or __("Stranger")
+
+    # If the player doesn't enter a name, they will be referred to as "Stranger"
+    if player_name == "Stranger":
+        narrate "No? Alright, then you are a stranger."
+
+    knight "We are honored to meet you [player_name]. May I also ask, how do you prefer to be referred to?"
 
     menu pronouns:
         "he/him":
@@ -273,33 +361,24 @@ label start:
             $ p_be = "are"
 
     narrate "I will now refer to you as [p_subject]."
-        
-    # menu sacrifice:
-    #     # Trust sacrifice
-    #     "Your trust":
-    #         $ fortitude = 10
-    #         $ empathy = 20
-    #         $ resolve = 5
+    knight "I will notify the others to bring you to our prophecy."
+    knight "Oh I'm getting ahead of myself I apologize. You must have questions, please let me know and I will do my best to answer."
+    menu:
+        "Who are these people?":
+            narrate "Emily needs to write this still smh"
+        "What do they mean by prophecy?":
+            narrate "Emily still needs to write this smh"
+        "{b}You have forgotten something horribly important{/b}":
+            narrate "Emily still needs to write this smh"
 
-    #     # Courage sacrifice
-    #     "Your courage":
-    #         $ fortitude = 5
-    #         $ empathy = 10
-    #         $ resolve = 20
+    narrate "Basically, blah blah blah youre at the prophecy now  "
+    prophecy " Come the diamond fractals in the air, a witch is born with two moons to spare."
+    prophecy "If the old wall weeps and hears its tongue, the path is set with the right hand of the sun."
+    prophecy "Then, for the empire's heart, bring forth its shield, and for knowledge, a conductor of the magic's field."
+    prophecy "Three gates bow down for each price once paid,"
+    prophecy "But the witch alone pierces the umbra of Parcae."
 
-    #     # Honesty
-    #     "Your honesty":
-    #         $ fortitude = 20
-    #         $ empathy = 5
-    #         $ resolve = 10
-
-
-    jump event_0_start
-
-# hurgles. tutorial
-label tutorial_start:
-    narrate "TUTORIAL MOMENT"
-    player "oh damn. what do i do now."
+    narrate "OK its time for emily to go to bed"
     player "that knight guy said that like. i could visit him. maybe i should do that....."
     player "tryna figure out what the hell to do with this prophecy is like kinda daunting actually."
     player "yeah. yeah lets go visit that knight and see what hes got to say."
