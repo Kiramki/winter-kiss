@@ -1,26 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 214, in script
-    $ doctor("Time of death: [current_time].")
-  File "game/script.rpy", line 214, in <module>
-    $ doctor("Time of death: [current_time].")
-TypeError: 'str' object is not callable
+  File "game/mage.rpy", line 15, in script
+    jump mage_idle
+ScriptError: could not find label 'mage_idle'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 214, in script
-    $ doctor("Time of death: [current_time].")
-  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 214, in <module>
-    $ doctor("Time of death: [current_time].")
-TypeError: 'str' object is not callable
+  File "game/mage.rpy", line 15, in script
+    jump mage_idle
+  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 1705, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Users/kiramki/Downloads/renpy/renpy/script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'mage_idle'.
 
 macOS-15.2-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
 Forever Yours, The Devil 1.0
-Wed Jan 15 21:59:28 2025
+Thu Jan 16 00:52:15 2025

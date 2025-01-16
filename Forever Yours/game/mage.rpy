@@ -12,86 +12,51 @@ label mage_check:
     narrate "{i}Should I spend time with [mage_name]?{/i}"
     menu mage_menu:
         "Yes":
-            # First encounter
-            if mage_encounters == 0:
-                jump mage_encounter_0
-
-            # Second encounter
-            elif mage_encounters == 1:
-                jump mage_encounter_1
-
-            # Third encounter
-            elif mage_encounters == 2:
-                jump mage_encounter_2
-
-            # Fourth encounter
-            elif mage_encounters == 3:
-                jump mage_encounter_3
-
-            # Fifth encounter
-            elif mage_encounters == 4:
-                jump mage_encounter_4
-
-            # Sixth encounter
-            elif mage_encounters == 5:
-                jump mage_encounter_5
-
-            # Subsequent encounters
-            else:
-                jump idle_mage
+            jump mage_idle
         "No":
             narrate "{i}You decide to leave the Mage's tower.{/i}"
             show screen map with Dissolve(0.5)
             pause
 
-label mage_encounter_0:
-    scene black with Dissolve(0.5)
-    narrate "ur prophecy says that you gotta be recruiting some like, wizard guy right now. better get on that"
-    
-    scene mage_bg_1 with Dissolve(0.5)
-    narrate "Well. This place looks. magic-y"
+label mage_idle:
+    jump mage_encounter_tutorial
 
-    show mage neutral with Dissolve(0.5)
-    mage "hello........ what are u doing in my house"
+label mage_encounter_tutorial:
+    narrate "Before you an ivory structure threatens to scrape the clouds that hang just above its highest peak; piercing the sky like the icy sun rays themselves. It is no wonder they call it The Mage Tower."
 
-    player "so like. u know about this prophecy where we like save the world"
-    player "ur part of it. i need u"
+    narrate "Upon approaching its doors, you find that you are hastily ushered inside and out of the winter's reach."
+    narrate "Fire sprites dance lazily through the foyer, illuminating their surroundings with curiosity; as who you assume to be mages scurry about on their routine business."
+    narrate "Already, you can hear passing murmurs regarding their conductor - The Arch-Mage."
+    narrate "It is easy to gather already that he is a person of importance to those within the tower; further proven by the sheer amount of textbooks that appear to be signed by him."
+    narrate "Pulling your attention away, you inquire about an audience with none other than the arch-mage himself."
 
-    show mage concerned 
-    narrate "[mage_name] looks out of sorts."
-    mage "oh no. haha. no uh. no i dont think. i dont think i can help you with that"
-    mage "arent there like. other wizards. better wizards."
-    mage "are u sure that im the one that ur actually looking for like thats uh. thats a lot of pressure"
+    narrate "Guided to the tower's uppermost floor, you come face to face with the mage."
+    narrate "He stands near the center before a table littered with dozens of different texts and rather strange looking specimens, leaning heavily with a palm to the tabletop."
+    narrate "Believing you to be simply another one of the mages, he begins rambling about something you couldn't even begin fathoming to summarize before sighing and coming to a pause."
 
-    show mage neutral
-    player "haha yeah im. im sure."
-    player "ur the guy. the cool guy. the cool prophecy guy."
+    mage "Oh… It's rare to get a visitor - I suppose I was getting carried away. How may I be of assistance?"
 
-    show mage concerned
-    mage "but :("
-    
-    player "no no. ur the guy"
-    player "i know this because..."
+    narrate "You announce that you are the chosen one foretold by the prophecy. A flash of unease crosses his face and his posture seems to stiffen up."
 
-    menu convince_mage:
-        "ur like super knowledgeable":
-            player "ur like super knowledgeable"
-            player "theres books everywhere. u know everything"
-            player "ur like literally The Arch-Mage. u fancy guy"
+    mage "The… prophecy-? Good Amari. You know what you're claiming, aren't you?"
 
-        "ur like a leader":
-            player "ur like a leader"
-            player "u have a tower. u have a robe"
-            player "everyone i talk to out here looks up to you. its wild"
+    narrate "You explain that he is stated to be one of the companions of the prophecy."
 
-    show mage neutral
-    mage "oh. um. i"
-    mage "i guess i can't. i can't say no to that"
-    
-    show mage concerned
-    mage "i guess. ill help you. call me when u need me."
+    narrate "You must be mistaken. There is no way the prophecy would have any use for me. I'm certain Amari would have chosen a more promising mage if anything."
 
-    narrate "{b}N I C E{/b}"
+    menu mage_tutorial:
+        "Reassure him that it seems he is already rather looked up to by his peers.":
+            narrate "You explain to him that from the moment you walked in the doors, you've already heard several passing conversations concerning him and his steady tutelage. Surely someone as looked up to as he would have a place in the prophecy."
+            narrate "Giving him a sincere look, you request that he assists you as well on your journey."
+            mage "If you truly think you need my guidance.. I suppose I can try my best to aid you. But please do not be disappointed when my methods prove subpar."
+        "Assert the prophecy's undeniability and your determination to see it through.":
+            narrate "You ask him if he was the one who read the prophecy or if it was you, as you clearly recall. What was written was not a question, but a demand. Standing firm, you tell him that he is who was called for whether he likes it or not."
+            mage "... If you insist."
+        "Announce that you've already seen the number of study materials he's published as a knowledgeable mage.":
+            narrate "You point to the books on the table and blatantly show that he is the author of the study material being referenced. You ask him what he could even mean by a 'more promising' mage when he's already proven to be quite dedicated and knowledgeable."
+            mage "…You're braver than you look. If you're willing to stand by me, I guess I can take a leap of faith. Let's hope you're as good as your word."
+    narrate "The mage agrees to meet with you at the temple tonight with the rest of the companions."
+    narrate "Despite this triumph, you feel a heavily charged atmosphere at your back that crackles with uncertainty and raises the hairs along the back of your neck as you turn to leave."
 
     scene black with Dissolve(0.5)
 

@@ -1,5 +1,6 @@
 # This file is meant to contain the main events.
 
+## EVENT 0 ##
 label event_0_start:
     narrate "YOOOOOO YOURE IN A TEMPLE NOW"
     narrate "AND THERES A KNIGHT HERE HOLYYYY SHIIIITTTTTTTTTT"
@@ -78,12 +79,17 @@ label event_0_continue:
 
     jump tutorial_start
 
+
+## EVENT 1 ##
 label event_1_start:
     scene mage_bg_large with Dissolve(0.5)
     narrate "GOOD JOB TEAM. YOUVE ASSEMBLED THE... prophecy guys???"
     narrate "(fuck. this doesnt look like a great team at all)"
 
+    show duke neutral at center
     duke "ok so like the world is literally going to end. we need to do this shit fast we all have things to do"
+    show duke at slight_left
+    show mage concerned at slight_right
     mage "um. no. uh. im pretty sure we need to like.... prepare"
     duke "so like actually. fuck you"
     knight "ha HA HA GUYS what if we like DONT be mean to each other and"
