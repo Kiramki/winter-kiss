@@ -1,24 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 251, in script
-    wizard "I've got a weapon, and I'm..."
-Exception: Sayer 'wizard' is not defined.
+  File "game/script.rpy", line 214, in script
+    $ doctor("Time of death: [current_time].")
+  File "game/script.rpy", line 214, in <module>
+    $ doctor("Time of death: [current_time].")
+TypeError: 'str' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 251, in script
-    wizard "I've got a weapon, and I'm..."
-  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 2579, in execute
-    Say.execute(self)
-  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 581, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 470, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'wizard' is not defined.
+  File "game/script.rpy", line 214, in script
+    $ doctor("Time of death: [current_time].")
+  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 827, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 214, in <module>
+    $ doctor("Time of death: [current_time].")
+TypeError: 'str' object is not callable
 
 macOS-15.2-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
 Forever Yours, The Devil 1.0
-Wed Jan 15 01:28:53 2025
+Wed Jan 15 21:59:28 2025

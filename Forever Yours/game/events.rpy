@@ -76,4 +76,4 @@ label event_0_continue:
     narrate "u gotta save the world with three losers"
     narrate "and now u go to wherever the player goes to contemplate how to start their week"
 
-    jump day_start
+    jump tutorial_start

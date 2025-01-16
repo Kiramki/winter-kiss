@@ -33,11 +33,25 @@ init python:
     knight_encounters = 0
     duke_encounters = 0
 
-    # Check if the player is currently in the tutorial.
-    tutorial_stage = 0
+    # Flags for areas of the map that are available
 
     # yo... yo what time is it
     year, month, day, hour, minute, second, dow, doy, dst = time.localtime() # stealing from the INTERNET idk how this works
+
+    if hour == 0 or hour == 12:
+        current_hour = 12
+    elif hour <= 11:
+        current_hour = hour
+    elif hour >= 13:
+        current_hour = hour - 12
+
+    if hour <= 11:
+        ampm = "AM"
+    if hour >= 12:
+        ampm = "PM"
+
+    minute = "{0:0=2d}".format(minute)
+
 
 
 # Define positions
@@ -202,7 +216,9 @@ label start:
     narrate "Your stomach drops as the angelic figure before you morphs into something sinister."
     devil "Foolish human. There are no second chances."
     narrate "Everything shatters around you. The darkness consumes everything and swallows you whole."
-    doctor "Time of death: 2:45 pm" #insert actual time # dear LORD
+
+    # Current
+    doctor "Time of death: [current_hour]:[minute] [ampm]." #insert actual time # dear LORD
 
     narrate "WISP. THIS IS. FOR YOU!"
     narrate "Before you an ivory structure threatens to scrape the clouds that hang just above its highest peak; piercing the sky like the icy sun rays themselves. It is no wonder they call it The Mage Tower."
@@ -242,9 +258,6 @@ label start:
     narrate"Despite this triumph, you feel a heavily charged atmosphere at your back that crackles with uncertainty and raises the hairs along the back of your neck as you turn to leave."
 
 
-
-
-    
     # sprite shenanigans
     narrate "sprite shenanigans"
     show mage happy
@@ -309,6 +322,13 @@ label start:
 
 
     jump event_0_start
+
+# hurgles. tutorial
+label tutorial_start:
+    narrate "TUTORIAL MOMENT"
+    player "oh damn. what do i do now."
+    player "that knight guy said that like. i could visit him. maybe i should do that....."
+    player "tryna figure out what the hell to do with this prophecy is like kinda daunting actually."
 
 label day_start:
     $ week += 1
