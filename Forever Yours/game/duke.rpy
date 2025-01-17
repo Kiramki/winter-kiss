@@ -6,8 +6,25 @@ label duke_check:
 
     narrate "{i}You make your way to the Duke's fancyass house.{/i}"
 
-    show duke neutral
-    duke "Hello."
+    # Love
+    if duke_affection >= 5:
+        show duke happy with Dissolve(0.5)
+        duke "It's been ages since I've sat in the garden and simply breathed. All thanks to you, my friend."
+
+    # Like
+    elif duke_affection >= 3:
+        show duke neutral with Dissolve(0.5)
+        duke "Hello, [player_name]. I had a feeling it was you. Looks like I'll have to do this another time."
+
+    # Neutral
+    elif duke_affection >= -2:
+        show duke neutral with Dissolve(0.5)
+        duke "Oh, it's you. I was in the middle of writing an expense report... but I can spare a moment."
+
+    # Dislike
+    else:
+        show duke neutral with Dissolve(0.5)
+        duke "There are things more pressing than idle chatter. I have work to do."
 
     narrate "{i}Should I spend time with the Duke?{/i}"
     menu duke_menu:
@@ -27,6 +44,21 @@ label duke_idle:
 
     $ resolve += 1
     $ duke_affection += 1
+
+    if duke_encounters == 1:
+        jump duke_encounter_1
+    
+    if duke_encounters == 2:
+        jump duke_encounter_2
+    
+    if duke_encounters == 3:
+        jump duke_encounter_3
+
+    if duke_encounters == 4:
+        jump duke_encounter_4
+
+    else:
+        jump day_end
 
 label duke_encounter_tutorial:
     player "haha hey im here to recruit you for the-"
@@ -54,7 +86,3 @@ label duke_encounter_2:
 label duke_encounter_3:
 
 label duke_encounter_4:
-
-label duke_encounter_5:
-
-label duke_encounter_6:

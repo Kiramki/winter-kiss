@@ -119,6 +119,9 @@ image duke shock = "images/sprites/duke_Shock.png"
 
 define player = Character('[player_name]')
 
+# Declare backgrounds
+image white = "#ffffff"
+
 # The game starts here.
 
 label start:
@@ -304,11 +307,12 @@ label start:
 
 # hurgles. tutorial
 label tutorial_start:
-    scene black 
-    narrate "(i forgot how to do the fadein effect help ill just use dots)"
-    narrate "..."
+    scene white with Dissolve(0.5)
+    pause(0.5)
     narrate "Somewhere, not here, there is music. Everything in front of you shifts like a kaleidoscope held up to the sun."
     narrate "Your body sludges through the fractured colors, towards the light before you, until you fall through the miasma, into somewhere else."
+
+    scene knight_bg_large with Dissolve(0.5)
     narrate "You are somewhere you have never existed before."
     narrate "The sounds that ring in your ears vibrate like waves but they are not."
     narrate "The floor beneath you looks like wood but it is not wood."
@@ -379,6 +383,7 @@ label tutorial_start:
     prophecy "But the witch alone pierces the umbra of Parcae."
 
     narrate "OK its time for emily to go to bed"
+
     player "that knight guy said that like. i could visit him. maybe i should do that....."
     player "tryna figure out what the hell to do with this prophecy is like kinda daunting actually."
     player "yeah. yeah lets go visit that knight and see what hes got to say."

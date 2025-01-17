@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 305: end of line expected.
-    scene black with fade 1.0
-                          ^
+File "game/script.rpy", line 123: expected expression
+    image white = 
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Thu Jan 16 02:07:56 2025
+Thu Jan 16 14:51:59 2025
