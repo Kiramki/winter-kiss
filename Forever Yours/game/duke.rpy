@@ -79,9 +79,40 @@ label duke_encounter_tutorial:
     jump event_1_start
 
 label duke_encounter_1:
+    scene duke_bg_large with Dissolve(0.5)
 
+    narrate "u visit the duke in his estate"
+    narrate "he looks. super busy. his desk is covered in an UNGODLY amount of paperwork"
+    narrate "how can a single person handle that much paperwork..."
+    show duke neutral
+    duke "goddamnit"
+    duke "u know. even though i try so hard. with my personal forces and resources to assist. people are still dying. to MONSTERS"
+    player "damn..."
+    player "hey so how do you feel about like. the prophecy. and how are you in general. u look stressed"
+    duke "u know what. its just really frustrating that i cant keep my promise to protect the people of the empire"
+    player "u seem like ur doing pretty well all things considered. working hard"
+    duke "nah. no. people r still dying. its not good enough"
+    player "well ! uh. okay !"
+    scene black with Dissolve(0.5)
+    narrate "me when i perfectionist huh."
+
+    # Increase encounter counter - jump to the end of the day
+    $ duke_encounters += 1
+    jump day_end
 
 label duke_encounter_2:
+    scene duke_bg_large with Dissolve(0.5)
+    narrate "u are with the duke once again."
+    narrate "he looks stressed. but youve come to realize that might just be his face....... or maybe he's just always stressed"
+    player "so. why are u always like. trying to do things urself"
+    duke ">:("
+    duke "get out"
+
+    scene black with Dissolve(0.5)
+    narrate "goddamn. ok"
+
+    $ duke_encounters += 1
+    jump day_end
 
 label duke_encounter_3:
 

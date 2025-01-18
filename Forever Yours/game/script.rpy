@@ -350,7 +350,7 @@ label tutorial_start:
             $ p_subject = "she"
             $ p_object = "her"
             $ p_possessive = "her"
-            $ p_possessive_adj = "her"
+            $ p_possessive_adj = "hers"
             $ p_reflexive = "herself"
             $ p_is = "she's"
             $ p_be = "is"
@@ -396,9 +396,15 @@ label tutorial_start:
     pause
 
 label day_start:
+    scene knight_bg_large with Dissolve(0.5)
     $ week += 1
     narrate "u wake up. you have [11 - week] weeks left to save the world. (this is the day_start label)"
     narrate "It is currently week [week]."
+
+    if week == 11:
+        narrate "you are out of time."
+        narrate "its time to face ur destiny or some shit."
+        jump trial_1_start
 
     narrate "(pls god nothings implemented past this point u WILL run into an error if u interact with that map)"
 
@@ -408,5 +414,28 @@ label day_start:
     pause
 
 label day_end:
-    narrate "you are now in the day_end label. on certain weeks you might have a dream sequence or a main event."
+    scene mage_bg_large with Dissolve(0.5)
+    narrate "you are now in the day_end label. This label will direct you to a story event, if there is one to see."
+
+    if week == 2:
+        jump event_2_start
+    elif week == 4:
+        jump event_3_start
+    elif week == 8:
+        jump event_4_start
+    elif week == 10:
+        jump event_5_start
+
+    else:
+        jump day_dreams
+
+
+label day_dreams:
+    # If there's a dream event, jump there. Otherwise, jump to the next day.
+    scene duke_bg_large with Dissolve(0.5)
+    narrate "You are now in the day_dreams label. This label will direct you to a dream sequence, if there is one to see."
+    if week == 2:
+        jump ambiguous_memory_1
+    else:
+        jump day_start
 

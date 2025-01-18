@@ -1,22 +1,51 @@
-2025-01-16 22:56:53 UTC
+2025-01-18 02:25:34 UTC
 macOS-15.2-arm64-arm-64bit
 Ren'Py 8.3.4.24120703
 
 Early init took 0.03s
 Loading error handling took 0.02s
-Loading script took 0.10s
+Loading script took 0.16s
 Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 433: if statement expects a non-empty block.
+    if week == 2:
+                 ^
+
+File "game/script.rpy", line 435: expected statement.
+    else:
+        ^
+DPI scale factor: 1.000000
+Interface start took 0.20s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M2 Pro'
+Version: b'2.1 Metal - 89.3'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 116.65s
+Loading error handling took 0.01s
+Loading script took 0.07s
+Loading save slot metadata took 0.01s
 Loading persistent took 0.00s
 Year: 2025
 Month: 1
-Day: 16
-Hour: 17
-Minute: 56
-Second: 53
-Day of Week: 3
-Day of Year: 16
+Day: 17
+Hour: 21
+Minute: 27
+Second: 31
+Day of Week: 4
+Day of Year: 17
 Daylight Savings Time: 0
-Running init code took 0.02s
+Running init code took 0.03s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.01s
@@ -25,20 +54,20 @@ Backing up script files to '/Users/kiramki/Library/RenPy/backups/Forever Yours':
 Dump and make backups took 0.02s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.01s
+Initial gc took 0.02s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.01s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.01s
 Prepare screens took 0.03s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
+Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.18s
+Interface start took 0.07s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1512, 982)
@@ -48,57 +77,15 @@ Vendor: "b'Apple'"
 Renderer: b'Apple M2 Pro'
 Version: b'2.1 Metal - 89.3'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 177.11s
-Loading error handling took 0.02s
+Early init took 171.43s
+Loading error handling took 0.01s
 Loading script took 0.06s
-Loading save slot metadata took 0.01s
-Loading persistent took 0.00s
-Running init code took 0.01s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/kiramki/Library/RenPy/backups/Forever Yours':
-Dump and make backups took 0.02s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.02s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.02s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.03s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M2 Pro'
-Version: b'2.1 Metal - 89.3'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 200.05s
-Loading error handling took 0.01s
-Loading script took 0.04s
-Loading save slot metadata took 0.01s
+Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
 Running init code took 0.01s
 Loading analysis data took 0.01s
@@ -122,7 +109,7 @@ Prepare screens took 0.03s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.04s
+Interface start took 0.06s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1512, 982)
@@ -132,97 +119,119 @@ Vendor: "b'Apple'"
 Renderer: b'Apple M2 Pro'
 Version: b'2.1 Metal - 89.3'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
 Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 213.93s
-Loading error handling took 0.01s
-Loading script took 0.04s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.01s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/kiramki/Library/RenPy/backups/Forever Yours':
-Dump and make backups took 0.02s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.02s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.03s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M2 Pro'
-Version: b'2.1 Metal - 89.3'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 215.65s
-Loading error handling took 0.01s
-Loading script took 0.04s
-Loading save slot metadata took 0.02s
-Loading persistent took 0.00s
-Running init code took 0.01s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Dump and make backups took 0.02s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.02s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.01s
-Build styles took 0.00s
-Load screen analysis took 0.01s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.03s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Prepare screens took 0.00s
 Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M2 Pro'
-Version: b'2.1 Metal - 89.3'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
-Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 225.05s
+Early init took 203.46s
 Loading error handling took 0.01s
 Loading script took 0.07s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.01s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/kiramki/Library/RenPy/backups/Forever Yours':
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.02s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.07s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M2 Pro'
+Version: b'2.1 Metal - 89.3'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 209.68s
+Loading error handling took 0.01s
+Loading script took 0.05s
+Loading save slot metadata took 0.01s
+Loading persistent took 0.00s
+Running init code took 0.01s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/kiramki/Library/RenPy/backups/Forever Yours':
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.02s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1512, 982)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M2 Pro'
+Version: b'2.1 Metal - 89.3'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 499.69s
+Loading error handling took 0.01s
+Loading script took 0.09s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
 Running init code took 0.02s
@@ -247,7 +256,7 @@ Prepare screens took 0.03s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.04s
+Interface start took 0.07s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1512, 982)
@@ -257,49 +266,14 @@ Vendor: "b'Apple'"
 Renderer: b'Apple M2 Pro'
 Version: b'2.1 Metal - 89.3'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
+Screen sizes: virtual=(1920, 1080) physical=(1512, 842) drawable=(3024, 1684)
 Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 253.06s
-Loading error handling took 0.01s
-Loading script took 0.05s
-Loading save slot metadata took 0.01s
-Loading persistent took 0.00s
-Running init code took 0.01s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/kiramki/Library/RenPy/backups/Forever Yours':
-Dump and make backups took 0.02s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.02s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.01s
+Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.00s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
-Save screen analysis took 0.01s
-Prepare screens took 0.03s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
+Prepare screens took 0.00s
 Running _start took 0.00s
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M2 Pro'
-Version: b'2.1 Metal - 89.3'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1512, 840) drawable=(3024, 1680)
-Maximum texture size: 4096x4096

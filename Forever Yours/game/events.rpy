@@ -80,7 +80,7 @@ label event_0_continue:
     jump tutorial_start
 
 
-## EVENT 1 ##
+## EVENT 1 - Recruitment Conflict ##
 label event_1_start:
     scene mage_bg_large with Dissolve(0.5)
     narrate "GOOD JOB TEAM. YOUVE ASSEMBLED THE... prophecy guys???"
@@ -99,4 +99,61 @@ label event_1_start:
 
     narrate "something something, a super appropriate transition to everyone going home after agreeing...."
     scene black with Dissolve(0.5)
-    jump day_start
+    jump day_dreams
+
+## EVENT 2 - Trying and FAILING to work together ##
+label event_2_start:
+    scene duke_bg_large with Dissolve(0.5)
+    narrate "Alright team. We've assembled the prophecy guys. We gotta practice together"
+    show duke neutral at center
+    duke ">:("
+    show duke neutral at slight_left
+    show mage neutral at slight_right
+    mage ">:("
+    knight ">:("
+    narrate "........ shit"
+
+    scene black with Dissolve(0.5)
+    jump day_dreams
+
+## EVENT 3 - BIG CONFLICT ##
+label event_3_start:
+    scene knight_bg_large with Dissolve(0.5)
+    narrate "ALRIGHT. ALRIGHT. SURELY WE WILL IMPROVE"
+    show duke neutral at slight_left
+    show mage neutral at slight_left
+    duke "D:<"
+    mage "D:<"
+    knight "guys... guys......"
+    show duke shock
+    show mage concern
+    narrate "ok... ok um. hm. uuuuuOHSHITISTHATAMONSTER"
+    narrate "AUGHGUHGOHGOD"
+
+    scene black with Dissolve(0.5)
+    jump day_dreams
+
+## EVENT 4 - GAY turning point ##
+label event_4_start:
+    scene knight_bg_large with Dissolve(0.5)
+    knight "[player_name]. listen. we need to do something about [duke_name] and [mage_name]."
+    player "youre. so right."
+    narrate "(resolution noises)"
+    narrate "(and then they kiss or something. ooo. gay people. i could write a 5+1 fanfic about this)"
+
+    scene black with Dissolve(0.5)
+    jump day_dreams
+
+## EVENT 5 - Brace for the end ##
+label event_5_start:
+    scene mage_bg_large with Dissolve(0.5)
+    narrate "so we're all getting together for a COOL HOLIDAY. WOOHOO"
+    knight "we are all so cool :)"
+    duke ":D"
+    mage ":D"
+    player "FANTASTIC. WE'RE SO READY FOR THIS."
+    narrate "haha whats that sound"
+    narrate "we really need to get to those trials"
+
+    scene black with Dissolve(0.5)
+    jump day_dreams

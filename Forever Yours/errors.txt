@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 123: expected expression
-    image white = 
-                  ^
+File "game/script.rpy", line 433: if statement expects a non-empty block.
+    if week == 2:
+                 ^
+
+File "game/script.rpy", line 435: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Thu Jan 16 14:51:59 2025
+Fri Jan 17 21:25:34 2025
