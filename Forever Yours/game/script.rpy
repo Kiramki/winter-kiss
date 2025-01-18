@@ -80,6 +80,8 @@ transform slight_right:
 define narrate = Character('Narrator')
 define prophecy = Character('', kind=nvl, color="#c8ffc8")
 
+define butler = Character('Butler')
+
 define angel = Character('Angel')
 
 define devil = Character('[devil_name]')

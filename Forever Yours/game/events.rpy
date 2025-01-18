@@ -121,7 +121,7 @@ label event_3_start:
     scene knight_bg_large with Dissolve(0.5)
     narrate "ALRIGHT. ALRIGHT. SURELY WE WILL IMPROVE"
     show duke neutral at slight_left
-    show mage neutral at slight_left
+    show mage neutral at slight_right
     duke "D:<"
     mage "D:<"
     knight "guys... guys......"

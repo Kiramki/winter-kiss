@@ -115,5 +115,41 @@ label duke_encounter_2:
     jump day_end
 
 label duke_encounter_3:
+    scene duke_bg_large with Dissolve(0.5)
+    narrate "teehee sneakink into the garden :) :D"
+    butler "YO... WHAT THE FUCK ARE YOU DOING HERE"
+    narrate "shit"
+    show duke neutral at center
+    duke "what the hell. is all that NOISE"
+    narrate "shit (x2)"
+    duke "everyone else. gtfo. you. >:("
+    player "can i have a tour. pretty pls. pls. pls"
+    duke "fine god. whatever. sure."
+    player "do u like. why dont u like the garden"
+    duke "its not that i dont like it. she was the only one i could go to when things were tough...."
+    player "Who"
+    duke "i have work to do. goodbye"
+    scene black with Dissolve(0.5)
+    narrate "oh"
+
+    $ duke_encounters += 1
+    jump day_end
 
 label duke_encounter_4:
+    scene duke_bg_large with Dissolve(0.5)
+    narrate "we are HERE TO SEE THE DUKEEEEE"
+    butler "duke's in the garden actually"
+    narrate "oh"
+    narrate "better go to the garden then"
+    narrate "(garden noises)"
+    show duke neutral
+    narrate "oh damn. that guys having tea"
+    duke "im having tea. my aide can do the work."
+    narrate "(a super cool and emotional scene ensues)"
+
+    scene black with Dissolve(0.5)
+    pause 0.5
+    narrate "(which im not writing)"
+
+    $ duke_encounters += 1
+    jump day_end
