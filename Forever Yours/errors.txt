@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 433: if statement expects a non-empty block.
-    if week == 2:
-                 ^
-
-File "game/script.rpy", line 435: expected statement.
-    else:
-        ^
+File "game/script.rpy", line 73: expected 'comma or end of line' not found.
+    if not show, xalign 0.25
+    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Fri Jan 17 21:25:34 2025
+Fri Jan 17 22:08:37 2025

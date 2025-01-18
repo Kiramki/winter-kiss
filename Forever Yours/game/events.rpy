@@ -88,10 +88,16 @@ label event_1_start:
 
     show duke neutral at center
     duke "ok so like the world is literally going to end. we need to do this shit fast we all have things to do"
-    show duke at slight_left
+    
     show mage concerned at slight_right
+    show duke at slight_left
     mage "um. no. uh. im pretty sure we need to like.... prepare"
     duke "so like actually. fuck you"
+    show knight at center
+    with hpunch
+    show mage at right
+    show duke at left
+
     knight "ha HA HA GUYS what if we like DONT be mean to each other and"
     player "AAAA CAN WE FOCUS"
 
@@ -105,7 +111,8 @@ label event_1_start:
 label event_2_start:
     scene duke_bg_large with Dissolve(0.5)
     narrate "Alright team. We've assembled the prophecy guys. We gotta practice together"
-    show duke neutral at center
+    show duke neutral at center 
+    with Dissolve(0.5)
     duke ">:("
     show duke neutral at slight_left
     show mage neutral at slight_right

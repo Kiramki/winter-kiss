@@ -42,7 +42,7 @@ label mage_encounter_tutorial:
 
     narrate "You explain that he is stated to be one of the companions of the prophecy."
 
-    narrate "You must be mistaken. There is no way the prophecy would have any use for me. I'm certain Amari would have chosen a more promising mage if anything."
+    mage "You must be mistaken. There is no way the prophecy would have any use for me. I'm certain Amari would have chosen a more promising mage if anything."
 
     menu mage_tutorial:
         "Reassure him that it seems he is already rather looked up to by his peers.":

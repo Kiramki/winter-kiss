@@ -62,18 +62,40 @@ init python:
 
 
 # Define positions
-transform slight_left:
-    xalign 0.25
+transform left:
     yalign 1.0
+    on replace:
+        linear 0.5 xalign 0.1
+    on show:
+        xalign 0.1
 
-transform slight_left_from_center:
-    xalign 0.5
+transform slight_left:
     yalign 1.0
-    linear 0.5 xalign 0.25
+    on replace:
+        linear 0.5 xalign 0.25
+    on show:
+        xalign 0.25
+
+transform center:
+    yalign 1.0
+    on replace:
+        linear 0.5 xalign 0.5
+    on show:
+        xalign 0.5
 
 transform slight_right:
-    xalign 0.75
     yalign 1.0
+    on replace:
+        linear 0.5 xalign 0.75
+    on show:
+        xalign 0.75
+
+transform right:
+    yalign 1.0
+    on replace:
+        linear 0.5 xalign 0.9
+    on show:
+        xalign 0.9
 
 # Declare the characters + sprites that will be used in the game.
 
@@ -410,7 +432,7 @@ label day_start:
 
     narrate "(pls god nothings implemented past this point u WILL run into an error if u interact with that map)"
 
-    show screen map
+    show screen map with Dissolve(0.5)
     window hide
 
     pause
