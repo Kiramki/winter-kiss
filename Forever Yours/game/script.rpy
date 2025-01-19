@@ -154,24 +154,42 @@ define player = Character('[player_name]')
 
 # Declare backgrounds
 image white = "#ffffff"
+image dying_1:
+    "images/bg/death_start.png"
+    .25
+    "images/bg/death_distorted.png"
+    .25
+    "images/bg/death_start.png"
+    2.0
+    repeat
 
+
+image dying_2:
+    "images/bg/death_distorted.png"
+    .25
+    "images/bg/red_distorted_black.png"
+    .25
+    repeat
 # The game starts here.
 
 label start:
     # GAME START
     # stop the menu music pls
     stop music fadeout 1.0
-    play sound "audio/hook/you_are_dying.mp3" fadein 1.0
-    scene black-smoke with Dissolve(0.5)
+    play music "<loop 0.0>audio/hook/you_are_dying.mp3" fadeout 1.0
+    scene dying_1 with Dissolve(0.5)
     narrate "You are dying." 
     narrate "A team of medical professionals surround you, electrodes are strapped to your chest."
+    narrate "Your mother is holding a small bundle of paper cranes."
+    narrate "With trembling fingers, she folds and unfolds one as the doctor speaks grimly about your condition."
+    stop music
     play sound "audio/hook/flatline.mp3" fadeout 0.5
-    scene black-smoke-heartline
+    scene death_flatline with Dissolve (0.5)
+    pause 1
+    scene distorted_black
     narrate "The monitor blares a flatline."
-    scene black with Dissolve (0.5)
     nurse "—for a pulse check?"
     doctor "Resume compressions. Thirty seconds until the next check."
-    narrate "Your mother is holding a small bundle of paper cranes. With trembling fingers, she folds and unfolds one as the doctor speaks grimly about your condition."
     
     play sound "audio/hook/light_appear.mp3"
     play music "<loop 0.0>audio/hook/angel_appears.mp3"
@@ -282,7 +300,7 @@ label start:
             stop music
             narrate "The moment the kiss lands, the air thickens, and something shifts inside you."
     play sound "audio/hook/dark_ambiance.mp3" 
-    scene black with Dissolve (0.5)  
+    scene dying_2 with Dissolve (0.5)  
     narrate "Suddenly, the light wilts and oozes down into thick, viscous liquid."
     hide angel with Dissolve(0.5)
     play music "audio/hook/minerva_reveal.mp3" fadein 1.0
@@ -290,10 +308,10 @@ label start:
     show devil malicious with Dissolve(0.5)
     narrate "The angelic figure before you morphs into something sinister. She looks at you with mirthful eyes."
     devil "So naive, {i}as always{/i}. It's time you learned there are no second chances."
-    scene black with Dissolve(0.5)
-    narrate "Reality shatters around you. Darkness consumes the room and swallows you whole."
-    # Current
     play sound "audio/hook/you_died.mp3" fadeout 0.5
+    narrate "Reality shatters around you. Darkness consumes the room and swallows you whole."
+    scene distorted_black with Dissolve(0.5)
+    # Current
     stop music fadeout 1.0
     pause(3)
     doctor "Time of death: [current_hour]:[minute] [ampm]." #insert actual time
