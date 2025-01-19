@@ -123,5 +123,6 @@ label knight_encounter_2:
     jump day_end
 
 label knight_encounter_3:
+    
 
 label knight_encounter_4:

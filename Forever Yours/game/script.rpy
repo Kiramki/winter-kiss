@@ -107,39 +107,48 @@ define butler = Character('Butler')
 define angel = Character('Angel')
 
 define devil = Character('[devil_name]')
-image devil angry = "images/sprites/devil_angry.png"
-image devil fear = "images/sprites/devil_fear.png"
-image devil happy = "images/sprites/devil_happy.png"
-image devil love = "images/sprites/devil_love.png"
-image devil malicious = "images/sprites/devil_malicious.png"
-image devil neutral = "images/sprites/devil_neutral.png"
-image devil pleading = "images/sprites/devil_pleading.png"
-image devil sad = "images/sprites/devil_sad.png"
+image devil angry = "images/sprites/devil/devil_angry.png"
+image devil fear = "images/sprites/devil/devil_fear.png"
+image devil happy = "images/sprites/devil/devil_happy.png"
+image devil love = "images/sprites/devil/devil_love.png"
+image devil malicious = "images/sprites/devil/devil_malicious.png"
+image devil neutral = "images/sprites/devil/devil_neutral.png"
+image devil pleading = "images/sprites/devil/devil_pleading.png"
+image devil sad = "images/sprites/devil/devil_sad.png"
 
 define knight = Character('[knight_name]')
+image knight angry = "images/sprites/knight/KNIGHT_angry.png"
+image knight concern = "images/sprites/knight/KNIGHT_concern.png"
+image knight happy = "images/sprites/knight/KNIGHT_happy.png"
+image knight love = "images/sprites/knight/KNIGHT_love.png"
+image knight nervous = "images/sprites/knight/KNIGHT_nervous.png"
+image knight neutral = "images/sprites/knight/KNIGHT_neutral.png"
+image knight shock = "images/sprites/knight/KNIGHT_shock.png"
 
 define mage = Character('[mage_name]')
-image mage angry = "images/sprites/Mage_Angry_WCane.png"
-image mage concerned = "images/sprites/Mage_Concerned_WCane.png"
-image mage happy = "images/sprites/Mage_Happy_WCane.png"
-image mage love = "images/sprites/Mage_Love_WCane.png"
-image mage neutral = "images/sprites/Mage_Neutral_WCane.png"
-image mage sad = "images/sprites/Mage_Sad_WCane.png"
-image mage angry nocane = "images/sprites/Mage_Angry_WOCane.png"
-image mage concerned nocane = "images/sprites/Mage_Concerned_WOCane.png"
-image mage happy nocane = "images/sprites/Mage_Happy_WOCane.png"
-image mage love nocane = "images/sprites/Mage_Love_WOCane.png"
-image mage neutral nocane = "images/sprites/Mage_Neutral_WOCane.png"
-image mage sad nocane = "images/sprites/Mage_Sad_WOCane.png"
+image mage angry = "images/sprites/mage/Mage_Angry_WOCane.png"
+image mage concern = "images/sprites/mage/Mage_Concerned_WOCane.png"
+image mage happy = "images/sprites/mage/Mage_Happy_WOCane.png"
+image mage love = "images/sprites/mage/Mage_Love_WOCane.png"
+image mage neutral = "images/sprites/mage/Mage_Neutral_WOCane.png"
+image mage sad = "images/sprites/mage/Mage_Sad_WOCane.png"
+
+image mage angry cane = "images/sprites/mage/Mage_Angry_WCane.png"
+image mage concern cane = "images/sprites/mage/Mage_Concerned_WCane.png"
+image mage happy cane = "images/sprites/mage/Mage_Happy_WCane.png"
+image mage love cane = "images/sprites/mage/Mage_Love_WCane.png"
+image mage neutral cane = "images/sprites/mage/Mage_Neutral_WCane.png"
+image mage sad cane = "images/sprites/mage/Mage_Sad_WCane.png"
 
 
 define duke = Character('[duke_name]')
-image duke concern = "images/sprites/duke_Concern.png"
-image duke happy = "images/sprites/duke_Happy.png"
-image duke love = "images/sprites/duke_Love.png"
-image duke neutral = "images/sprites/duke_Neutral.png"
-image duke sad = "images/sprites/duke_Sad.png"
-image duke shock = "images/sprites/duke_Shock.png"
+image duke angry = "images/sprites/duke/DUKE_angry.png"
+image duke concern = "images/sprites/duke/DUKE_concern.png"
+image duke happy = "images/sprites/duke/DUKE_happy.png"
+image duke love = "images/sprites/duke/DUKE_love.png"
+image duke neutral = "images/sprites/duke/DUKE_neutral.png"
+image duke sad = "images/sprites/duke/DUKE_sad.png"
+image duke shock = "images/sprites/duke/DUKE_shocked.png"
 
 define player = Character('[player_name]')
 
@@ -157,19 +166,28 @@ label start:
     narrate "You are dying." 
     narrate "A team of medical professionals surround you. Electrodes are strapped to your chest, the monitor blares a flatline."
     nurse "—for a pulse check?"
-    doctor "Resume compressions. Thirty seconds until next check."
+    doctor "Resume compressions. Thirty seconds until the next check."
     narrate "Your mother is holding a small bundle of paper cranes. With trembling fingers, she folds and unfolds one as the doctor speaks grimly about your condition."
+    
+    scene white with Dissolve(0.5)
     narrate "Suddenly, a blinding light tears your attention away from the scene."
+
+    show angel neutral at center
     narrate "Beside you, a figure appears, silently observing the chaos below."
     angel "They're going to let you go, I'm sorry."
+
     menu question_angel:
         "Who are you?":
             narrate "The figure smiles serenely."
             angel "I am what lies between you and the end of all things."
         "No, that can't be right.":
             narrate "The figure shakes her head, eyes filled with sympathy."
+            show angel sad
             angel "They tried their best, but it won't be long now."
+
     narrate "The light in the room grows brighter. Your mom's face blurs away into the sea of white."
+
+    show angel sad
     angel "It's almost time to let go. Are you ready?"
     narrate "Grief crushes you, winding itself around your heart like a vice in your chest."
     narrate "No, this can't be all there is. You are not ready. You never..."
@@ -186,33 +204,39 @@ label start:
 
         "Explored the world":
             $ goal = "exploration"
-
-    if goal == "impact":
-        angel "I see that you want to make an impact on the world."
     
-    elif goal == "meaning":
-        angel "I see that you want to mean something to someone."
-
-    elif goal == "purpose":
-        angel "I see that you want to discover your true purpose."
-
-    elif goal == "exploration":
-        angel "I see that you want to explore the world."
-    
+    show angel neutral
     narrate "The angel seems to sympathize with your words, then tilts her head, offering a soft smile."
     angel "What if this doesn't have to be the end?"
     
     # ooooo scene change
-    scene black
-    narrate "In that vast emptiness, a faded, blurry image of a sunny land appears before you. In an instance, it's also coated in the same blinding and dreary white that took the world away from you."
+    scene knight_bg_large with Dissolve(1)
+    narrate "In that vast emptiness, a faded, blurry image of a sunny land appears before you. In an instant, it's also coated in the same blinding and dreary white that took the world away from you."
+    show angel neutral with Dissolve(0.5)
     angel "This is the Empire of Parcae. A land of peace, virtue, and balance. But it's in peril."
     angel "When winter comes, it will be the end of everything."
-    angel "I can offer you a second chance—to save this world and become the hero in the prophecy."
-    narrate "A second chance.. but why you? You don't understand."
-    angel "Because this world has chosen you. This is your chance to mean something to someone."
+    angel "I can offer you a second chance — to save this world and become the hero in the prophecy."
+    narrate "A second chance... but why you? You don't understand."
+
+    show angel sad
+    if goal == "impact":
+        angel "Because this world has chosen you. This is your chance to leave your mark on the world."
+    elif goal == "meaning":
+        angel "Because this world has chosen you. This is your chance to mean something to someone."
+    elif goal == "purpose":
+        angel "Because this world has chosen you. This is your chance to discover your true purpose."
+    elif goal == "exploration":
+        angel "Because this world has chosen you. This is your chance to explore a brand new world."
+    else:
+        angel "Because this world has chosen you. This is your second chance."
+    
     angel "But to join, you must let go of this life and sacrifice a piece of yourself."
+
+    scene white with Dissolve(0.5)
     nurse "Charging to 200!"
     doctor "Pause compressions. Stand clear."
+
+    show angel sad with Dissolve(0.5)
     angel "Time is running out. The light will take you soon. What is your choice?"
         
     menu sacrifice:
@@ -245,7 +269,9 @@ label start:
     #     narrate "No? Alright, then you are a stranger."
     # else:
     #     angel "Then, [player_name]. There is one last thing you have to do."
-    angel "So you’ve decided to join this new world?"
+    
+    show angel neutral
+    angel "So you've decided to join this new world?"
     narrate "She smiles prettily and leans in towards you."
     angel "Then, touch your lips to mine, and seal your choice."
 
@@ -254,81 +280,22 @@ label start:
             narrate "You lean in, your lips brushing against hers."
             narrate "The moment the kiss lands, the air thickens, and something shifts inside you."
     narrate "Suddenly, the light wilts and oozes down into thick, viscous liquid."
-    narrate " The angelic figure before you morphs into something sinister. She looks at you with mirthful eyes."
-    devil "So naive, as always. It’s time you learned there are no second chances."
+
+    hide angel with Dissolve(0.5)
+    pause 0.5
+    show devil malicious with Dissolve(0.5)
+    narrate "The angelic figure before you morphs into something sinister. She looks at you with mirthful eyes."
+    devil "So naive, {i}as always{/i}. It's time you learned there are no second chances."
+
+    scene black with Dissolve(0.5)
     narrate "Reality shatters around you. Darkness consumes the room and swallows you whole."
     # Current
     doctor "Time of death: [current_hour]:[minute] [ampm]." #insert actual time
+
     jump tutorial_start #MIA. COMMENT THIS OUT. IF YOU WANT TO DO YOUR TESTING. 
-
-    # sprite shenanigans
-    narrate "sprite shenanigans"
-    show mage happy
-    mage "I've got a weapon, and I'm..."
-    show mage concerned
-    mage "I've got a weapon, and I'm... admittedly VERY afraid to use it!"
-
-    hide mage
-
-    # # Pronoun menus - IM MOVING THIS TOO
-
-    # narrate "tell me ur pronouns"
-
-    # menu pronouns:
-    #     "he/him":
-    #         $ p_subject = "he"
-    #         $ p_object = "him"
-    #         $ p_possessive = "his"
-    #         $ p_possessive_adj = "his"
-    #         $ p_reflexive = "himself"
-    #         $ p_is = "he's"
-    #         $ p_be = "is"
-
-    #     "she/her":
-    #         $ p_subject = "she"
-    #         $ p_object = "her"
-    #         $ p_possessive = "her"
-    #         $ p_possessive_adj = "her"
-    #         $ p_reflexive = "herself"
-    #         $ p_is = "she's"
-    #         $ p_be = "is"
-
-    #     "they/them":
-    #         $ p_subject = "they"
-    #         $ p_object = "them"
-    #         $ p_possessive = "their"
-    #         $ p_possessive_adj = "theirs"
-    #         $ p_reflexive = "themself"
-    #         $ p_is = "they're"
-    #         $ p_be = "are"
-
-    # narrate "I will now refer to you as [p_subject]."
-        
-    # menu sacrifice:
-    #     # Trust sacrifice
-    #     "Your trust":
-    #         $ fortitude = 10
-    #         $ empathy = 20
-    #         $ resolve = 5
-
-    #     # Courage sacrifice
-    #     "Your courage":
-    #         $ fortitude = 5
-    #         $ empathy = 10
-    #         $ resolve = 20
-
-    #     # Honesty
-    #     "Your honesty":
-    #         $ fortitude = 20
-    #         $ empathy = 5
-    #         $ resolve = 10
-
-
-    jump event_0_start
 
 # hurgles. tutorial
 label tutorial_start:
-    scene white with Dissolve(0.5)
     pause(0.5)
     narrate "Somewhere beyond you, there is music."
     narrate "Lights churn around your body like a kaleidoscope and your body sludges towards the beckoning hymn."
@@ -339,6 +306,8 @@ label tutorial_start:
     scene knight_bg_large with Dissolve(0.5)
     narrate "Your vision clears. When you look up, you are met with a grand hall bathed in candlelight."
     narrate "Two figures step forward. One dressed in fine armor stands at attention beside another in ceremonial robes."
+
+    show knight neutral at center
     priest "Chosen One, blessed by our great deity Amari, we are so glad you've come to us."
     priest "Your arrival is a gift to the Empire. The Holy Order welcomes you."
     narrate "The knight beside him takes a step towards you and bows deeply."
@@ -350,9 +319,10 @@ label tutorial_start:
 
     # If the player doesn't enter a name, they will be referred to as "Stranger"
     if player_name == "Stranger":
-        narrate "No? Alright, then you are a stranger."
+        narrate "There is an extended moment of silence, but nothing comes to mind."
     
     menu pronouns:
+        narrate "What of your pronouns, [player_name]"
         "he/him":
             $ p_subject = "he"
             $ p_object = "him"
@@ -382,13 +352,14 @@ label tutorial_start:
             $ p_is = "they're"
             $ p_be = "are"
             $ p_title = "Mx."
+    
     narrate "You've remembered who you are and you tell the Grand Priest and the Holy Knight beside him as such."
     narrate "The priest offers a gentle smile with understanding and acceptance."
-    knight "It is a pleasure to meet you, [player_name]. I understand you may have some questions. Please feel free to share them with me now."
+    priest "It is a pleasure to meet you, [player_name]. I understand you may have some questions. Please feel free to share them with me now."
     menu opening_priest_questions:
         "Ask them where you are":
             priest "As I mentioned before, you are in the Holy Empire of Parcae. A country within the continent of Verum Lüge."
-            priest "Our deity of Fate, Amari, sent down a prophecy predicting your arrival from another world to ours . That is, here in Atemporal"
+            priest "Our deity of Fate, Amari, sent down a prophecy predicting your arrival from another world to ours . That is, here in Atemporal."
         "Ask them what they mean by prophecy":
             priest "Two weeks ago we received a prophecy from our great deity, Amari. It foretold your arrival today and warned us of a great danger to the Parcae Empire."
         "{b}You have forgotten something terribly important{/b}":
@@ -398,12 +369,14 @@ label tutorial_start:
 
     narrate "The Grand Priest gestures to the knight and they hand him a small rolled up scroll. The scroll is then handed to you and he encourages you to open and read it."
     priest "We were only able to decipher the first half of the prophecy when it descended. The second half remains a mystery, written in a language not familiar to this world."
+
     narrate "You study the scroll in your hands as it opens itself to you and the script dances across the page as if it were being written right before your eyes."
     narrate "Some sentences seem to shimmer and draw your attention more compared to the rest of the lines."
     narrate "The first half of the prophecy, despite being written in a different language, is plain as day to you."
     narrate "You read that the Chosen One - you - were set to arrive from another world and be the last hope in saving the Parcae Empire from the {i}End{/i}."
     narrate "You feel your heart drop to your stomach. {i}What does it mean by the End?{/i}"
     narrate "Continuing on, the second half appears to be written in English. Meant only for you to read."
+    
     prophecy "Come diamond fractals, fiends and fare,"
     prophecy "A witch is born with two moons to spare."
     prophecy "If the old wall weeps and hears its tongue,"
@@ -412,29 +385,37 @@ label tutorial_start:
     prophecy "and for knowledge, a conductor of the magic's field."
     prophecy "Three gates shall bow down for each price once paid,"
     prophecy "But the witch alone slays the umbra of Parcae."
+    
     narrate "After you've read the scroll over, the Grand Priest appears almost anxious as he questions what the second half of the prophecy said."
     narrate "You recite it and his expression becomes puzzled, as does that of the knight beside him."
     narrate "For a moment, neither of them speak. "
     narrate "Then the Grand Priest speaks up, calmer now than he had been a moment ago."
-    priest "I see…so this is a task only you may undergo. Please forgive me for being unable to help you but know you may always seek solace in the temple if you so need."
+    priest "I see... so this is a task only you may undergo. Please forgive me for being unable to help you but know you may always seek solace in the temple if you so need."
     priest "For now, I hope Ser Lurien may be of help to you in my stead."
     narrate "The knight offers another bow as they'd done before when you all first met."
+    
     knight "Should there be anything you need, please do not hesitate to request it. I will do everything within my power to assist you, [player name]."
     narrate "Content, the Grand Priest excuses himself to attend to other matters and leaves the room so it's only you and the Knight left."
     knight "Allow me to show you around, [p_title] [player name]."
+
     narrate "You ask the knight to be less formal with you and they nod before turning with the intent to guide you about the Temple grounds."
     narrate "The tour ends with the both of you now outside the Grand Temple."
     narrate "From here, you're able to marvel about the rather massive temple of ivory, decorated with gold on the ionic columns and above the wide doorway which leads further into the home of worship."
     narrate "All of it seems pristine and almost unreal in a way that's unlike anything you've ever seen before."
     narrate "When your attention turns to the knight again, they seem to perk up as if realizing that now you might be looking to them for more guidance."
+    
+    show knight happy
     knight "I understand this must be a lot to a stranger of this world. I mean what I said before; if there's anything I can do to help you, please let me know."
 
     menu opening_knight_questions:
         "Explore on your own":
-            narrate "You tell the Knight you want to explore on your own to better understand the empire you've appeared in."
-            narrate "Maybe along the way you'll find the people meant for the prophecy?"
-            knight "That reminds me- I was supposed to hand it to you earlier during the tour. I apologize for forgetting until now."
+            jump opening_knight_questions_explore
         "Ask where you should start":
+            narrate "(incomplete)"
+
+label opening_knight_questions_explore:
+    narrate "You tell the Knight you want to explore on your own to better understand the empire you've appeared in."
+    narrate "Maybe along the way you'll find the people meant for the prophecy?"
 
 
     player "that knight guy said that like. i could visit him. maybe i should do that....."
