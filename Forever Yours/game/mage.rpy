@@ -24,24 +24,19 @@ label mage_idle:
 label mage_encounter_tutorial:
     narrate "Before you an ivory structure threatens to scrape the clouds that hang just above its highest peak; piercing the sky like the icy sun rays themselves. It is no wonder they call it The Mage Tower."
 
-    narrate "Upon approaching its doors, you find that you are hastily ushered inside and out of the winter's reach."
+    narrate "Upon approaching its doors, you find that you are hastily ushered inside and out of the winter’s reach."
+    narrate "Fire sprites dance lazily through the foyer, illuminating their surroundings with curiosity; as who you assume to be mages scurry about on their routine business. "
     narrate "Fire sprites dance lazily through the foyer, illuminating their surroundings with curiosity; as who you assume to be mages scurry about on their routine business."
     narrate "Already, you can hear passing murmurs regarding their conductor - The Arch-Mage."
     narrate "It is easy to gather already that he is a person of importance to those within the tower; further proven by the sheer amount of textbooks that appear to be signed by him."
     narrate "Pulling your attention away, you inquire about an audience with none other than the arch-mage himself."
-
-    narrate "Guided to the tower's uppermost floor, you come face to face with the mage."
+    narrate "Guided to the tower’s uppermost floor, you come face to face with the mage."
     narrate "He stands near the center before a table littered with dozens of different texts and rather strange looking specimens, leaning heavily with a palm to the tabletop."
-    narrate "Believing you to be simply another one of the mages, he begins rambling about something you couldn't even begin fathoming to summarize before sighing and coming to a pause."
-
-    mage "Oh… It's rare to get a visitor - I suppose I was getting carried away. How may I be of assistance?"
-
+    narrate "Believing you to be simply another one of the mages, he begins rambling about something you couldn’t even begin fathoming to summarize before sighing and coming to a pause."
+    mage "Oh… It's rare to get a visitor - I suppose I was getting a bit carried away. How may I be of assistance?"
     narrate "You announce that you are the chosen one foretold by the prophecy. A flash of unease crosses his face and his posture seems to stiffen up."
-
     mage "The… prophecy-? Good Amari. You know what you're claiming, aren't you?"
-
     narrate "You explain that he is stated to be one of the companions of the prophecy."
-
     mage "You must be mistaken. There is no way the prophecy would have any use for me. I'm certain Amari would have chosen a more promising mage if anything."
 
     menu mage_tutorial:
@@ -54,15 +49,16 @@ label mage_encounter_tutorial:
             mage "... If you insist."
         "Announce that you've already seen the number of study materials he's published as a knowledgeable mage.":
             narrate "You point to the books on the table and blatantly show that he is the author of the study material being referenced. You ask him what he could even mean by a 'more promising' mage when he's already proven to be quite dedicated and knowledgeable."
-            mage "…You're braver than you look. If you're willing to stand by me, I guess I can take a leap of faith. Let's hope you're as good as your word."
+            mage "... I suppose you’re right. I have worked hard to get here.. I’ll do my best to be of use."
     narrate "The mage agrees to meet with you at the temple tonight with the rest of the companions."
     narrate "Despite this triumph, you feel a heavily charged atmosphere at your back that crackles with uncertainty and raises the hairs along the back of your neck as you turn to leave."
 
     scene black with Dissolve(0.5)
 
     narrate "You decide to leave [mage_name]'s tower."
-    narrate "The last person you need to meet is the duke guy......"
-    narrate "hope that recruiting this guy goes better than with the other two!! man, who woulda thought that trying to convince people that they're part of a prophecy where the world hangs in the balance would be so DIFFICULT"
+    narrate "According to the prophecy, there's only one last member to recruit. {i}The shield of the empire{/i}."
+    #narrate "The last person you need to meet is the duke guy......"
+    #narrate "hope that recruiting this guy goes better than with the other two!! man, who woulda thought that trying to convince people that they're part of a prophecy where the world hangs in the balance would be so DIFFICULT"
 
     $ mage_encounters += 1
     $ mage_available = False
