@@ -161,14 +161,20 @@ label start:
     # GAME START
     # stop the menu music pls
     stop music fadeout 1.0
-
-    scene black
+    play sound "audio/hook/you_are_dying.mp3" fadein 1.0
+    scene black-smoke with Dissolve(0.5)
     narrate "You are dying." 
-    narrate "A team of medical professionals surround you. Electrodes are strapped to your chest, the monitor blares a flatline."
+    narrate "A team of medical professionals surround you, electrodes are strapped to your chest."
+    play sound "audio/hook/flatline.mp3" fadeout 0.5
+    scene black-smoke-heartline
+    narrate "The monitor blares a flatline."
+    scene black with Dissolve (0.5)
     nurse "—for a pulse check?"
     doctor "Resume compressions. Thirty seconds until the next check."
     narrate "Your mother is holding a small bundle of paper cranes. With trembling fingers, she folds and unfolds one as the doctor speaks grimly about your condition."
     
+    play sound "audio/hook/light_appear.mp3"
+    play music "<loop 0.0>audio/hook/angel_appears.mp3"
     scene white with Dissolve(0.5)
     narrate "Suddenly, a blinding light tears your attention away from the scene."
 
@@ -210,8 +216,12 @@ label start:
     angel "What if this doesn't have to be the end?"
     
     # ooooo scene change
+    play sound "<loop 0.0>audio/hook/angel_spell.mp3"
     scene knight_bg_large with Dissolve(1)
-    narrate "In that vast emptiness, a faded, blurry image of a sunny land appears before you. In an instant, it's also coated in the same blinding and dreary white that took the world away from you."
+    narrate "In that vast emptiness, a faded, blurry image of a sunny land appears before you."
+    play sound "audio/hook/light_appear.mp3"
+    scene white with Dissolve(0.5)
+    narrate "In an instant, it's also coated in the same blinding and dreary white that took the world away from you."
     show angel neutral with Dissolve(0.5)
     angel "This is the Empire of Parcae. A land of peace, virtue, and balance. But it's in peril."
     angel "When winter comes, it will be the end of everything."
@@ -233,6 +243,7 @@ label start:
     angel "But to join, you must let go of this life and sacrifice a piece of yourself."
 
     scene white with Dissolve(0.5)
+    play sound "audio/hook/you_are_dying.mp3" fadein 1.0
     nurse "Charging to 200!"
     doctor "Pause compressions. Stand clear."
 
@@ -277,26 +288,33 @@ label start:
 
     menu kiss_her:
         "Kiss Her":
+            play sound "<loop 0.0>audio/hook/angel_spell.mp3"
             narrate "You lean in, your lips brushing against hers."
+            stop music
             narrate "The moment the kiss lands, the air thickens, and something shifts inside you."
+    play sound "audio/hook/dark_ambiance.mp3" 
+    scene black with Dissolve (0.5)  
     narrate "Suddenly, the light wilts and oozes down into thick, viscous liquid."
-
     hide angel with Dissolve(0.5)
+    play music "audio/hook/minerva_reveal.mp3" fadein 1.0
     pause 0.5
     show devil malicious with Dissolve(0.5)
     narrate "The angelic figure before you morphs into something sinister. She looks at you with mirthful eyes."
     devil "So naive, {i}as always{/i}. It's time you learned there are no second chances."
-
     scene black with Dissolve(0.5)
     narrate "Reality shatters around you. Darkness consumes the room and swallows you whole."
     # Current
+    play sound "audio/hook/you_died.mp3" fadeout 0.5
+    stop music fadeout 1.0
     doctor "Time of death: [current_hour]:[minute] [ampm]." #insert actual time
 
     jump tutorial_start #MIA. COMMENT THIS OUT. IF YOU WANT TO DO YOUR TESTING. 
 
 # hurgles. tutorial
 label tutorial_start:
-    pause(0.5)
+    pause(3)
+    stop sound fadeout 1.0
+    narrate "..."
     narrate "Somewhere beyond you, there is music."
     narrate "Lights churn around your body like a kaleidoscope and your body sludges towards the beckoning hymn."
     narrate "You burst from the miasma like a newborn thrust into the chill of open air for the first time; into somewhere you have never existed before."
@@ -394,10 +412,9 @@ label tutorial_start:
     priest "For now, I hope Ser Lurien may be of help to you in my stead."
     narrate "The knight offers another bow as they'd done before when you all first met."
     
-    knight "Should there be anything you need, please do not hesitate to request it. I will do everything within my power to assist you, [player name]."
+    knight "Should there be anything you need, please do not hesitate to request it. I will do everything within my power to assist you, [player_name]."
     narrate "Content, the Grand Priest excuses himself to attend to other matters and leaves the room so it's only you and the Knight left."
-    knight "Allow me to show you around, [p_title] [player name]."
-
+    knight "Allow me to show you around, [p_title] [player_name]."
     narrate "You ask the knight to be less formal with you and they nod before turning with the intent to guide you about the Temple grounds."
     narrate "The tour ends with the both of you now outside the Grand Temple."
     narrate "From here, you're able to marvel about the rather massive temple of ivory, decorated with gold on the ionic columns and above the wide doorway which leads further into the home of worship."
