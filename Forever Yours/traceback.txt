@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/duke.rpy", line 9, in script
-    if duke_affection <= 2:
-SyntaxError: invalid syntax (duke.rpy, line 13)
+  File "game/script.rpy", line 394, in script
+    return opening_questions
+  File "game/script.rpy", line 394, in <module>
+    return opening_questions
+NameError: name 'opening_questions' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/duke.rpy", line 9, in script
-    if duke_affection <= 2:
-  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 1849, in execute
-    if renpy.python.py_eval(condition):
-  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1207, in py_eval
-    code = py_compile(code, 'eval')
-  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1144, in py_compile
-    raise e
-  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1081, in py_compile
-    raise orig_e
-  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (duke.rpy, line 13)
+  File "game/script.rpy", line 394, in script
+    return opening_questions
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1485, in execute
+    renpy.store._return = renpy.python.py_eval(self.expression)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 394, in <module>
+    return opening_questions
+NameError: name 'opening_questions' is not defined
 
-macOS-15.2-arm64-arm-64bit arm64
+Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.4.24120703
 Forever Yours, The Devil 1.0
-Thu Jan 16 14:59:59 2025
+Sat Jan 18 21:57:39 2025

@@ -169,8 +169,8 @@ label start:
         "No, that can't be right.":
             narrate "The figure shakes her head, eyes filled with sympathy."
             angel "They tried their best, but it won't be long now."
-    narrate "The light in the room grows brighter. Your mom's face blurs away into the the sea of white."
-    angel "It's time to let go. Are you ready?"
+    narrate "The light in the room grows brighter. Your mom's face blurs away into the sea of white."
+    angel "It's almost time to let go. Are you ready?"
     narrate "Grief crushes you, winding itself around your heart like a vice in your chest."
     narrate "No, this can't be all there is. You are not ready. You never..."
 
@@ -200,12 +200,11 @@ label start:
         angel "I see that you want to explore the world."
     
     narrate "The angel seems to sympathize with your words, then tilts her head, offering a soft smile."
-    angel "What if it doesn't have to be?"
+    angel "What if this doesn't have to be the end?"
     
     # ooooo scene change
     scene black
-    narrate "(imagine a scene change to a REALLY cool portal)"
-
+    narrate "In that vast emptiness, a faded, blurry image of a sunny land appears before you. In an instance, it's also coated in the same blinding and dreary white that took the world away from you."
     angel "This is the Empire of Parcae. A land of peace, virtue, and balance. But it's in peril."
     angel "When winter comes, it will be the end of everything."
     angel "I can offer you a second chance—to save this world and become the hero in the prophecy."
@@ -214,7 +213,7 @@ label start:
     angel "But to join, you must let go of this life and sacrifice a piece of yourself."
     nurse "Charging to 200!"
     doctor "Pause compressions. Stand clear."
-    angel "Time is running out, The light will take you soon. What is your choice?"
+    angel "Time is running out. The light will take you soon. What is your choice?"
         
     menu sacrifice:
         # Trust sacrifice
@@ -246,23 +245,21 @@ label start:
     #     narrate "No? Alright, then you are a stranger."
     # else:
     #     angel "Then, [player_name]. There is one last thing you have to do."
-
+    angel "So you’ve decided to join this new world?"
     narrate "She smiles prettily and leans in towards you."
-    angel "Touch your lips to mine, and seal your choice."
+    angel "Then, touch your lips to mine, and seal your choice."
 
     menu kiss_her:
         "Kiss Her":
-            narrate "You lean in, your lips brushing against theirs."
+            narrate "You lean in, your lips brushing against hers."
             narrate "The moment the kiss lands, the air thickens, and something shifts inside you."
     narrate "Suddenly, the light wilts and oozes down into thick, viscous liquid."
-    narrate "Your stomach drops as the angelic figure before you morphs into something sinister."
-    devil "Foolish human. There are no second chances."
-    narrate "Everything shatters around you. The darkness consumes everything and swallows you whole."
-
-    jump tutorial_start #MIA. COMMENT THIS OUT. IF YOU WANT TO DO YOUR TESTING. 
-
+    narrate " The angelic figure before you morphs into something sinister. She looks at you with mirthful eyes."
+    devil "So naive, as always. It’s time you learned there are no second chances."
+    narrate "Reality shatters around you. Darkness consumes the room and swallows you whole."
     # Current
     doctor "Time of death: [current_hour]:[minute] [ampm]." #insert actual time
+    jump tutorial_start #MIA. COMMENT THIS OUT. IF YOU WANT TO DO YOUR TESTING. 
 
     # sprite shenanigans
     narrate "sprite shenanigans"
@@ -333,33 +330,28 @@ label start:
 label tutorial_start:
     scene white with Dissolve(0.5)
     pause(0.5)
-    narrate "Somewhere, not here, there is music. Everything in front of you shifts like a kaleidoscope held up to the sun."
-    narrate "Your body sludges through the fractured colors, towards the light before you, until you fall through the miasma, into somewhere else."
-
-    scene knight_bg_large with Dissolve(0.5)
-    narrate "You are somewhere you have never existed before."
-    narrate "The sounds that ring in your ears vibrate like waves but they are not."
-    narrate "The floor beneath you looks like wood but it is not wood."
-    narrate "Like a newborn thrust into cold air for the first time, you are lost."
+    narrate "Somewhere beyond you, there is music."
+    narrate "Lights churn around your body like a kaleidoscope and your body sludges towards the beckoning hymn."
+    narrate "You burst from the miasma like a newborn thrust into the chill of open air for the first time; into somewhere you have never existed before."
+    narrate "The material beneath your palms twist forward in impossible patterns of life. You are lost."
     unknown "Let them rest a moment..."
-    unknown "Be at ease, you are in the Temple of Amari. Welcome to Parcae."
-    narrate "Your vision clears. When you look up, your eyes scan across a grand hall bathed in candlelight."
-    narrate "Then, your eyes land on two figures, one fine armor is dressed in fine armor and stands at attention beside someone in ceremonial robes."
+    unknown "Be at ease, you are in the Grand Temple of Amari. Welcome to Parcae."
+    scene knight_bg_large with Dissolve(0.5)
+    narrate "Your vision clears. When you look up, you are met with a grand hall bathed in candlelight."
+    narrate "Two figures step forward. One dressed in fine armor stands at attention beside another in ceremonial robes."
     priest "Chosen One, blessed by our great deity Amari, we are so glad you've come to us."
     priest "Your arrival is a gift to the Empire. The Holy Order welcomes you."
     narrate "The knight beside him takes a step towards you and bows deeply."
-    knight "I know this must be overwhelming, but... you're here. We are honored to meet you."
-    narrate "No. You shouldn't be here. You know that much. You shouldn't be here because... because..."
-    narrate "You try to remember, reaching back to a time before this. Your head throbs."
+    knight "I know this must be overwhelming, but...we are honored to meet you."
+    narrate "No. You shouldn't be here. You know that much. You shouldn't be here because... because…"
+    narrate "You try to remember, fumbling to recall what came before the mirage of light and sound leading to your awakening here."
     priest "Tell us, what name should we call you by?"
     $ player_name = renpy.input("Enter your name.").title().strip() or __("Stranger")
 
     # If the player doesn't enter a name, they will be referred to as "Stranger"
     if player_name == "Stranger":
         narrate "No? Alright, then you are a stranger."
-
-    knight "We are honored to meet you [player_name]. May I also ask, how do you prefer to be referred to?"
-
+    
     menu pronouns:
         "he/him":
             $ p_subject = "he"
@@ -369,6 +361,7 @@ label tutorial_start:
             $ p_reflexive = "himself"
             $ p_is = "he's"
             $ p_be = "is"
+            $ p_title = "Sir"
 
         "she/her":
             $ p_subject = "she"
@@ -378,6 +371,7 @@ label tutorial_start:
             $ p_reflexive = "herself"
             $ p_is = "she's"
             $ p_be = "is"
+            $ p_title = "Lady"
 
         "they/them":
             $ p_subject = "they"
@@ -387,26 +381,61 @@ label tutorial_start:
             $ p_reflexive = "themself"
             $ p_is = "they're"
             $ p_be = "are"
+            $ p_title = "Mx."
+    narrate "You've remembered who you are and you tell the Grand Priest and the Holy Knight beside him as such."
+    narrate "The priest offers a gentle smile with understanding and acceptance."
+    knight "It is a pleasure to meet you, [player_name]. I understand you may have some questions. Please feel free to share them with me now."
+    menu opening_priest_questions:
+        "Ask them where you are":
+            priest "As I mentioned before, you are in the Holy Empire of Parcae. A country within the continent of Verum Lüge."
+            priest "Our deity of Fate, Amari, sent down a prophecy predicting your arrival from another world to ours . That is, here in Atemporal"
+        "Ask them what they mean by prophecy":
+            priest "Two weeks ago we received a prophecy from our great deity, Amari. It foretold your arrival today and warned us of a great danger to the Parcae Empire."
+        "{b}You have forgotten something terribly important{/b}":
+            narrate "There was a world you lived in before this one. A life, a name, faces you should know but cannot recall."
+            narrate "Hazy memories swirl around your head. You remember antiseptic, the crinkle of paper cranes, and haunting, melodic laughter."
+            jump opening_priest_questions
 
-    narrate "I will now refer to you as [p_subject]."
-    knight "I will notify the others to bring you to our prophecy."
-    knight "Oh I'm getting ahead of myself I apologize. You must have questions, please let me know and I will do my best to answer."
-    menu:
-        "Who are these people?":
-            narrate "Emily needs to write this still smh"
-        "What do they mean by prophecy?":
-            narrate "Emily still needs to write this smh"
-        "{b}You have forgotten something horribly important{/b}":
-            narrate "Emily still needs to write this smh"
+    narrate "The Grand Priest gestures to the knight and they hand him a small rolled up scroll. The scroll is then handed to you and he encourages you to open and read it."
+    priest "We were only able to decipher the first half of the prophecy when it descended. The second half remains a mystery, written in a language not familiar to this world."
+    narrate "You study the scroll in your hands as it opens itself to you and the script dances across the page as if it were being written right before your eyes."
+    narrate "Some sentences seem to shimmer and draw your attention more compared to the rest of the lines."
+    narrate "The first half of the prophecy, despite being written in a different language, is plain as day to you."
+    narrate "You read that the Chosen One - you - were set to arrive from another world and be the last hope in saving the Parcae Empire from the {i}End{/i}."
+    narrate "You feel your heart drop to your stomach. {i}What does it mean by the End?{/i}"
+    narrate "Continuing on, the second half appears to be written in English. Meant only for you to read."
+    prophecy "Come diamond fractals, fiends and fare,"
+    prophecy "A witch is born with two moons to spare."
+    prophecy "If the old wall weeps and hears its tongue,"
+    prophecy "The path is set with the right hand of the sun."
+    prophecy "Then, for the empire's heart, bring forth its shield,"
+    prophecy "and for knowledge, a conductor of the magic's field."
+    prophecy "Three gates shall bow down for each price once paid,"
+    prophecy "But the witch alone slays the umbra of Parcae."
+    narrate "After you've read the scroll over, the Grand Priest appears almost anxious as he questions what the second half of the prophecy said."
+    narrate "You recite it and his expression becomes puzzled, as does that of the knight beside him."
+    narrate "For a moment, neither of them speak. "
+    narrate "Then the Grand Priest speaks up, calmer now than he had been a moment ago."
+    priest "I see…so this is a task only you may undergo. Please forgive me for being unable to help you but know you may always seek solace in the temple if you so need."
+    priest "For now, I hope Ser Lurien may be of help to you in my stead."
+    narrate "The knight offers another bow as they'd done before when you all first met."
+    knight "Should there be anything you need, please do not hesitate to request it. I will do everything within my power to assist you, [player name]."
+    narrate "Content, the Grand Priest excuses himself to attend to other matters and leaves the room so it's only you and the Knight left."
+    knight "Allow me to show you around, [p_title] [player name]."
+    narrate "You ask the knight to be less formal with you and they nod before turning with the intent to guide you about the Temple grounds."
+    narrate "The tour ends with the both of you now outside the Grand Temple."
+    narrate "From here, you're able to marvel about the rather massive temple of ivory, decorated with gold on the ionic columns and above the wide doorway which leads further into the home of worship."
+    narrate "All of it seems pristine and almost unreal in a way that's unlike anything you've ever seen before."
+    narrate "When your attention turns to the knight again, they seem to perk up as if realizing that now you might be looking to them for more guidance."
+    knight "I understand this must be a lot to a stranger of this world. I mean what I said before; if there's anything I can do to help you, please let me know."
 
-    narrate "Basically, blah blah blah youre at the prophecy now  "
-    prophecy " Come the diamond fractals in the air, a witch is born with two moons to spare."
-    prophecy "If the old wall weeps and hears its tongue, the path is set with the right hand of the sun."
-    prophecy "Then, for the empire's heart, bring forth its shield, and for knowledge, a conductor of the magic's field."
-    prophecy "Three gates bow down for each price once paid,"
-    prophecy "But the witch alone pierces the umbra of Parcae."
+    menu opening_knight_questions:
+        "Explore on your own":
+            narrate "You tell the Knight you want to explore on your own to better understand the empire you've appeared in."
+            narrate "Maybe along the way you'll find the people meant for the prophecy?"
+            knight "That reminds me- I was supposed to hand it to you earlier during the tour. I apologize for forgetting until now."
+        "Ask where you should start":
 
-    narrate "OK its time for emily to go to bed"
 
     player "that knight guy said that like. i could visit him. maybe i should do that....."
     player "tryna figure out what the hell to do with this prophecy is like kinda daunting actually."
