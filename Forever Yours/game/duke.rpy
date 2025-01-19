@@ -111,7 +111,7 @@ label duke_encounter_tutorial:
             narrate "He looks momentarily miffed by your actions but quickly fixes his gaze on the page before him in interest."
             narrate "Before the two of you, the line only you can read begins to shimmer and waver ever so slightly in place before the letters start to emit a soft golden glow much like they did with the knight."
             narrate "The Duke is rendered speechless as he stares at the letters coming to life before him. He doesn't answer you right away, but when he does he seems more convinced than you thought he'd be."
-            Duke "...Fine. I'll be there tonight."
+            duke "...Fine. I'll be there tonight."
     narrate "Now that you've managed to capture the Duke's interest, you feel as though you can breathe a little easier after stepping outside of the rather large and empty home."
     narrate "Wilfred sees you off but you barely think to say goodbye as you step outside the gates and head back towards the temple."
     $ duke_available = True

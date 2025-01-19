@@ -62,7 +62,7 @@ label knight_encounter_tutorial:
     narrate "Kneeling before the altar which is spread before the fountain of Amari is the Knight, their back turned to you while the soft sound of their murmured prayers is nearly buried under the trickling of Amari's flowing waters."
     narrate "When they realize they have company, the Knight stands up and turns to face you with a questioning gaze."
     narrate "They'd fully believed you would have left by now to explore the capital and find the others mentioned in the prophecy."
-    knight "[Player_name]? Is everything alright?"
+    knight "[player_name]? Is everything alright?"
     narrate "You tell them that you returned to look for…"
     menu knight_encounter_tutorial_guess:
         "The Grand Priest":

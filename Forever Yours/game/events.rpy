@@ -34,7 +34,7 @@ label event_1_start:
     show duke at left
     knight "Please, everyone! Let’s not panic."
     narrate "The Knight gestures at the group in a frantic motion reminiscent of someone trying to disperse smoke before it sets off a fire alarm."
-    kngiht "The prophecy chose us for a reason, and the Chosen Witch will lead us. We can trust [p_object]."
+    knight "The prophecy chose us for a reason, and the Chosen Witch will lead us. We can trust [p_object]."
     duke "Trust [p_object]? {i}Trust [p_object]{/i}? We’ve just met [p_object]! Blind faith in words on a scroll isn’t leadership— it’s madness."
     duke "And I will be damned before I allow some scroll to dictate what may be right or wrong."
     mage "I know you, value this prophecy quite a bit and it is rather… formal;"

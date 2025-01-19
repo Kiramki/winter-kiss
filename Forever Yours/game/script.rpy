@@ -176,12 +176,12 @@ label start:
     # GAME START
     # stop the menu music pls
     stop music fadeout 1.0
+    scene black with Dissolve(0.5)
+    narrate "You are dying." 
     play music "<loop 0.0>audio/hook/you_are_dying.mp3" fadeout 1.0
     scene dying_1 with Dissolve(0.5)
-    narrate "You are dying." 
     narrate "A team of medical professionals surround you, electrodes are strapped to your chest."
-    narrate "Your mother is holding a small bundle of paper cranes."
-    narrate "With trembling fingers, she folds and unfolds one as the doctor speaks grimly about your condition."
+    narrate "Your mother is holding a small bundle of paper cranes. With trembling fingers, she folds and unfolds one as the doctor speaks grimly about your condition."
     stop music
     play sound "audio/hook/flatline.mp3" fadeout 0.5
     scene death_flatline with Dissolve (0.5)
@@ -294,7 +294,7 @@ label start:
     angel "Then, touch your lips to mine, and seal your choice."
 
     menu kiss_her:
-        "Kiss Her":
+        "Kiss her":
             play sound "<loop 0.0>audio/hook/angel_spell.mp3"
             narrate "You lean in, your lips brushing against hers."
             stop music
@@ -488,6 +488,7 @@ label opening_map:
     prophecy "Then, for the empire's heart, bring forth its shield,"
     prophecy "And for knowledge, a conductor of the magic’s field."
     narrate "The first line could be hinting at someone important in the temple itself, since the symbol of branching paths similar to a 'sun' appears all over the building and even the uniform that both the Grand Priest and the holy knight were wearing."
+    stop music
     # From here player goes to knight.rpy -> knight_check -> knight_encounter_tutorial
     $ knight_available = True
     show screen map
