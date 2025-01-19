@@ -249,6 +249,7 @@ label start:
 
     show angel sad with Dissolve(0.5)
     angel "Time is running out. The light will take you soon. What is your choice?"
+    stop sound fadeout 0.5
         
     menu sacrifice:
         # Trust sacrifice
@@ -269,18 +270,6 @@ label start:
             $ empathy = 5
             $ resolve = 10
     narrate "Your current stats are:\nFortitude: [fortitude]\nEmpathy: [empathy]\nResolve: [resolve]"
-
-    # # IM CHANGING THIS, YOU INPUT IN TUTORIAL - EMILY; INPUT NAME
-    # angel "So you've decided to join this new world?"
-    # angel "Then, tell me. What did they call you here on earth?"
-    # $ player_name = renpy.input("Enter your name.").title().strip() or __("Stranger")
-
-    # # If the player doesn't enter a name, they will be referred to as "Stranger"
-    # if player_name == "Stranger":
-    #     narrate "No? Alright, then you are a stranger."
-    # else:
-    #     angel "Then, [player_name]. There is one last thing you have to do."
-    
     show angel neutral
     angel "So you've decided to join this new world?"
     narrate "She smiles prettily and leans in towards you."
@@ -306,13 +295,13 @@ label start:
     # Current
     play sound "audio/hook/you_died.mp3" fadeout 0.5
     stop music fadeout 1.0
+    pause(3)
     doctor "Time of death: [current_hour]:[minute] [ampm]." #insert actual time
 
     jump tutorial_start #MIA. COMMENT THIS OUT. IF YOU WANT TO DO YOUR TESTING. 
 
 # hurgles. tutorial
 label tutorial_start:
-    pause(3)
     stop sound fadeout 1.0
     narrate "..."
     narrate "Somewhere beyond you, there is music."
@@ -322,6 +311,7 @@ label tutorial_start:
     unknown "Let them rest a moment..."
     unknown "Be at ease, you are in the Grand Temple of Amari. Welcome to Parcae."
     scene knight_bg_large with Dissolve(0.5)
+    play music "<loop 0.0>audio/opening/temple_ambiance.mp3" fadein 1.0
     narrate "Your vision clears. When you look up, you are met with a grand hall bathed in candlelight."
     narrate "Two figures step forward. One dressed in fine armor stands at attention beside another in ceremonial robes."
 
@@ -428,23 +418,65 @@ label tutorial_start:
         "Explore on your own":
             jump opening_knight_questions_explore
         "Ask where you should start":
-            narrate "(incomplete)"
+            jump opening_knight_questions_start
+        "Express concerns about the prophecy":
+            jump opening_knight_questions_concerns
 
 label opening_knight_questions_explore:
     narrate "You tell the Knight you want to explore on your own to better understand the empire you've appeared in."
     narrate "Maybe along the way you'll find the people meant for the prophecy?"
+    knight "That reminds me- I was supposed to hand it to you earlier during the tour. I apologize for forgetting until now."
+    narrate "They hand you a carefully folded up piece of paper that turns out to be a map once you unfold it."
+    narrate "The top declares 'Capital of Parcae', meaning it must be the capital city of the empire you're currently in."
+    narrate "(Imagine a cool cg thing of the map)"
+    narrate "A few places are marked specifically on the map and catch your eye. It looks like noble estates in the capital are marked with their house crests, but one in particular has a shield as its crest."
+    narrate "There also appears to be a mage tower near the center of the capital."
+    narrate "You thank the knight for the map and they bow, a curious smile on their face for what you might do next."
+    narrate "You plan to explore some of the options within the capital and see if you can find a lead on who the other saviors of the prophecy are."
+    jump opening_map
 
+label opening_knight_questions_start:
+    narrate "You feel a little hopeless - you've just appeared here and you're basically being told to fly the nest like a baby bird. You don't know where to go or how to get there!"
+    narrate "You express this to the knight and they blink as if processing what you said before realization dawns and they become apologetic."
+    narrate " Immediately they're grabbing something from their pocket and they hold it out to you. It's a folded piece of paper that reveals itself to be a map once you unfold it."
+    knight "Please forgive me, I forgot to give this to you when you were reading the prophecy earlier."
+    knight "This should be a map of the capital, since that's where the Grand Temple is located. It might help you in your search"
+    narrate "You study the map for a moment and notice a mage's tower marked near the center of the capital, not too far from the temple."
+    narrate "There's also what looks to be noble estates marked with house crests, and one of the crests even looks similar to a shield."
+    narrate "You thank the knight and they bow again, still apologetic about their blunder."
+    narrate "With a new idea on where you are and the places you could explore, you think you're ready to leave past the gates into the capital to find who the other saviors of prophecy may be."
+    jump opening_map
 
-    player "that knight guy said that like. i could visit him. maybe i should do that....."
-    player "tryna figure out what the hell to do with this prophecy is like kinda daunting actually."
-    player "yeah. yeah lets go visit that knight and see what hes got to say."
+label opening_knight_questions_concerns:
+    narrate "Now seems like as good a time as any to reveal your anxieties about the prophecy."
+    narrate "You tell the knight that you're concerned by 'The End' that was mentioned and how you're not entirely sure you are the supposed Chosen One that the Grand Priest had called you earlier."
+    narrate "You don't even know this land, the people, or the culture. You're more out of place than you want to be."
+    narrate "The knight seems to understand your struggles and anxieties as their expression shows their sympathy and concern, looking somewhat serious for the first time compared to how gentle and warm they'd been up until now."
+    knight "It may not make sense now, but our deity has never been wrong before and I'm certain with all my heart they're not wrong now either."
+    knight "You are the first foreigner to ever appear in our world through such divine means, appearing just like the prophecy said you would! Please have faith, [player_name]." 
+    narrate "You feel a little better but still incredibly out of place and new to all of this."
+    narrate "Then again, who {i}wouldn't{/i} feel the way you do in such a situation?"
+    narrate "Taking a deep breath, you manage to calm enough to notice that the Knight is now holding a map out to you."
+    knight  "I hope this may be of help to you, [player_name]."
+    knight "It's a map of the capital here in the empire. Perhaps it will help direct you where you need to go on your search?"
+    narrate "You thank the Knight and they appear to be visibly relieved that you're in better spirits now."
+    narrate "The gates don't look as foreboding as they had minutes ago in the midst of your worries."
+    jump opening_map
 
+label opening_map:
+    narrate "Even though you feel ready to take off into the capital of Parcae and look closer at the two places that just might have a connection to the prophecy, you think it might be easiest to start here in the very Grand Temple first and foremost on the first line."
+    narrate "You pull out the prophecy scroll once more to reread it."
+    prophecy "The path is set with the right hand of the sun."
+    prophecy "Then, for the empire's heart, bring forth its shield,"
+    prophecy "And for knowledge, a conductor of the magic’s field."
+    narrate "The first line could be hinting at someone important in the temple itself, since the symbol of branching paths similar to a 'sun' appears all over the building and even the uniform that both the Grand Priest and the holy knight were wearing."
     # From here player goes to knight.rpy -> knight_check -> knight_encounter_tutorial
     $ knight_available = True
     show screen map
     window hide
-
     pause
+
+
 
 label day_start:
     scene knight_bg_large with Dissolve(0.5)

@@ -57,7 +57,11 @@ label knight_idle:
         jump day_end
 
 label knight_encounter_tutorial:
-    player "hi knighttttt"
+    narrate "Putting the prophecy scroll away once more, you head back to the front of the temple and slip inside."
+    narrate "The sound of the doors as they creak open quietly is the same as when you had first woken up in this very room."
+    narrate "Kneeling before the altar which is spread before the fountain of Amari is the Knight, their back turned to you while the soft sound of their murmured prayers is nearly buried under the trickling of Amari's flowing waters."
+    narrate "When they realize they have company, the Knight stands up and turns to face you with a questioning gaze."
+    narrate "They'd fully believed you would have left by now to explore the capital and find the others mentioned in the prophecy."
     knight "omg hey..... im like so glad that u came to see me i was like. kind of worried you were just gonna like forget about me and run off and like die or something"
     narrate "ok im not writing all that"
     narrate "u recruit the knight and stuff. next ur PRETTY sure u gotta go meet a mage....."
