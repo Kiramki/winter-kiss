@@ -154,6 +154,7 @@ define player = Character('[player_name]')
 
 # Declare backgrounds
 image white = "#ffffff"
+
 image dying_1:
     "images/bg/death_start.png"
     .25
@@ -162,7 +163,6 @@ image dying_1:
     "images/bg/death_start.png"
     2.0
     repeat
-
 
 image dying_2:
     "images/bg/death_distorted.png"
@@ -174,11 +174,11 @@ image dying_2:
 
 label start:
     # GAME START
-    # stop the menu music pls
+    # Stop menu music
     stop music fadeout 1.0
     scene black with Dissolve(0.5)
     narrate "You are dying." 
-    play music "<loop 0.0>audio/hook/you_are_dying.mp3" fadeout 1.0
+    play music "audio/hook/you_are_dying.mp3" fadeout 1.0
     scene dying_1 with Dissolve(0.5)
     narrate "A team of medical professionals surround you, electrodes are strapped to your chest."
     narrate "Your mother is holding a small bundle of paper cranes. With trembling fingers, she folds and unfolds one as the doctor speaks grimly about your condition."
@@ -192,7 +192,7 @@ label start:
     doctor "Resume compressions. Thirty seconds until the next check."
     
     play sound "audio/hook/light_appear.mp3"
-    play music "<loop 0.0>audio/hook/angel_appears.mp3"
+    play music "audio/hook/angel_appears.mp3"
     scene white with Dissolve(0.5)
     narrate "Suddenly, a blinding light tears your attention away from the scene."
 
@@ -234,7 +234,7 @@ label start:
     angel "What if this doesn't have to be the end?"
     
     # ooooo scene change
-    play sound "<loop 0.0>audio/hook/angel_spell.mp3"
+    play sound "audio/hook/angel_spell.mp3"
     scene knight_bg_large with Dissolve(1)
     narrate "In that vast emptiness, a faded, blurry image of a sunny land appears before you."
     play sound "audio/hook/light_appear.mp3"
@@ -331,13 +331,14 @@ label tutorial_start:
     scene knight_bg_large with Dissolve(0.5)
     play music "<loop 0.0>audio/opening/temple_ambiance.mp3" fadein 1.0
     narrate "Your vision clears. When you look up, you are met with a grand hall bathed in candlelight."
-    narrate "Two figures step forward. One dressed in fine armor stands at attention beside another in ceremonial robes."
-
     show knight neutral at center
+    narrate "Two figures step forward. One dressed in fine armor stands at attention beside another in ceremonial robes."
     priest "Chosen One, blessed by our great deity Amari, we are so glad you've come to us."
     priest "Your arrival is a gift to the Empire. The Holy Order welcomes you."
     narrate "The knight beside him takes a step towards you and bows deeply."
+    show knight happy
     knight "I know this must be overwhelming, but...we are honored to meet you."
+    show knight neutral
     narrate "No. You shouldn't be here. You know that much. You shouldn't be here because... because…"
     narrate "You try to remember, fumbling to recall what came before the mirage of light and sound leading to your awakening here."
     priest "Tell us, what name should we call you by?"
@@ -348,7 +349,7 @@ label tutorial_start:
         narrate "There is an extended moment of silence, but nothing comes to mind."
     
     menu pronouns:
-        narrate "What of your pronouns, [player_name]"
+        narrate "What of your pronouns, [player_name]?"
         "he/him":
             $ p_subject = "he"
             $ p_object = "him"
@@ -420,7 +421,9 @@ label tutorial_start:
     priest "For now, I hope Ser Lurien may be of help to you in my stead."
     narrate "The knight offers another bow as they'd done before when you all first met."
     
+    show knight happy
     knight "Should there be anything you need, please do not hesitate to request it. I will do everything within my power to assist you, [player_name]."
+    show knight neutral
     narrate "Content, the Grand Priest excuses himself to attend to other matters and leaves the room so it's only you and the Knight left."
     knight "Allow me to show you around, [p_title] [player_name]."
     narrate "You ask the knight to be less formal with you and they nod before turning with the intent to guide you about the Temple grounds."
@@ -432,6 +435,7 @@ label tutorial_start:
     show knight happy
     knight "I understand this must be a lot to a stranger of this world. I mean what I said before; if there's anything I can do to help you, please let me know."
 
+    show knight neutral
     menu opening_knight_questions:
         "Explore on your own":
             jump opening_knight_questions_explore
@@ -443,42 +447,67 @@ label tutorial_start:
 label opening_knight_questions_explore:
     narrate "You tell the Knight you want to explore on your own to better understand the empire you've appeared in."
     narrate "Maybe along the way you'll find the people meant for the prophecy?"
+
+    show knight shock
     knight "That reminds me- I was supposed to hand it to you earlier during the tour. I apologize for forgetting until now."
+    
+    show knight neutral
     narrate "They hand you a carefully folded up piece of paper that turns out to be a map once you unfold it."
     narrate "The top declares 'Capital of Parcae', meaning it must be the capital city of the empire you're currently in."
+
+    ###
     narrate "(Imagine a cool cg thing of the map)"
+    ###
+
     narrate "A few places are marked specifically on the map and catch your eye. It looks like noble estates in the capital are marked with their house crests, but one in particular has a shield as its crest."
     narrate "There also appears to be a mage tower near the center of the capital."
     narrate "You thank the knight for the map and they bow, a curious smile on their face for what you might do next."
     narrate "You plan to explore some of the options within the capital and see if you can find a lead on who the other saviors of the prophecy are."
+
+    $ resolve += 1
+    $ fortitude += 1
+
     jump opening_map
 
 label opening_knight_questions_start:
     narrate "You feel a little hopeless - you've just appeared here and you're basically being told to fly the nest like a baby bird. You don't know where to go or how to get there!"
+    show knight shock
     narrate "You express this to the knight and they blink as if processing what you said before realization dawns and they become apologetic."
     narrate " Immediately they're grabbing something from their pocket and they hold it out to you. It's a folded piece of paper that reveals itself to be a map once you unfold it."
+    show knight concern
     knight "Please forgive me, I forgot to give this to you when you were reading the prophecy earlier."
+    show knight neutral
     knight "This should be a map of the capital, since that's where the Grand Temple is located. It might help you in your search"
     narrate "You study the map for a moment and notice a mage's tower marked near the center of the capital, not too far from the temple."
     narrate "There's also what looks to be noble estates marked with house crests, and one of the crests even looks similar to a shield."
     narrate "You thank the knight and they bow again, still apologetic about their blunder."
     narrate "With a new idea on where you are and the places you could explore, you think you're ready to leave past the gates into the capital to find who the other saviors of prophecy may be."
+    
+    $ fortitude += 1
+    $ empathy += 1
+    
     jump opening_map
 
 label opening_knight_questions_concerns:
     narrate "Now seems like as good a time as any to reveal your anxieties about the prophecy."
     narrate "You tell the knight that you're concerned by 'The End' that was mentioned and how you're not entirely sure you are the supposed Chosen One that the Grand Priest had called you earlier."
     narrate "You don't even know this land, the people, or the culture. You're more out of place than you want to be."
+    show knight concern
     narrate "The knight seems to understand your struggles and anxieties as their expression shows their sympathy and concern, looking somewhat serious for the first time compared to how gentle and warm they'd been up until now."
     knight "It may not make sense now, but our deity has never been wrong before and I'm certain with all my heart they're not wrong now either."
     knight "You are the first foreigner to ever appear in our world through such divine means, appearing just like the prophecy said you would! Please have faith, [player_name]." 
     narrate "You feel a little better but still incredibly out of place and new to all of this."
     narrate "Then again, who {i}wouldn't{/i} feel the way you do in such a situation?"
+    show knight neutral
     narrate "Taking a deep breath, you manage to calm enough to notice that the Knight is now holding a map out to you."
     knight  "I hope this may be of help to you, [player_name]."
     knight "It's a map of the capital here in the empire. Perhaps it will help direct you where you need to go on your search?"
     narrate "You thank the Knight and they appear to be visibly relieved that you're in better spirits now."
     narrate "The gates don't look as foreboding as they had minutes ago in the midst of your worries."
+
+    $ empathy += 1
+    $ resolve += 1
+
     jump opening_map
 
 label opening_map:
@@ -486,7 +515,7 @@ label opening_map:
     narrate "You pull out the prophecy scroll once more to reread it."
     prophecy "The path is set with the right hand of the sun."
     prophecy "Then, for the empire's heart, bring forth its shield,"
-    prophecy "And for knowledge, a conductor of the magic’s field."
+    prophecy "And for knowledge, a conductor of the magic's field."
     narrate "The first line could be hinting at someone important in the temple itself, since the symbol of branching paths similar to a 'sun' appears all over the building and even the uniform that both the Grand Priest and the holy knight were wearing."
     stop music
     # From here player goes to knight.rpy -> knight_check -> knight_encounter_tutorial
@@ -494,8 +523,6 @@ label opening_map:
     show screen map
     window hide
     pause
-
-
 
 label day_start:
     scene knight_bg_large with Dissolve(0.5)
