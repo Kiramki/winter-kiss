@@ -1,24 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/events.rpy", line 37, in script
-    kngiht "The prophecy chose us for a reason, and the Chosen Witch will lead us. We can trust [p_object]."
-Exception: Sayer 'kngiht' is not defined.
+  File "game/script.rpy", line 388, in script
+    menu opening_priest_questions:
+  File "game/script.rpy", line 394, in <module>
+    "{b}You have forgotten something terribly important{/b}" if forgotten_memory == False:
+NameError: name 'forgotten_memory' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/events.rpy", line 37, in script
-    kngiht "The prophecy chose us for a reason, and the Chosen Witch will lead us. We can trust [p_object]."
-  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 2579, in execute
-    Say.execute(self)
-  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 581, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 470, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'kngiht' is not defined.
+  File "game/script.rpy", line 388, in script
+    menu opening_priest_questions:
+  File "/Users/kiramki/Downloads/renpy/renpy/ast.py", line 1625, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "/Users/kiramki/Downloads/renpy/renpy/exports/menuexports.py", line 100, in menu
+    condition = renpy.python.py_eval(condition)
+  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/kiramki/Downloads/renpy/renpy/python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 394, in <module>
+    "{b}You have forgotten something terribly important{/b}" if forgotten_memory == False:
+NameError: name 'forgotten_memory' is not defined
 
-Windows-10-10.0.19045 AMD64
+macOS-15.2-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
 Forever Yours, The Devil 1.0
-Sun Jan 19 14:26:34 2025
+Wed Jan 29 16:13:49 2025

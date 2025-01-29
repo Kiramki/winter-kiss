@@ -383,7 +383,12 @@ label tutorial_start:
     narrate "You've remembered who you are and you tell the Grand Priest and the Holy Knight beside him as such."
     narrate "The priest offers a gentle smile with understanding and acceptance."
     priest "It is a pleasure to meet you, [player_name]. I understand you may have some questions. Please feel free to share them with me now."
+    
+    
+    default opening_priest_set = set()
+    
     menu opening_priest_questions:
+        set opening_priest_set
         "Ask them where you are":
             priest "As I mentioned before, you are in the Holy Empire of Parcae. A country within the continent of Verum Lüge."
             priest "Our deity of Fate, Amari, sent down a prophecy predicting your arrival from another world to ours . That is, here in Atemporal."

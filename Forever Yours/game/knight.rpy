@@ -60,20 +60,30 @@ label knight_encounter_tutorial:
     narrate "Putting the prophecy scroll away once more, you head back to the front of the temple and slip inside."
     narrate "The sound of the doors as they creak open quietly is the same as when you had first woken up in this very room."
     narrate "Kneeling before the altar which is spread before the fountain of Amari is the Knight, their back turned to you while the soft sound of their murmured prayers is nearly buried under the trickling of Amari's flowing waters."
+    
+    show knight neutral at center 
+    with Dissolve(0.5)
     narrate "When they realize they have company, the Knight stands up and turns to face you with a questioning gaze."
     narrate "They'd fully believed you would have left by now to explore the capital and find the others mentioned in the prophecy."
     knight "[player_name]? Is everything alright?"
+
     narrate "You tell them that you returned to look for…"
+
+    default kn_tut_guess = set()
     menu knight_encounter_tutorial_guess:
+        set kn_tut_guess
+        narrate "You tell them that you returned to look for…"
         "The Grand Priest":
             jump knight_encounter_tutorial_guess_priest
         "The Knight":
             narrate "You explain that you had reread the prophecy lines and concluded that the 'right hand of the sun' must mean the Grand Priest. {b} fix this {/b}"
+
     knight "Me?! Surely that can't be right! I'm only a member of the clergy. The Grand Priest has far more divinity and experience than I!"
     narrate "Yet, undeniably, the line that led you here begins to glow a soft golden as you declare it must be the knight then."
     narrate "The three of you now have proof that the knight is the correct choice, even if they seem far from convinced it could be them."
     narrate "Now you have undeniable proof that you've made the right choice."
     narrate "Still, the knight looks hesitant and reluctant to believe that you're right."
+
     menu knight_encounter_tutorial_reassure:
         "Reassure them that it must be the will of Amari":
             narrate "You tell the knight that, much like what they had said to you at the gates outside, they must have faith in Amari's guidance if that is what this prophecy is supposed to be."
@@ -84,7 +94,6 @@ label knight_encounter_tutorial:
             narrate "You gesture to the lit lines of prophecy to express their importance once again, determined for the knight to understand."
             narrate "You state that you are the one who was able to decipher the second half of the prophecy and were the Chosen One. There was no room for doubting your choice."
             knight  "...Please tell me whatever it is I can do to be of help to you, [player_name]. It is my duty."
-            jump something
         "Reiterate their importance to the Temple and their work beside the Grand Priest":
             narrate "You tell the knight that you understand their concern but that you've seen just how important they are, as a simple member of the clergy or not."
             narrate "They are the right hand of the Grand Priest and now, the deity as well."
@@ -103,6 +112,7 @@ label knight_encounter_tutorial:
     show screen map with Dissolve(0.5)
     hide window
     pause
+
 label knight_encounter_tutorial_guess_priest:
     narrate "You explain that you had reread the prophecy lines and concluded that the 'right hand of the sun' must mean the Grand Priest. You returned in search of him but aren't sure where to find him."
     narrate "The knight agrees that the line must mean the priest as well and vows to help you track him down within the temple."
@@ -114,10 +124,6 @@ label knight_encounter_tutorial_guess_priest:
     narrate "Both the priest and the knight seem uncertain of how to handle your disappointment on the unchanging scroll. They share a look."
     narrate "...I'm sorry, [player_name]. Perhaps I'm not the one meant to accompany you."
     narrate "But this choice made so much sense, you thought. If not him, then who else?"
-    menu:
-        "The Knight":
-            narrate "You look at the knight and they recognize the look in your eyes as if they can read your mind."
-    narrate ""
     jump knight_encounter_tutorial_guess
 
 label knight_encounter_1:
