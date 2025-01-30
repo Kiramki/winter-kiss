@@ -197,6 +197,7 @@ label start:
     nurse "—for a pulse check?"
     doctor "Resume compressions. Thirty seconds until the next check."
     play sound "audio/hook/flatline.mp3" fadeout 0.5
+    scene flatline
     centered "The monitor blares a flatline."
     pause 1
     play sound "audio/hook/light_appear.mp3"
@@ -244,11 +245,8 @@ label start:
     
     # ooooo scene change
     play sound "audio/hook/angel_spell.mp3"
-    scene knight_bg_large with Dissolve(1)
+    scene parcae_flash with Dissolve(1)
     narrate "In that vast emptiness, a faded, blurry image of a sunny land appears before you."
-    play sound "audio/hook/light_appear.mp3"
-    scene white with Dissolve(0.5)
-    narrate "In an instant, it's also coated in the same blinding and dreary white that took the world away from you."
     show angel neutral with Dissolve(0.5)
     voice "audio/voice/devil/line0006.ogg"
     angel "This is the Empire of Parcae. A land of peace, virtue, and balance. But it's in peril."
@@ -278,10 +276,11 @@ label start:
     angel "But to join, you must let go of this life and sacrifice a piece of yourself."
 
     scene white with Dissolve(0.5)
-    play sound "audio/hook/you_are_dying.mp3" fadein 1.0
+    play sound "audio/hook/light_appear.mp3"
+    scene white with Dissolve(0.5)
     nurse "Charging to 200!"
     doctor "Pause compressions. Stand clear."
-
+    play sound "audio/hook/you_are_dying.mp3" fadein 1.0
     show angel sad with Dissolve(0.5)
     voice "audio/voice/devil/line0014.ogg"
     angel "Time is running out. The light will take you soon. What is your choice?"
@@ -320,11 +319,13 @@ label start:
             stop music
             narrate "The moment the kiss lands, the air thickens, and something shifts inside you."
     play sound "audio/hook/dark_ambiance.mp3" 
-    scene black with Dissolve (0.5)  
+    scene black with Dissolve(0.5)
+    voice "audio/voice/devil/laugh.ogg"
+    play music "audio/hook/minerva_reveal.mp3" fadein 2.5
+    pause 2.5
+    scene black_smoke with Dissolve (0.5)  
     narrate "Suddenly, the light wilts and oozes down into thick, viscous liquid."
     hide angel with Dissolve(0.5)
-    play music "audio/hook/minerva_reveal.mp3" fadein 1.0
-    voice "audio/voice/devil/laugh.ogg"
     show devil malicious with Dissolve(0.5)
     narrate "The angelic figure before you morphs into something sinister. She looks at you with mirthful eyes."
     voice "audio/voice/devil/line0017.ogg"
@@ -332,10 +333,12 @@ label start:
     play sound "audio/hook/you_died.mp3" fadeout 0.5
     narrate "Reality shatters around you. Darkness consumes the room and swallows you whole."
     # Current
-    scene black with Dissolve (0.5)
+    scene black with Dissolve (0.5)  
+    pause 2
+    scene flatline 
     stop music fadeout 1.0
     pause(3)
-    doctor "Time of death: [current_hour]:[minute] [ampm]." #insert actual time
+    centered "The doctor declares your time of death at {color=#8b67b0}[current_hour]:[minute] [ampm]{/color}" #insert actual time
     scene black with Dissolve (0.5)
     pause(3)
 
@@ -348,7 +351,7 @@ label tutorial_start:
     narrate "Somewhere beyond you, there is music."
     play music "<loop 0.0>audio/opening/temple_ambiance.mp3" fadein 1.0
     scene knight_bg_large with Dissolve(1)
-    narrate "Lights churn around your body like a kaleidoscope and your body sludges towards the beckoning hymn."
+    narrate "Lights churn around your body like a kaleidoscope and you sludge towards the beckoning hymn."
     narrate "You burst from the miasma like a newborn thrust into the chill of open air for the first time; into somewhere you have never existed before."
     narrate "The material beneath your palms twist forward in impossible patterns of life. You are lost."
     unknown "Let them rest a moment..."
@@ -552,12 +555,14 @@ label opening_knight_questions_concerns:
 
 label opening_map:
     scene knight_outside with Dissolve(0.5)
-    narrate "Even though you feel ready to take off into the capital of Parcae and look closer at the two places that just might have a connection to the prophecy, you think it might be easiest to start here in the very Grand Temple first and foremost on the first line."
+    narrate "Even though you feel ready to take off into the capital of Parcae and look closer at the two places that just might have a connection to the prophecy."
+    narrate "It might be easiest to start here in the {color=#8b67b0}Grand Temple{/color} first and foremost on the first line."
     narrate "You pull out the prophecy scroll once more to reread it."
     prophecy "The path is set with the right hand of the sun."
     prophecy "Then, for the empire's heart, bring forth its shield,"
     prophecy "And for knowledge, a conductor of the magic's field."
-    narrate "The first line could be hinting at someone important in the temple itself, since the symbol of branching paths similar to a 'sun' appears all over the building and even the uniform that both the Grand Priest and the holy knight were wearing."
+    narrate "The first line could be hinting at someone important in the temple itself."
+    narrate "A symbol of branching paths similar to a 'sun' appears all over the building and even the uniform that both the Grand Priest and the holy knight were wearing."
     stop music
     # From here player goes to knight.rpy -> knight_check -> knight_encounter_tutorial
     $ knight_available = True
