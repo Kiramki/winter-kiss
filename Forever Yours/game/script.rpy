@@ -217,8 +217,7 @@ label start:
             voice "audio/voice/devil/line0003.ogg"
             angel "They tried their best, but it won't be long now."
 
-    narrate "The light surrounding her grows brighter, your mother's face is lost in the sea of white."
-
+    #narrate "The light surrounding her grows brighter, your mother's face is lost in the sea of white."
     show angel sad
     voice "audio/voice/devil/line0004.ogg"
     angel "It's almost time to let go. Are you ready?"
@@ -427,7 +426,6 @@ label tutorial_start:
 
     narrate "The Grand Priest gestures to the knight and they hand him a small rolled up scroll. The scroll is then handed to you and he encourages you to open and read it."
     priest "We were only able to decipher the first half of the prophecy when it descended. The second half remains a mystery, written in a language not familiar to this world."
-
     narrate "You study the scroll in your hands as it opens itself to you and the script dances across the page as if it were being written right before your eyes."
     narrate "Some sentences seem to shimmer and draw your attention more compared to the rest of the lines."
     narrate "The first half of the prophecy, despite being written in a different language, is plain as day to you."
@@ -460,6 +458,7 @@ label tutorial_start:
     voice "audio/voice/knight/line0003.ogg"
     knight "Allow me to show you around, [p_title] [player_name]."
     narrate "You ask the knight to be less formal with you and they nod before turning with the intent to guide you about the Temple grounds."
+    scene knight_outside with Dissolve(0.5)
     narrate "The tour ends with the both of you now outside the Grand Temple."
     narrate "From here, you're able to marvel about the rather massive temple of ivory, decorated with gold on the ionic columns and above the wide doorway which leads further into the home of worship."
     narrate "All of it seems pristine and almost unreal in a way that's unlike anything you've ever seen before."

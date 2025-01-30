@@ -67,6 +67,7 @@ label knight_encounter_tutorial:
     with Dissolve(0.5)
     narrate "When they realize they have company, the Knight stands up and turns to face you with a questioning gaze."
     narrate "They'd fully believed you would have left by now to explore the capital and find the others mentioned in the prophecy."
+    voice "audio/voice/knight/line0012.ogg"
     knight "[player_name]? Is everything alright?"
 
     narrate "You tell them that you returned to look for…"
@@ -79,7 +80,7 @@ label knight_encounter_tutorial:
             jump knight_encounter_tutorial_guess_priest
         "The Knight":
             narrate "You explain that you had reread the prophecy lines and concluded that the 'right hand of the sun' must mean the Grand Priest. {b} fix this {/b}"
-
+    voice "audio/voice/knight/line0013.ogg"
     knight "Me?! Surely that can't be right! I'm only a member of the clergy. The Grand Priest has far more divinity and experience than I!"
     narrate "Yet, undeniably, the line that led you here begins to glow a soft golden as you declare it must be the knight then."
     narrate "The three of you now have proof that the knight is the correct choice, even if they seem far from convinced it could be them."
@@ -91,17 +92,24 @@ label knight_encounter_tutorial:
             narrate "You tell the knight that, much like what they had said to you at the gates outside, they must have faith in Amari's guidance if that is what this prophecy is supposed to be."
             narrate "Surely the deity would not have picked someone who was incapable of being a savior of the world."
             narrate "After all, the deity has never been wrong before."
-            knight "If it truly is the will of Amari…I will do my best to be of assistance to you and the others in the prophecy. I trust you, [player_name]."
+            voice "audio/voice/knight/line0014.ogg"
+            knight "If it truly is the will of Amari…"
+            voice "audio/voice/knight/line0015.ogg"
+            knight "I will do my best to be of assistance to you and the others in the prophecy. I trust you, [player_name]."
         "Assert the prophecy's undeniability and your determination to see it through":
             narrate "You gesture to the lit lines of prophecy to express their importance once again, determined for the knight to understand."
             narrate "You state that you are the one who was able to decipher the second half of the prophecy and were the Chosen One. There was no room for doubting your choice."
+            voice "audio/voice/knight/line0016.ogg"
             knight  "...Please tell me whatever it is I can do to be of help to you, [player_name]. It is my duty."
         "Reiterate their importance to the Temple and their work beside the Grand Priest":
             narrate "You tell the knight that you understand their concern but that you've seen just how important they are, as a simple member of the clergy or not."
             narrate "They are the right hand of the Grand Priest and now, the deity as well."
             narrate "You could already tell just by their determination and faithfulness to the temple that they were an upstanding character. The prophecy only highlights that."
             narrate "You reaffirm that it has to be the will of Amari and you're going to put your faith in the knight just as the deity has, if the two of you are to figure out how to stop The End from ever reaching fruition."
-            knight "If you're certain about this, how could I argue? I put my trust in you, [player_name]. Tell me what needs to be done and I will do it."
+            voice "audio/voice/knight/line0017.ogg"
+            knight "If you're certain about this, how could I argue? I put my trust in you, [player_name]."
+            voice "audio/voice/knight/line0018.ogg"
+            knight "Tell me what needs to be done and I will do it."
     narrate "The knight agrees to pardon themself from the late watch tonight in order to join you and the rest of the companions once you've found them."
     narrate "They reassure you that they'll be there regardless of your search's success or not."
     narrate "Despite this triumph, you feel a weighing uncertainty behind you as you leave the temple with a renewed sense of urgency and expectation."
