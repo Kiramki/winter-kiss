@@ -139,6 +139,14 @@ label event_1_middle:
     narrate "The sun dips below the horizon and, as its warm glow fades, a quiet comfort settles within you."
     narrate "Watching it, you realize that tomorrow, you will get to see it rise again."
     scene black with Dissolve(0.5)
+    centered "Your dreams are faint echoes, drifting through smoke and flame." with dissolve
+    centered "your skin sears, as if burning alive."
+    centered "A familiar voice emerges, soft and mocking."
+    devil "Are you enjoying this little world I built?"
+    devil "Or have you already forgotten the price you paid to be here?"
+    pause 2.0
+    centered "You have reached the end of the tutorial! Thank you for playing Forever Yours, The Devil. If you enjoyed this game, please consider following us {color=#8b67b0}@Gloamy Studios{/color} <3"
+    return
     jump day_dreams
 
 
