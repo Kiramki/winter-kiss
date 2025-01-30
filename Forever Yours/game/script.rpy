@@ -154,6 +154,14 @@ define player = Character('[player_name]')
 
 # Declare backgrounds
 image white = "#ffffff"
+image logo_white = "gui/logo/logo_white.png"
+
+
+label splashscreen:
+    play sound "audio/hook/angel_spell.mp3"
+    play music "<loop 43.94 to 141.97>ForeverYoursTheme.ogg"
+    $ renpy.movie_cutscene("gui/logo/gloamy_logo.webm")
+    return
 
 image dying_1:
     "images/bg/death_start.png"
@@ -176,21 +184,23 @@ label start:
     # GAME START
     # Stop menu music
     stop music fadeout 1.0
-    scene black with Dissolve(0.5)
-    narrate "You are dying." 
-    play music "audio/hook/you_are_dying.mp3" fadeout 1.0
-    scene dying_1 with Dissolve(0.5)
-    narrate "A team of medical professionals surround you, electrodes are strapped to your chest."
-    narrate "Your mother is holding a small bundle of paper cranes. With trembling fingers, she folds and unfolds one as the doctor speaks grimly about your condition."
-    stop music
-    play sound "audio/hook/flatline.mp3" fadeout 0.5
-    scene death_flatline with Dissolve (0.5)
+    play sound "audio/hook/you_are_dying.mp3"
     pause 1
-    scene distorted_black
-    narrate "The monitor blares a flatline."
+    scene black with Dissolve(0.5)
+    show text "You are dying." with dissolve
+    pause 2
+    hide text with dissolve
+    pause 1
+    centered "A team of medical professionals surround you, electrodes are strapped to your chest." 
+    centered "Your mother is holding a small bundle of paper cranes."
+    centered "With trembling fingers, she folds and unfolds one as the doctor speaks grimly about your condition."
     nurse "—for a pulse check?"
     doctor "Resume compressions. Thirty seconds until the next check."
-    
+    play sound "audio/hook/flatline.mp3" fadeout 0.5
+    scene death_flatline with Dissolve (0.5)
+    pause 2
+    scene black with Dissolve(0.5)
+    narrate "The monitor blares a flatline."
     play sound "audio/hook/light_appear.mp3"
     play music "audio/hook/angel_appears.mp3"
     scene white with Dissolve(0.5)
@@ -328,7 +338,7 @@ label tutorial_start:
     narrate "The material beneath your palms twist forward in impossible patterns of life. You are lost."
     unknown "Let them rest a moment..."
     unknown "Be at ease, you are in the Grand Temple of Amari. Welcome to Parcae."
-    scene knight_bg_large with Dissolve(0.5)
+    scene knight_main with Dissolve(0.5)
     play music "<loop 0.0>audio/opening/temple_ambiance.mp3" fadein 1.0
     narrate "Your vision clears. When you look up, you are met with a grand hall bathed in candlelight."
     show knight neutral at center
@@ -530,7 +540,7 @@ label opening_map:
     pause
 
 label day_start:
-    scene knight_bg_large with Dissolve(0.5)
+    scene knight_main with Dissolve(0.5)
     $ week += 1
     narrate "u wake up. you have [11 - week] weeks left to save the world. (this is the day_start label)"
     narrate "It is currently week [week]."

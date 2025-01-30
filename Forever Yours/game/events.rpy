@@ -2,7 +2,7 @@
 
 ## EVENT 1 - Recruitment Conflict ##
 label event_1_start:
-    scene mage_bg_large with Dissolve(0.5)
+    scene knight_outside with Dissolve(0.5)
     # narrate "GOOD JOB TEAM. YOUVE ASSEMBLED THE... prophecy guys???"
     # narrate "(fuck. this doesnt look like a great team at all)"
     narrate "You stand at the entrance of the temple, the Holy Knight at your side."
@@ -18,6 +18,7 @@ label event_1_start:
     narrate "Not long after the mage appears, looking small with his arms crossed over himself; and hastily trails into the temple entrance almost as if it will keep him safe from what’s to come."
     mage "..."
     narrate "The air is thick with awkward tension as the group gathers in the temple’s grand hall."
+    scene knight_main with Dissolve(0.5)
     knight "Well, this is everyone, then: the Shield of the Empire, the Conductor of Magics, and the Right Hand of the Sun. Together, we are tasked with fulfilling the prophecy."
     narrate "A pause. They glance at each of you, their tone softening."
     knight "Before we begin... I should warn you. Things have been worsening across the land—the monster attacks, the bitter cold—it’s all connected. The curse has taken root, and based on the prophecy…"

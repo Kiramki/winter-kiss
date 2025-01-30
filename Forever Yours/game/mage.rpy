@@ -1,7 +1,7 @@
 # This file is meant to contain the encounters with the Wizard that the player has when they visit their location on the map.
 
 label mage_check:
-    scene mage_bg_large
+    scene mage_outside
     hide screen map with Dissolve(0.5)
 
     narrate "{i}You make your way to [mage_name]'s tower.{/i}"
@@ -26,11 +26,11 @@ label mage_encounter_tutorial:
 
     narrate "Upon approaching its doors, you find that you are hastily ushered inside and out of the winter’s reach."
     narrate "Fire sprites dance lazily through the foyer, illuminating their surroundings with curiosity; as who you assume to be mages scurry about on their routine business. "
-    narrate "Fire sprites dance lazily through the foyer, illuminating their surroundings with curiosity; as who you assume to be mages scurry about on their routine business."
     narrate "Already, you can hear passing murmurs regarding their conductor - The Arch-Mage."
     narrate "It is easy to gather already that he is a person of importance to those within the tower; further proven by the sheer amount of textbooks that appear to be signed by him."
     narrate "Pulling your attention away, you inquire about an audience with none other than the arch-mage himself."
     narrate "Guided to the tower’s uppermost floor, you come face to face with the mage."
+    scene mage_main
     narrate "He stands near the center before a table littered with dozens of different texts and rather strange looking specimens, leaning heavily with a palm to the tabletop."
     narrate "Believing you to be simply another one of the mages, he begins rambling about something you couldn’t even begin fathoming to summarize before sighing and coming to a pause."
     mage "Oh… It's rare to get a visitor - I suppose I was getting a bit carried away. How may I be of assistance?"
@@ -53,8 +53,7 @@ label mage_encounter_tutorial:
     narrate "The mage agrees to meet with you at the temple tonight with the rest of the companions."
     narrate "Despite this triumph, you feel a heavily charged atmosphere at your back that crackles with uncertainty and raises the hairs along the back of your neck as you turn to leave."
 
-    scene black with Dissolve(0.5)
-
+    scene mage_outside with Dissolve(0.5)
     narrate "You decide to leave [mage_name]'s tower."
     narrate "According to the prophecy, there's only one last member to recruit. {i}The shield of the empire{/i}."
     #narrate "The last person you need to meet is the duke guy......"

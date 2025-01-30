@@ -1,44 +1,47 @@
-2025-01-15 03:43:18 UTC
-macOS-14.6.1-arm64-arm-64bit
+2025-01-30 07:02:42 UTC
+Windows-10-10.0.19045
 Ren'Py 8.3.4.24120703
 
-Early init took 0.03s
-Loading error handling took 0.03s
-Loading script took 0.48s
-Loading save slot metadata took 0.00s
+Early init took 0.06s
+Loading error handling took 0.04s
+Loading script took 0.64s
+Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
 Set script version to: (6, 99, 12, 4) (alternate path)
-Running init code took 0.03s
+Running init code took 0.04s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.00s
+Reloading save slot metadata took 0.05s
 Index archives took 0.00s
-Dump and make backups took 0.03s
+Backing up script files to 'C:\\Users\\Emily Lin\\AppData\\Roaming/RenPy/backups\\GUI_Tutorial_by_zishy-1.0-pc':
+Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.00s
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.28s
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
 Prepare screens took 0.03s
-Save pyanalysis. took 0.00s
+Save pyanalysis. took 0.01s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.24s
+Interface start took 0.04s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1470, 956)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M2'
-Version: b'2.1 Metal - 88.1'
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(2560, 1440)
+Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(1280, 720)
 Could not open 'cache/shaders.txt':
 Maximum texture size: 4096x4096

@@ -1,10 +1,10 @@
-2024-12-30 12:06:00 UTC
-macOS-15.2-arm64-arm-64bit
+2025-01-30 05:29:59 UTC
+Windows-10-10.0.19045
 Ren'Py 8.3.4.24120703
 
-Early init took 0.03s
+Early init took 0.05s
 Loading error handling took 0.02s
-Loading script took 0.14s
+Loading script took 0.08s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
 Running init code took 0.03s
@@ -12,293 +12,107 @@ Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.01s
 Index archives took 0.00s
-Backing up script files to '/Users/kiramki/Library/RenPy/backups/screen':
-Dump and make backups took 0.03s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.02s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.02s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.03s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Interface start took 0.20s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M2 Pro'
-Version: b'2.1 Metal - 89.3'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1410, 793) drawable=(2820, 1586)
-Maximum texture size: 4096x4096
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue. It has been updated.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'You have learned two things about this clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_2', 'name': 'Clue 2', 'description': 'This is the second clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the second update.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the second update.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the second update.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue. It has been updated.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue. It has been updated.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-Resetting cache.
-Early init took 108.79s
-Loading error handling took 0.02s
-Loading script took 0.06s
-Loading save slot metadata took 0.01s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/kiramki/Library/RenPy/backups/screen':
-Dump and make backups took 0.02s
+Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.03s
 DPI scale factor: 1.000000
-Creating interface object took 0.00s
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.28s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.03s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.03s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Interface start took 0.04s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M2 Pro'
-Version: b'2.1 Metal - 89.3'
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1410, 793) drawable=(2820, 1586)
+Screen sizes: virtual=(1920, 1080) physical=(1410, 793) drawable=(1410, 793)
 Maximum texture size: 4096x4096
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_2', 'name': 'Clue 2', 'description': 'This is the second clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-Resetting cache.
-Early init took 149.05s
-Loading error handling took 0.01s
-Loading script took 0.06s
-Loading save slot metadata took 0.01s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/kiramki/Library/RenPy/backups/screen':
-Dump and make backups took 0.02s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.02s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.02s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.03s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
 
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M2 Pro'
-Version: b'2.1 Metal - 89.3'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1410, 793) drawable=(2820, 1586)
-Maximum texture size: 4096x4096
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-Resetting cache.
-Early init took 153.79s
-Loading error handling took 0.01s
-Loading script took 0.04s
-Loading save slot metadata took 0.01s
-Loading persistent took 0.00s
-Running init code took 0.02s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/kiramki/Library/RenPy/backups/screen':
-Dump and make backups took 0.02s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.02s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.02s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.01s
-Prepare screens took 0.03s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Interface start took 0.04s
+Full traceback:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2879, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 1381, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\screen.py", line 752, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 1171, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\behavior.py", line 976, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 1409, in render
+    xminimum = max(xminimum, size_groups[size_group].width(width, height, st, at))
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 1346, in width
+    rend = renpy.display.render.render_for_size(i, width, height, st, at)
+  File "render.pyx", line 312, in renpy.display.render.render_for_size
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\behavior.py", line 976, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 1457, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\text\text.py", line 2600, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\text\text.py", line 767, in __init__
+    glyphs = ts.glyphs(s, self)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\text\text.py", line 340, in glyphs
+    fo = font.get_font(self.font, self.size, self.bold, self.italic, 0, self.antialias, self.vertical, self.hinting, layout.oversample, self.shaper, self.instance, self.axis)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\text\font.py", line 745, in get_font
+    face = load_face(fn, shaper)
+  File "C:\Users\Emily Lin\Downloads\renpy-8.3.4-sdk\renpy\text\font.py", line 673, in load_face
+    raise Exception("Could not find font {0!r}.".format(orig_fn))
+Exception: Could not find font 'OpenSans-Regular.ttf'.
 
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1512, 982)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M2 Pro'
-Version: b'2.1 Metal - 89.3'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1410, 793) drawable=(2820, 1586)
-Maximum texture size: 4096x4096
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'You have learned two things about this clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
-The current clue is: {'id': 'clue_1', 'name': 'Clue 1', 'description': 'This is the first clue.'}
-The current clue is: {'description': '', 'name': ''}
+While running game code:
+Exception: Could not find font 'OpenSans-Regular.ttf'.

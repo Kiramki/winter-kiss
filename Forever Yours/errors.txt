@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 159: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    play sound "audio/hook/heartbeat_loop.mp3"
-               ^
+File "game/script.rpy", line 192: expected 'image_name_component' not found.
+    show "A team of medical professionals surround you, electrodes are strapped to your chest." 
+         ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Jan 19 14:08:09 2025
+Thu Jan 30 04:02:01 2025

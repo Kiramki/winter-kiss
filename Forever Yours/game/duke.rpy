@@ -1,7 +1,7 @@
 # This file is meant to contain the encounters with the Duke that the player has when they visit their location on the map.
 
 label duke_check:
-    scene duke_bg_large
+    scene duke_outside
     hide screen map with Dissolve(0.5)
 
     narrate "{i}You make your way to the Duke's fancyass house.{/i}"
@@ -61,6 +61,7 @@ label duke_idle:
         jump day_end
 
 label duke_encounter_tutorial:
+    scene duke_outside
     narrate "You stand before a tall gate not unlike the gates at the Grand Temple."
     narrate "They are shut firmly, attached to a fence of iron and stone that wraps around the large estate belonging to the Ducal House of Thornwick."
     narrate "Just like on the map, a crest of silver in the shape of a shield rests in the center of the gate just above your head."
@@ -87,6 +88,7 @@ label duke_encounter_tutorial:
     narrate "There's minimal furnishings in any of the rooms you can see into when you walk past them, as if the home was only for show rather than living in."
     narrate "Wilfred stops suddenly at two large wooden doors and knocks twice on one."
     narrate "From within the room, you can hear a man's voice respond and Wilfred opens one of the doors inward for you with a gesture."
+    scene duke_main
     narrate "A man younger than Wilfred sits at a large oak desk that's stacked with papers and various other important looking things."
     narrate "His dark hair is swept back save for a few snowy strands that fall into his face."
     duke "Wilfred told me you're here because of the prophecy the Grand Temple announced two weeks ago. I'm not sorry to say that I'm not much affiliated with the temple, so I see no reason why you're even standing before me."
@@ -113,6 +115,7 @@ label duke_encounter_tutorial:
             narrate "The Duke is rendered speechless as he stares at the letters coming to life before him. He doesn't answer you right away, but when he does he seems more convinced than you thought he'd be."
             duke "...Fine. I'll be there tonight."
     narrate "Now that you've managed to capture the Duke's interest, you feel as though you can breathe a little easier after stepping outside of the rather large and empty home."
+    scene duke_outside
     narrate "Wilfred sees you off but you barely think to say goodbye as you step outside the gates and head back towards the temple."
     $ duke_available = True
     $ mage_available = True
