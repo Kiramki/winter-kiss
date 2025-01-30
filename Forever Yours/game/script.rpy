@@ -197,31 +197,30 @@ label start:
     nurse "—for a pulse check?"
     doctor "Resume compressions. Thirty seconds until the next check."
     play sound "audio/hook/flatline.mp3" fadeout 0.5
-    scene death_flatline with Dissolve (0.5)
-    pause 2
-    scene black with Dissolve(0.5)
-    narrate "The monitor blares a flatline."
+    centered "The monitor blares a flatline."
+    pause 1
     play sound "audio/hook/light_appear.mp3"
     play music "audio/hook/angel_appears.mp3"
     scene white with Dissolve(0.5)
-    narrate "Suddenly, a blinding light tears your attention away from the scene."
-
-    show angel neutral at center
-    narrate "Beside you, a figure appears, silently observing the chaos below."
-    angel "They're going to let you go, I'm sorry."
+    narrate "Suddenly, the room around you is eclipsed in a flash of light and a figure emerges."
+    voice "audio/voice/devil/line0001.ogg"
+    angel "They're going to let you go. I'm sorry."
 
     menu question_angel:
         "Who are you?":
             narrate "The figure smiles serenely."
+            voice "audio/voice/devil/line0002.ogg"
             angel "I am what lies between you and the end of all things."
         "No, that can't be right.":
             narrate "The figure shakes her head, eyes filled with sympathy."
             show angel sad
+            voice "audio/voice/devil/line0003.ogg"
             angel "They tried their best, but it won't be long now."
 
-    narrate "The light in the room grows brighter. Your mom's face blurs away into the sea of white."
+    narrate "The light surrounding her grows brighter, your mother's face is lost in the sea of white."
 
     show angel sad
+    voice "audio/voice/devil/line0004.ogg"
     angel "It's almost time to let go. Are you ready?"
     narrate "Grief crushes you, winding itself around your heart like a vice in your chest."
     narrate "No, this can't be all there is. You are not ready. You never..."
@@ -241,6 +240,7 @@ label start:
     
     show angel neutral
     narrate "The angel seems to sympathize with your words, then tilts her head, offering a soft smile."
+    voice "audio/voice/devil/line0005.ogg"
     angel "What if this doesn't have to be the end?"
     
     # ooooo scene change
@@ -251,23 +251,31 @@ label start:
     scene white with Dissolve(0.5)
     narrate "In an instant, it's also coated in the same blinding and dreary white that took the world away from you."
     show angel neutral with Dissolve(0.5)
+    voice "audio/voice/devil/line0006.ogg"
     angel "This is the Empire of Parcae. A land of peace, virtue, and balance. But it's in peril."
+    voice "audio/voice/devil/line0007.ogg"
     angel "When winter comes, it will be the end of everything."
+    voice "audio/voice/devil/line0008.ogg"
     angel "I can offer you a second chance — to save this world and become the hero in the prophecy."
     narrate "A second chance... but why you? You don't understand."
 
     show angel sad
     if goal == "impact":
+        voice "audio/voice/devil/line0009.ogg"
         angel "Because this world has chosen you. This is your chance to leave your mark on the world."
     elif goal == "meaning":
+        voice "audio/voice/devil/line0010.ogg"
         angel "Because this world has chosen you. This is your chance to mean something to someone."
     elif goal == "purpose":
+        voice "audio/voice/devil/line0011.ogg"
         angel "Because this world has chosen you. This is your chance to discover your true purpose."
     elif goal == "exploration":
+        voice "audio/voice/devil/line0012.ogg"
         angel "Because this world has chosen you. This is your chance to explore a brand new world."
     else:
+        voice "audio/voice/devil/line009.ogg"
         angel "Because this world has chosen you. This is your second chance."
-    
+    voice "audio/voice/devil/line0013.ogg"
     angel "But to join, you must let go of this life and sacrifice a piece of yourself."
 
     scene white with Dissolve(0.5)
@@ -276,6 +284,7 @@ label start:
     doctor "Pause compressions. Stand clear."
 
     show angel sad with Dissolve(0.5)
+    voice "audio/voice/devil/line0014.ogg"
     angel "Time is running out. The light will take you soon. What is your choice?"
     stop sound fadeout 0.5
         
@@ -299,8 +308,10 @@ label start:
             $ resolve = 10
     narrate "Your current stats are:\nFortitude: [fortitude]\nEmpathy: [empathy]\nResolve: [resolve]"
     show angel neutral
+    voice "audio/voice/devil/line0015.ogg"
     angel "So you've decided to join this new world?"
     narrate "She smiles prettily and leans in towards you."
+    voice "audio/voice/devil/line0016.ogg"
     angel "Then, touch your lips to mine, and seal your choice."
 
     menu kiss_her:
@@ -310,21 +321,24 @@ label start:
             stop music
             narrate "The moment the kiss lands, the air thickens, and something shifts inside you."
     play sound "audio/hook/dark_ambiance.mp3" 
-    scene dying_2 with Dissolve (0.5)  
+    scene black with Dissolve (0.5)  
     narrate "Suddenly, the light wilts and oozes down into thick, viscous liquid."
     hide angel with Dissolve(0.5)
     play music "audio/hook/minerva_reveal.mp3" fadein 1.0
-    pause 0.5
+    voice "audio/voice/devil/laugh.ogg"
     show devil malicious with Dissolve(0.5)
     narrate "The angelic figure before you morphs into something sinister. She looks at you with mirthful eyes."
+    voice "audio/voice/devil/line0017.ogg"
     devil "So naive, {i}as always{/i}. It's time you learned there are no second chances."
     play sound "audio/hook/you_died.mp3" fadeout 0.5
     narrate "Reality shatters around you. Darkness consumes the room and swallows you whole."
-    scene distorted_black with Dissolve(0.5)
     # Current
+    scene black with Dissolve (0.5)
     stop music fadeout 1.0
     pause(3)
     doctor "Time of death: [current_hour]:[minute] [ampm]." #insert actual time
+    scene black with Dissolve (0.5)
+    pause(3)
 
     jump tutorial_start #MIA. COMMENT THIS OUT. IF YOU WANT TO DO YOUR TESTING. 
 
@@ -333,13 +347,14 @@ label tutorial_start:
     stop sound fadeout 1.0
     narrate "..."
     narrate "Somewhere beyond you, there is music."
+    play music "<loop 0.0>audio/opening/temple_ambiance.mp3" fadein 1.0
+    scene knight_bg_large with Dissolve(1)
     narrate "Lights churn around your body like a kaleidoscope and your body sludges towards the beckoning hymn."
     narrate "You burst from the miasma like a newborn thrust into the chill of open air for the first time; into somewhere you have never existed before."
     narrate "The material beneath your palms twist forward in impossible patterns of life. You are lost."
     unknown "Let them rest a moment..."
     unknown "Be at ease, you are in the Grand Temple of Amari. Welcome to Parcae."
     scene knight_main with Dissolve(0.5)
-    play music "<loop 0.0>audio/opening/temple_ambiance.mp3" fadein 1.0
     narrate "Your vision clears. When you look up, you are met with a grand hall bathed in candlelight."
     show knight neutral at center
     narrate "Two figures step forward. One dressed in fine armor stands at attention beside another in ceremonial robes."
@@ -347,6 +362,7 @@ label tutorial_start:
     priest "Your arrival is a gift to the Empire. The Holy Order welcomes you."
     narrate "The knight beside him takes a step towards you and bows deeply."
     show knight happy
+    voice "audio/voice/knight/line0001.ogg"
     knight "I know this must be overwhelming, but...we are honored to meet you."
     show knight neutral
     narrate "No. You shouldn't be here. You know that much. You shouldn't be here because... because…"
@@ -437,9 +453,11 @@ label tutorial_start:
     narrate "The knight offers another bow as they'd done before when you all first met."
     
     show knight happy
+    voice "audio/voice/knight/line0002.ogg"
     knight "Should there be anything you need, please do not hesitate to request it. I will do everything within my power to assist you, [player_name]."
     show knight neutral
     narrate "Content, the Grand Priest excuses himself to attend to other matters and leaves the room so it's only you and the Knight left."
+    voice "audio/voice/knight/line0003.ogg"
     knight "Allow me to show you around, [p_title] [player_name]."
     narrate "You ask the knight to be less formal with you and they nod before turning with the intent to guide you about the Temple grounds."
     narrate "The tour ends with the both of you now outside the Grand Temple."
@@ -448,6 +466,7 @@ label tutorial_start:
     narrate "When your attention turns to the knight again, they seem to perk up as if realizing that now you might be looking to them for more guidance."
     
     show knight happy
+    voice "audio/voice/knight/line0004.ogg"
     knight "I understand this must be a lot to a stranger of this world. I mean what I said before; if there's anything I can do to help you, please let me know."
 
     show knight neutral
@@ -464,6 +483,7 @@ label opening_knight_questions_explore:
     narrate "Maybe along the way you'll find the people meant for the prophecy?"
 
     show knight shock
+    voice "audio/voice/knight/line0005.ogg"
     knight "That reminds me- I was supposed to hand it to you earlier during the tour. I apologize for forgetting until now."
     
     show knight neutral
@@ -490,9 +510,11 @@ label opening_knight_questions_start:
     narrate "You express this to the knight and they blink as if processing what you said before realization dawns and they become apologetic."
     narrate " Immediately they're grabbing something from their pocket and they hold it out to you. It's a folded piece of paper that reveals itself to be a map once you unfold it."
     show knight concern
+    voice "audio/voice/knight/line0006.ogg"
     knight "Please forgive me, I forgot to give this to you when you were reading the prophecy earlier."
     show knight neutral
-    knight "This should be a map of the capital, since that's where the Grand Temple is located. It might help you in your search"
+    voice "audio/voice/knight/line0007.ogg"
+    knight "This should be a map of the capital, since that's where the Grand Temple is located. It might help you in your search!"
     narrate "You study the map for a moment and notice a mage's tower marked near the center of the capital, not too far from the temple."
     narrate "There's also what looks to be noble estates marked with house crests, and one of the crests even looks similar to a shield."
     narrate "You thank the knight and they bow again, still apologetic about their blunder."
@@ -509,13 +531,17 @@ label opening_knight_questions_concerns:
     narrate "You don't even know this land, the people, or the culture. You're more out of place than you want to be."
     show knight concern
     narrate "The knight seems to understand your struggles and anxieties as their expression shows their sympathy and concern, looking somewhat serious for the first time compared to how gentle and warm they'd been up until now."
+    voice "audio/voice/knight/line0008.ogg"   
     knight "It may not make sense now, but our deity has never been wrong before and I'm certain with all my heart they're not wrong now either."
+    voice "audio/voice/knight/line0009.ogg"  
     knight "You are the first foreigner to ever appear in our world through such divine means, appearing just like the prophecy said you would! Please have faith, [player_name]." 
     narrate "You feel a little better but still incredibly out of place and new to all of this."
     narrate "Then again, who {i}wouldn't{/i} feel the way you do in such a situation?"
     show knight neutral
     narrate "Taking a deep breath, you manage to calm enough to notice that the Knight is now holding a map out to you."
+    voice "audio/voice/knight/line0010.ogg"  
     knight  "I hope this may be of help to you, [player_name]."
+    voice "audio/voice/knight/line0011.ogg"  
     knight "It's a map of the capital here in the empire. Perhaps it will help direct you where you need to go on your search?"
     narrate "You thank the Knight and they appear to be visibly relieved that you're in better spirits now."
     narrate "The gates don't look as foreboding as they had minutes ago in the midst of your worries."
@@ -526,6 +552,7 @@ label opening_knight_questions_concerns:
     jump opening_map
 
 label opening_map:
+    scene knight_outside with Dissolve(0.5)
     narrate "Even though you feel ready to take off into the capital of Parcae and look closer at the two places that just might have a connection to the prophecy, you think it might be easiest to start here in the very Grand Temple first and foremost on the first line."
     narrate "You pull out the prophecy scroll once more to reread it."
     prophecy "The path is set with the right hand of the sun."
