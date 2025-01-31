@@ -85,14 +85,14 @@ label duke_encounter_tutorial:
     narrate "Now that you've been allowed inside, you follow the man and realize you don't actually know who he is but context clues suggest that he's not the master of this property."
     narrate "As if sensing your curiosity, the man finally introduces himself as Wilfred and asks that you simply refer to him by name."
     narrate "You think to introduce yourself again but remember that you've already technically done so and opt to stay silent instead."
-    scene duke_bg_large with Dissolve (0.5)
+    scene duke_bg_large with Dissolve(0.5)
     play music "audio/duke_theme.mp3" fadein 1.0
     narrate "The two of you walk down rather intricate  halls that showcase wealth and yet somehow feel almost lonely."
     narrate "The paintings hold no people in them and the colors feel as cold as the winter outside."
     narrate "There's minimal furnishings in any of the rooms you can see into when you walk past them, as if the home was only for show rather than living in."
     narrate "Wilfred stops suddenly at two large wooden doors and knocks twice on one."
     narrate "From within the room, you can hear a man's voice respond and Wilfred opens one of the doors inward for you with a gesture."
-    scene duke_main
+    scene duke_main with Dissolve(0.5)
     narrate "A man younger than Wilfred sits at a large oak desk that's stacked with papers and various other important looking things."
     narrate "His dark hair is swept back save for a few snowy strands that fall into his face."
     duke "Wilfred told me you're here because of the prophecy the Grand Temple announced two weeks ago. I'm not sorry to say that I'm not much affiliated with the temple, so I see no reason why you're even standing before me."
