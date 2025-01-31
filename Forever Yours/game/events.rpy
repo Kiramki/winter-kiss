@@ -16,6 +16,7 @@ label event_1_start:
     with Dissolve(0.5)
     pause 0
     show knight at slight_right
+    voice "audio/voice/duke/line0006.ogg"
     duke "I hope this isn't a waste of my time." 
     narrate "He looks like he's bitten into something sour as he's dismounting. It's clear he doesn't want to be here."
 
@@ -25,6 +26,7 @@ label event_1_start:
     show duke at left
     show knight at center
     narrate "Not long after the mage appears, looking small with his arms crossed over himself; and hastily trails into the temple entrance almost as if it will keep him safe from what’s to come."
+    voice "audio/voice/mage/noise1.ogg"
     mage "..."
     narrate "The air is thick with awkward tension as the group gathers in the temple's grand hall."
 
@@ -60,9 +62,11 @@ label event_1_start:
 
     play music "audio/tense.mp3"
     show duke angry
+    voice "audio/voice/duke/line0007.ogg"
     duke "{i}Ten weeks?{/i} That's absurd! The temple spoke of no cause for concern!"
     voice "audio/voice/mage/noise2.ogg"
     narrate "The Mage seems to grip himself tighter and sits down shakily on a nearby bench, while the Duke paces around the room."
+    voice "audio/voice/duke/line0008.ogg"
     duke "If that's true, I should be back at my duchy preparing evacuation plans—not. gallivanting off on some wild prophecy hunt! My people need me."
     voice "audio/voice/mage/line0009.ogg"
     mage "Yes, I- I shouldn't be here. All my, studies are at the tower. All my resources - There's no way we can, face whatever this is if we don't understand it."
@@ -87,7 +91,16 @@ label event_1_start:
     show knight neutral
     knight "We can trust [p_object]."
     show duke angry
-    duke "Trust [p_object]? {i}Trust [p_object]{/i}? We've just met [p_object]! Blind faith in words on a scroll isn't leadership— it's madness."
+    if p_object == "her":
+        voice "audio/voice/duke/line0010.ogg"
+    elif p_object == "them":
+        voice "audio/voice/duke/line0009.ogg"
+    else:
+        voice "audio/voice/duke/line0011.ogg"
+    duke "Trust [p_object]? {i}Trust [p_object]{/i}? We've just met [p_object]!"
+    voice "audio/voice/duke/line0012.ogg"
+    duke "Blind faith in words on a scroll isn't leadership— it's madness."
+    voice "audio/voice/duke/line0013.ogg"
     duke "And I will be damned before I allow some scroll to dictate what may be right or wrong."
 
     voice "audio/voice/mage/line0010.ogg"
@@ -147,7 +160,8 @@ label event_1_convince_silence:
     narrate "Your chest feels tight. You struggle to find the words to comfort them."
     show duke neutral
     show mage neutral
-    narrate "You silently agree with the Duke and the Mage, understanding where they're coming from - and why they hesitate to just put faith in you and the prophecy they'd only learned the most dire parts of."
+    narrate "You silently agree with the Duke and the Mage, understanding where they're coming from."
+    narrate "As well as why they hesitate to just put faith in you and the prophecy they'd only learned the most dire parts of."
     narrate "The Knight did put a lot of sudden responsibility on your shoulders despite you being a newcomer to this world, barely a day in."
     show mage concern
     narrate "Your hesitation comes off as silence - you can't force yourself to bring confidence to a group you don't feel confident in, after all."
@@ -159,6 +173,7 @@ label event_1_convince_silence:
 
 label event_1_middle:
     narrate "The Duke shakes his head, turning toward the exit."
+    voice "audio/voice/duke/line0014.ogg"
     duke "This is a waste of time. I won't stand by while my people suffer. If you need me, you know where to find me."
     show knight concern
     show mage concern
@@ -185,6 +200,7 @@ label event_1_middle:
     show duke neutral with Dissolve(0.5)
     narrate "The Duke takes a visible step back, his expression hardening."
     show duke angry
+    voice "audio/voice/duke/line0015.ogg"
     duke "Absolutely not. I refuse to participate in a 'trust trial'."
 
     hide duke with Dissolve(0.5)
@@ -214,6 +230,7 @@ label event_1_middle:
     narrate "A heavy silence settles over the group as the reality of the trials sinks in."
     narrate "Without another word, you ascend back up to the main area of the temple with the others."
     narrate "The spirits of the group seem to have shifted."
+    play music temple_ambiance
     scene knight_main with Dissolve(1)
     show duke neutral at left
     show mage neutral at right
@@ -224,7 +241,6 @@ label event_1_middle:
     voice "audio/voice/knight/line0032.ogg"
     knight "If we want to stop the world from ending, we need to at least try to work together..."
     voice "audio/voice/knight/line0033.ogg"
-    play music temple_ambiance
     show knight happy
     knight "It could very well be the key to breaking the curse!"
 
@@ -234,8 +250,10 @@ label event_1_middle:
     mage "Yes, I suppose you are correct. I'll do more research on the trials…the nature of these doors…"
     show duke concern
     show mage neutral
+    voice "audio/voice/duke/line0016.ogg"
     duke "…I still intend to prioritize the monster attacks threatening the empire."
     show duke neutral
+    voice "audio/voice/duke/line0017.ogg"
     duke "But, if there's information to be found, I'll readily track it down. If you all believe we truly can vanquish this evil, I suppose I can cooperate."
     narrate "Though still hesitant, the gathering seems to conclude with a reluctant agreement to work together as a team."
     scene knight_bg_large with Dissolve(1)

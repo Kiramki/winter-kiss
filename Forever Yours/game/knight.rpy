@@ -144,6 +144,7 @@ label knight_encounter_tutorial:
     narrate "They reassure you that they'll be there, regardless of your search's success or not."
     narrate "Despite this triumph, you feel a weighing uncertainty behind you as you leave the temple with a renewed sense of urgency and expectation."
     narrate "You can only hope that finding the other two will be as easy as the first one was."
+    stop music fadeout 1.0
     $ knight_encounters += 1
 
     # From here player goes to mage.rpy -> mage_check -> mage_encounter_tutorial

@@ -110,13 +110,16 @@ label duke_encounter_tutorial:
     show duke neutral with Dissolve(0.5)
     narrate "A man younger than Wilfred sits at a large oak desk that's stacked with papers and various other important looking things."
     narrate "His dark hair is swept back save for a few snowy strands that fall into his face."
+    voice "audio/voice/duke/line0001.ogg"
     duke "Wilfred told me you're here because of the prophecy the Grand Temple announced two weeks ago."
+    voice "audio/voice/duke/line0002.ogg"
     duke "I'm not sorry to say that I'm not much affiliated with the temple, so I see no reason why you're even standing before me."
 
     menu:
         "Appeal to the Duke's household title as the Empire's Shield.":
             narrate "You tell the duke that his house is mentioned in the prophecy and watch as one eyebrow raises in an arch."
             narrate "The papers in his hands are put down and he fixes his full attention on you compared to the half-attentive greeting he'd given."
+            voice "audio/voice/duke/line0003.ogg"
             duke "I don't recall hearing this in the prophecy the temple released."
             narrate "You recall both the shield on the map and the shield crest outside on the gates of the home. You tell him as such and repeat the line of the prophecy that states the empire's shield."
             narrate "He needs to join you and the other prophetic saviors at the temple tonight in order to go over the new information about the prophecy and figure out what must be done to save the world."
@@ -133,6 +136,7 @@ label duke_encounter_tutorial:
             narrate "You tell him you won't leave until he promises to go to the temple tonight. You know he's the Shield of the prophecy, and believe he's part of the chosen group of saviors for the world."
             narrate "Those words seem to catch his attention but you're not sure why."
             show duke angry
+            voice "audio/voice/duke/line0004.ogg"
             duke "Fine, {i}fine{/i}. Now leave. I have work to do."
 
             $ resolve += 1
@@ -147,6 +151,7 @@ label duke_encounter_tutorial:
             narrate "Before the two of you, the line only you can read begins to shimmer and waver ever so slightly in place before the letters start to emit a soft golden glow much like they did with the knight."
             narrate "The Duke is rendered speechless as he stares at the letters coming to life before him."
             narrate "He doesn't answer you right away, but when he does he seems more convinced than you thought he'd be."
+            voice "audio/voice/duke/line0005.ogg"
             duke "...Fine. I'll be there tonight."
 
             $ fortitude += 1

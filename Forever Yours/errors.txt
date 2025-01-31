@@ -2,13 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/events.rpy", line 203: end of line expected.
-    show knight neutral at xalign 0
-                                  ^
+File "game/events.rpy", line 94: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    if p_object == "her":
+    ^
 
-File "game/events.rpy", line 205: expected statement.
-    at xalign 0
-               ^
+File "game/events.rpy", line 96: expected statement.
+    elif p_object == "them":
+                  ^
+
+File "game/events.rpy", line 98: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Fri Jan 31 02:20:53 2025
+Fri Jan 31 04:04:04 2025
