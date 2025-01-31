@@ -2,6 +2,7 @@
 
 ## EVENT 1 - Recruitment Conflict ##
 label event_1_start:
+    play music "<loop 0.0>audio/opening/temple_ambiance.mp3" fadein 1.0
     scene knight_outside with Dissolve(0.5)
     # narrate "GOOD JOB TEAM. YOUVE ASSEMBLED THE... prophecy guys???"
     # narrate "(fuck. this doesnt look like a great team at all)"
@@ -32,8 +33,10 @@ label event_1_start:
     knight "The curse has taken root, and based on the prophecy…"
     narrate "They hesitate for a moment before continuing."
     voice "audio/voice/knight/line0024.ogg"
+    stop music
     knight "…We have {color=#8b67b0}{b}10 WEEKS{/b}{/color} before the world ends."
     narrate "There's silence for a moment before the words seem to ripple across the group."
+    play music "audio/tense.mp3"
     duke "{i}Ten weeks?{/i} That's absurd! The temple spoke of no cause for concern!"
     voice "audio/voice/mage/noise2.ogg"
     narrator "The Mage seems to grip himself tighter and sits down shakily on a nearby bench, while the Duke paces around the room."
@@ -60,8 +63,8 @@ label event_1_start:
     duke "And I will be damned before I allow some scroll to dictate what may be right or wrong."
     voice "audio/voice/mage/line0010.ogg"
     mage "I know you, value this prophecy quite a bit and it is rather… formal..."
-    voice "audio/voice/mage/line0011.ogg"
-    mage "but this is an enormous responsibility you're putting onto this, unfortunate - 'chosen one', and not to mention the rest of us…"
+    voice "audio/voice/mage/line0010_1.ogg"
+    mage "But this is an enormous responsibility you're putting onto this, unfortunate - 'chosen one', and not to mention the rest of us…"
     narrate "To this, the knight seems to falter for the first time. They turn to you, clearly expecting you to say something that will steady the group."
     menu event_1_convince:
         "Convince them earnestly":
@@ -97,7 +100,7 @@ label event_1_middle:
     narrate "The Duke shakes his head, turning toward the exit."
     duke "This is a waste of time. I won't stand by while my people suffer. If you need me, you know where to find me."
     narrate "Just as the Duke moves to leave, the ground trembles violently beneath your feet. Dust and debris rain down from the temple's ceiling as the air hums with unfamiliar magic."
-    voice "audio/voice/mage/line0012.ogg"
+    voice "audio/voice/mage/line0011.ogg"
     mage "What was that?"
     narrate "From the look on everyone else's faces, it seems no one knows for sure. Both the knight and Duke grab the swords at their hips and move to stand on guard. For now it seems that the Duke has forgotten about leaving."
     narrate "The floor beneath you shifts and, with a groaning creak, a hidden staircase reveals itself leading deeper into the temple. The group exchanges wary glances before descending - the Duke and Knight in lead, with you and the Mage following behind."
@@ -113,7 +116,7 @@ label event_1_middle:
     narrate "The Duke takes a visible step back, his expression hardening."
     duke "Absolutely not. I refuse to participate in a 'trust trial'."
     centered "The second, for The Conductor of Magics, reads: {color=#8b67b0}{b}The Trial of Courage{/b}{/color}"
-    voice "audio/voice/mage/line0013.ogg"
+    voice "audio/voice/mage/line0012.ogg"
     mage "I'm not sure I like the implications of this…"
     narrate "This seems to unsettle him, but he does not elaborate further."
     centered "The third, for The Hand of the Sun, reads: {color=#8b67b0}{b}The Trial of Honesty{/b}{/color}"
@@ -127,8 +130,9 @@ label event_1_middle:
     voice "audio/voice/knight/line0032.ogg"
     knight "If we want to stop the world from ending, we need to at least try to work together..."
     voice "audio/voice/knight/line0033.ogg"
+    play music temple_ambiance
     knight "It could very well be the key to breaking the curse!"
-    voice "audio/voice/mage/line0014.ogg"
+    voice "audio/voice/mage/line0013.ogg"
     mage "Yes, I suppose you are correct. I'll do more research on the trials…the nature of these doors…"
     duke "…I still intend to prioritize the monster attacks threatening the empire. But, if there's information to be found, I'll readily track it down. If you all believe we truly can vanquish this evil, I suppose I can cooperate."
     narrate "Though still hesitant, the gathering seems to conclude with a reluctant agreement to work together as a team."
@@ -139,13 +143,21 @@ label event_1_middle:
     narrate "The sun dips below the horizon and, as its warm glow fades, a quiet comfort settles within you."
     narrate "Watching it, you realize that tomorrow, you will get to see it rise again."
     scene black with Dissolve(0.5)
+    stop music
+    play music "audio/hook/minerva_reveal.mp3" fadein 2.0 
     centered "Your dreams are faint echoes, drifting through smoke and flame." with dissolve
-    centered "your skin sears, as if burning alive."
+    centered "Your skin sears, as if burning alive."
     centered "A familiar voice emerges, soft and mocking."
+    voice "audio/voice/devil/line0020.ogg"
     devil "Are you enjoying this little world I built?"
+    voice "audio/voice/devil/line0021.ogg"
     devil "Or have you already forgotten the price you paid to be here?"
-    pause 2.0
-    centered "You have reached the end of the tutorial! Thank you for playing Forever Yours, The Devil. If you enjoyed this game, please consider following us {color=#8b67b0}@Gloamy Studios{/color} <3"
+    stop music fadeout 2.0
+    voice "audio/voice/devil/laugh.ogg"
+    pause 3.0
+    centered "You have reached the end of the DEMO! Thank you for playing {color=#8b67b0}Forever Yours, The Devil{/color}"
+    centered "If you enjoyed this game, please consider following us {color=#8b67b0}@Gloamy Studios{/color} <3"
+    scene black with Dissolve(0.5)
     return
     jump day_dreams
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 169: end of line expected.
-    with camera(at=Transform(xalign=0, x=0), duration = 1):
-                                                          ^
+File "game/events.rpy", line 156: expected end of line
+    voice "audio/voice/devil/laugh.ogg" fadeout 0.5
+                                        ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Thu Jan 30 20:07:16 2025
+Thu Jan 30 21:49:27 2025

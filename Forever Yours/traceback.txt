@@ -1,76 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing text tag {color= red} in '…We have {color= red} {b}ten weeks{/b} before the world ends.{/color}'.:
-  File "game/events.rpy", line 34, in script
-    knight "…We have {color= red} {b}ten weeks{/b} before the world ends.{/color}"
-ValueError: invalid literal for int() with base 16: ' '
+While running game code:
+  File "game/events.rpy", line 159, in script
+    CENTERED "If you enjoyed this game, please consider following us {color=#8b67b0}@Gloamy Studios{/color} <3"
+Exception: Sayer 'CENTERED' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/events.rpy", line 34, in script
-    knight "…We have {color= red} {b}ten weeks{/b} before the world ends.{/color}"
+  File "game/events.rpy", line 159, in script
+    CENTERED "If you enjoyed this game, please consider following us {color=#8b67b0}@Gloamy Studios{/color} <3"
   File "/Applications/renpy-8.3.4-sdk/renpy/ast.py", line 2579, in execute
     Say.execute(self)
-  File "/Applications/renpy-8.3.4-sdk/renpy/ast.py", line 621, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Applications/renpy-8.3.4-sdk/renpy/exports/sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "/Applications/renpy-8.3.4-sdk/renpy/character.py", line 1455, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Applications/renpy-8.3.4-sdk/renpy/character.py", line 1106, in do_display
-    display_say(who,
-  File "/Applications/renpy-8.3.4-sdk/renpy/character.py", line 803, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/Applications/renpy-8.3.4-sdk/renpy/ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/core.py", line 2879, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/core.py", line 1381, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/screen.py", line 752, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/layout.py", line 1457, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Applications/renpy-8.3.4-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Applications/renpy-8.3.4-sdk/renpy/text/text.py", line 2600, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "/Applications/renpy-8.3.4-sdk/renpy/text/text.py", line 730, in __init__
-    self.paragraphs = self.segment(text.tokens, style, renders, text)
-  File "/Applications/renpy-8.3.4-sdk/renpy/text/text.py", line 1415, in segment
-    push().color = renpy.easy.color(value)
-  File "/Applications/renpy-8.3.4-sdk/renpy/color.py", line 160, in __new__
-    r = int(c[0], 16) * 0x11
-ValueError: invalid literal for int() with base 16: ' '
+  File "/Applications/renpy-8.3.4-sdk/renpy/ast.py", line 581, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "/Applications/renpy-8.3.4-sdk/renpy/ast.py", line 470, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'CENTERED' is not defined.
 
 macOS-14.6.1-arm64-arm-64bit arm64
 Ren'Py 8.3.4.24120703
 Forever Yours, The Devil 1.0
-Thu Jan 30 12:01:34 2025
+Thu Jan 30 21:50:34 2025

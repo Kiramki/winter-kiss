@@ -60,7 +60,8 @@ label knight_encounter_tutorial:
     scene knight_outside
     narrate "Putting the prophecy scroll away once more, you head back to the front of the temple and slip inside."
     narrate "The sound of the doors as they creak open quietly is the same as when you had first woken up in this very room."
-    scene knight_main
+    scene knight_main with Dissolve(0.5)
+    play music knight_theme.wav fadein 1.0
     narrate "Kneeling before the altar which is spread before the fountain of Amari is the Knight, their back turned to you while the soft sound of their murmured prayers is nearly buried under the trickling of Amari's flowing waters."
     
     show knight neutral at center 

@@ -243,21 +243,21 @@ label start:
     show angel sad
     if goal == "impact":
         voice "audio/voice/devil/line0009.ogg"
-        angel "Because this world has chosen you. This is your chance to leave your mark on the world."
+        angel "Because this world has chosen you. This is your chance to {color=#8b67b0}leave your mark on the world{/color}."
     elif goal == "meaning":
         voice "audio/voice/devil/line0010.ogg"
-        angel "Because this world has chosen you. This is your chance to mean something to someone."
+        angel "Because this world has chosen you. This is your chance to {color=#8b67b0}mean something to someone{/color}."
     elif goal == "purpose":
         voice "audio/voice/devil/line0011.ogg"
-        angel "Because this world has chosen you. This is your chance to discover your true purpose."
+        angel "Because this world has chosen you. This is your chance to {color=#8b67b0}discover your true purpose{/color}."
     elif goal == "exploration":
         voice "audio/voice/devil/line0012.ogg"
-        angel "Because this world has chosen you. This is your chance to explore a brand new world."
+        angel "Because this world has chosen you. This is your chance to {color=#8b67b0}explore a brand new world{/color}."
     else:
         voice "audio/voice/devil/line009.ogg"
         angel "Because this world has chosen you. This is your second chance."
     voice "audio/voice/devil/line0013.ogg"
-    angel "But to join, you must let go of this life and sacrifice a piece of yourself."
+    angel "But to join, you must let go of this life and {color=#8b67b0}sacrfice a piece of yourself{/color}."
 
     scene white with Dissolve(0.5)
     play sound "audio/hook/light_appear.mp3"
@@ -271,23 +271,39 @@ label start:
         
     menu sacrifice:
         # Trust sacrifice
-        "Sacrifice a memory of trust":
+        "Sacrifice a memory of Resolve":
             $ fortitude = 10
             $ empathy = 20
             $ resolve = 5
+            prophecy "You've chased ambition like a moth to a flame, only to find yourself burned time and time again."
+            prophecy "You've pushed too hard, too far, and left behind the people and moments that truly mattered."
+            prophecy "What good is determination when it blinds you to everything else?"
+            prophecy "Sacrificing resolve might be the only way to finally slow down and stop trading the things you truly care about. "
+            prophecy "{color=#8b67b0}{b}You close your eyes, and let the thought go.{/b}{/color}"
 
         # Courage sacrifice
-        "Sacrifice a memory of courage":
+        "Sacrifice a memory of Fortitude":
             $ fortitude = 5
             $ empathy = 10
             $ resolve = 20
+            prophecy "You can endure through almost anything, but that's exactly the problem."
+            prophecy "It makes you complacent, sticking with things that don't serve you because you don't think you deserve better."
+            prophecy "Maybe it's time to let go of this endless endurance."
+            prophecy "Sacrificing fortitude could mean gaining something new - a sense of standards, of self-worth."
+            prophecy "{color=#8b67b0}{b}You close your eyes, and let the thought go.{/b}{/color}"
 
         # Honesty
-        "Sacrifice a memory of honesty":
+        "Sacrifice a memory of Empathy":
             $ fortitude = 20
             $ empathy = 5
             $ resolve = 10
-    narrate "Your current stats are:\nFortitude: [fortitude]\nEmpathy: [empathy]\nResolve: [resolve]"
+            prophecy "You've always had a fickle heart—an open door for everyone and everything."
+            prophecy "Always trying to please, always trying to make everyone else happy."
+            prophecy "But where has it gotten you? Perhaps letting go could mean freedom from that constant inner tug-of-war."
+            prophecy "It would give you some space to breathe - to prioritize yourself for once."
+            prophecy "{color=#8b67b0}{b}You close your eyes, and let the thought go.{/b}{/color}"
+    prophecy "Your current stats are:\nFortitude: [fortitude]\nEmpathy: [empathy]\nResolve: [resolve]"
+    nvl clear
     show angel neutral
     voice "audio/voice/devil/line0015.ogg"
     angel "So you've decided to join this new world?"
@@ -325,7 +341,7 @@ label start:
     scene flatline 
     stop music fadeout 1.0
     pause(3)
-    centered "The doctor declares you dead at {color=#8b67b0}[current_hour]:[minute] [ampm]{/color}" #insert actual time
+    centered "The doctor pronounced your time of death as {color=#8b67b0}[current_hour]:[minute] [ampm]{/color}" #insert actual time
     scene black with Dissolve (0.5)
     pause(3)
 
@@ -431,6 +447,7 @@ label tutorial_start:
     prophecy "and for knowledge, a conductor of the magic's field."
     prophecy "Three gates shall bow down for each price once paid,"
     prophecy "But the witch alone slays the umbra of Parcae."
+    nvl clear
     
     narrate "After you've read the scroll over, the Grand Priest appears almost anxious as he questions what the second half of the prophecy said."
     narrate "You recite it and his expression becomes puzzled, as does that of the knight beside him."
@@ -545,9 +562,10 @@ label opening_map:
     narrate "Even though you feel ready to take off into the capital of Parcae and look closer at the two places that just might have a connection to the prophecy."
     narrate "It might be easiest to start here in the {color=#8b67b0}Grand Temple{/color} first and foremost on the first line."
     narrate "You pull out the prophecy scroll once more to reread it."
-    prophecy "The path is set with the right hand of the sun."
-    prophecy "Then, for the empire's heart, bring forth its shield,"
-    prophecy "And for knowledge, a conductor of the magic's field."
+    prophecy "The path is set with the right hand of the {color=#8b67b0}sun{/color}."
+    prophecy "Then, for the empire's heart, bring forth its {color=#8b67b0}shield{/color},"
+    prophecy "and for knowledge, a conductor of the {color=#8b67b0}magic's field{/color}."
+    nvl clear
     narrate "The first line could be hinting at someone important in the temple itself."
     narrate "A symbol of branching paths similar to a 'sun' appears all over the building and even the uniform that both the Grand Priest and the holy knight were wearing."
     stop music
