@@ -4,30 +4,40 @@ label knight_check:
     scene knight_outside
     hide screen map with Dissolve(0.5)
 
-    narrate "{i}You make your way to wherever the knight is.{/i}"
-
-    # Love
-    if knight_affection >= 5:
-        knight "There you are, [player_name]! I always have time for you, would you like to go for a meal together?"
-
-    # Like
-    elif knight_affection >= 3:
-        knight "[player_name]! I was just thinking about you. Did you have time to chat?"
-
-    # Neutral
-    elif knight_affection >= -2:
-        knight "Oh, hello [player_name]! How are you? Is there something you need from me?"
-
-    # Dislike
+    if knight_encounters == 0:
+        narrate "{i}You look up at the temple, and consider what to do next.{/i}"
     else:
-        knight "I apologize, but I'm quite busy at the moment. Give me a moment and I'd be more than happy to help."
+        narrate "{i}You make your way to wherever the knight is.{/i}"
 
-    narrate "{i}Should I spend time with [knight_name]?{/i}"
+    # # Love
+    # if knight_affection >= 5:
+    #     knight "There you are, [player_name]! I always have time for you, would you like to go for a meal together?"
+
+    # # Like
+    # elif knight_affection >= 3:
+    #     knight "[player_name]! I was just thinking about you. Did you have time to chat?"
+
+    # # Neutral
+    # elif knight_affection >= -2:
+    #     knight "Oh, hello [player_name]! How are you? Is there something you need from me?"
+
+    # # Dislike
+    # else:
+    #     knight "I apologize, but I'm quite busy at the moment. Give me a moment and I'd be more than happy to help."
+
+    if knight_encounters == 0:
+        narrate "{i}Should I go inside?{/i}"
+    else:
+        narrate "{i}Should I spend time with [knight_name]?{/i}"
     menu knight_menu:
         "Yes":
             jump knight_idle
         "No":
-            narrate "{i}You decide to ABANDON [knight_name] to... whatever they do.{/i}"
+            if knight_encounters == 0:
+                narrate "No... you need a little longer to think."
+                narrate "{i}You decide to check the map again.{/i}"
+            else:
+                narrate "{i}You decide to ABANDON [knight_name] to... whatever they do.{/i}"
             show screen map with Dissolve(0.5)
             pause
 
@@ -61,11 +71,10 @@ label knight_encounter_tutorial:
     narrate "Putting the prophecy scroll away once more, you head back to the front of the temple and slip inside."
     narrate "The sound of the doors as they creak open quietly is the same as when you had first woken up in this very room."
     scene knight_main with Dissolve(0.5)
-    play music knight_theme.wav fadein 1.0
+    play music "audio/knight_theme.wav" fadein 1.0
     narrate "Kneeling before the altar which is spread before the fountain of Amari is the Knight, their back turned to you while the soft sound of their murmured prayers is nearly buried under the trickling of Amari's flowing waters."
     
-    show knight neutral at center 
-    with Dissolve(0.5)
+    show knight neutral with Dissolve(0.5)
     narrate "When they realize they have company, the Knight stands up and turns to face you with a questioning gaze."
     narrate "They'd fully believed you would have left by now to explore the capital and find the others mentioned in the prophecy."
     voice "audio/voice/knight/line0012.ogg"
@@ -80,12 +89,14 @@ label knight_encounter_tutorial:
         "The Grand Priest":
             jump knight_encounter_tutorial_guess_priest
         "The Knight":
-            narrate "You explain that you had reread the prophecy lines and concluded that the 'right hand of the sun' must mean the Grand Priest. {b} fix this {/b}"
+            narrate "You explain that you had reread the prophecy lines and concluded that the 'right hand of the sun' must mean the knight."
     voice "audio/voice/knight/line0013.ogg"
+    show knight shock
     knight "Me?! Surely that can't be right! I'm only a member of the clergy. The Grand Priest has far more divinity and experience than I!"
-    narrate "Yet, undeniably, the line that led you here begins to glow a soft golden as you declare it must be the knight then."
+    show knight concern
+    narrate "Yet, undeniably, the line that led you here begins to glow a soft golden as you declare it must be the knight."
     narrate "The three of you now have proof that the knight is the correct choice, even if they seem far from convinced it could be them."
-    narrate "Now you have undeniable proof that you've made the right choice."
+    narrate "Now, you have undeniable proof that you've made the right choice."
     narrate "Still, the knight looks hesitant and reluctant to believe that you're right."
 
     menu knight_encounter_tutorial_reassure:
@@ -97,22 +108,40 @@ label knight_encounter_tutorial:
             knight "If it truly is the will of Amari…"
             voice "audio/voice/knight/line0015.ogg"
             knight "I will do my best to be of assistance to you and the others in the prophecy. I trust you, [player_name]."
+
+            $ empathy += 1
+            $ knight_affection += 1
+
         "Assert the prophecy's undeniability and your determination to see it through":
             narrate "You gesture to the lit lines of prophecy to express their importance once again, determined for the knight to understand."
-            narrate "You state that you are the one who was able to decipher the second half of the prophecy and were the Chosen One. There was no room for doubting your choice."
+            narrate "You state that you are the one who was able to decipher the second half of the prophecy and were the Chosen One. There is no room for doubting your choice."
             voice "audio/voice/knight/line0016.ogg"
             knight  "...Please tell me whatever it is I can do to be of help to you, [player_name]. It is my duty."
+
+            $ resolve += 1
+            $ knight_affection += 1
+
         "Reiterate their importance to the Temple and their work beside the Grand Priest":
             narrate "You tell the knight that you understand their concern but that you've seen just how important they are, as a simple member of the clergy or not."
             narrate "They are the right hand of the Grand Priest and now, the deity as well."
+            show knight neutral
             narrate "You could already tell just by their determination and faithfulness to the temple that they were an upstanding character. The prophecy only highlights that."
             narrate "You reaffirm that it has to be the will of Amari and you're going to put your faith in the knight just as the deity has, if the two of you are to figure out how to stop The End from ever reaching fruition."
+            
+            show knight happy
             voice "audio/voice/knight/line0017.ogg"
             knight "If you're certain about this, how could I argue? I put my trust in you, [player_name]."
             voice "audio/voice/knight/line0018.ogg"
             knight "Tell me what needs to be done and I will do it."
+
+            show knight neutral
+
+            $ fortitude += 1
+            $ knight_affection += 1
+
     narrate "The knight agrees to pardon themself from the late watch tonight in order to join you and the rest of the companions once you've found them."
-    narrate "They reassure you that they'll be there regardless of your search's success or not."
+    show knight neutral
+    narrate "They reassure you that they'll be there, regardless of your search's success or not."
     narrate "Despite this triumph, you feel a weighing uncertainty behind you as you leave the temple with a renewed sense of urgency and expectation."
     narrate "You can only hope that finding the other two will be as easy as the first one was."
     $ knight_encounters += 1
@@ -125,13 +154,17 @@ label knight_encounter_tutorial:
     pause
 
 label knight_encounter_tutorial_guess_priest:
-    narrate "You explain that you had reread the prophecy lines and concluded that the 'right hand of the sun' must mean the Grand Priest. You returned in search of him but aren't sure where to find him."
+    narrate "You explain that you had reread the prophecy lines and concluded that the 'right hand of the sun' must mean the Grand Priest."
+    narrate "You had returned in search of him, but aren't sure where to find him."
+    show knight happy
     narrate "The knight agrees that the line must mean the priest as well and vows to help you track him down within the temple."
+    show knight neutral
     narrate "With their help, you're able to find the priest in a prayer room setting up for a sermon. He seems surprised to see you again but is quick to relax and ask how your search is going."
     narrate "You now explain to him that you've surmised the first line of the prophecy to be a call to recruit {i}him{/i} and his surprise returns."
     priest "Are you sure? I can see how I may fit the bill, but I've never done anything more adventurous than touring the empire to spread the faith and goodwill of Amari."
     narrate "Certain in your choice you take out the scroll to prove it to him, only to find that there are no changes to the lines of script."
     narrate "They continue to appear as simple scrawled lines of ink on the paper. There's no grand revelation on whether you're correct or not."
+    show knight concern
     narrate "Both the priest and the knight seem uncertain of how to handle your disappointment on the unchanging scroll. They share a look."
     narrate "...I'm sorry, [player_name]. Perhaps I'm not the one meant to accompany you."
     narrate "But this choice made so much sense, you thought. If not him, then who else?"

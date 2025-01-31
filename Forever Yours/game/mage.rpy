@@ -4,17 +4,26 @@ label mage_check:
     scene mage_outside
     hide screen map with Dissolve(0.5)
 
-    narrate "{i}You make your way to [mage_name]'s tower.{/i}"
+    if mage_encounters == 0:
+        narrate "{i}You make your way to where you think you may find your next companion - The Mage Tower.{/i}"
+    else:
+        narrate "{i}You make your way to [mage_name]'s tower.{/i}"
 
-    show mage neutral
-    mage "omg heyyyyyy :)"
+    # show mage neutral
+    # mage "omg heyyyyyy :)"
 
-    narrate "{i}Should I spend time with [mage_name]?{/i}"
+    if mage_encounters == 0:
+        narrate "{i}You hesitate at the entrance. Are you ready to find your next companion?"
+    else:
+        narrate "{i}Should I spend time with [mage_name]?{/i}"
     menu mage_menu:
         "Yes":
             jump mage_idle
         "No":
-            narrate "{i}You decide to leave the Mage's tower.{/i}"
+            if mage_encounters == 0:
+                narrate "{i}Not yet. You decide to take a moment to prepare yourself before entering.{/i}"
+            else:
+                narrate "{i}You decide to leave, for now.{/i}"
             show screen map with Dissolve(0.5)
             pause
 
@@ -27,19 +36,26 @@ label mage_encounter_tutorial:
 
     narrate "Upon approaching its doors, you find that you are hastily ushered inside and out of the winter's reach."
     play music "mage_theme.ogg" fadein 2.0
+
     scene mage_bg_large with Dissolve (0.5)
     narrate "Fire sprites dance lazily through the foyer, illuminating their surroundings with curiosity; as who you assume to be mages scurry about on their routine business. "
     narrate "Already, you can hear passing murmurs regarding their conductor - The Arch-Mage."
     narrate "It is easy to gather already that he is a person of importance to those within the tower; further proven by the sheer amount of textbooks that appear to be signed by him."
     narrate "Pulling your attention away, you inquire about an audience with none other than the arch-mage himself."
     narrate "Guided to the tower's uppermost floor, you come face to face with the mage."
+
     scene mage_main with Dissolve (0.5)
+    show mage neutral with Dissolve(0.5)
     narrate "He stands near the center before a table littered with dozens of different texts and rather strange looking specimens, leaning heavily with a palm to the tabletop."
-    narrate "Believing you to be simply another one of the mages, he begins rambling about something you couldn't even begin fathoming to summarize before sighing and coming to a pause."
+    show mage happy
+    narrate "Believing you to be simply another one of the mages, he begins rambling about something you couldn't even begin to fathom attempting to summarize."
+    show mage neutral
+    narrate "Then, he sighs, and comes to a pause."
     voice "audio/voice/mage/line0001.ogg"
     mage "Oh… It's rare to get a visitor."
     voice "audio/voice/mage/line0002.ogg"
-    mage "I suppose I was getting a bit carried away...how may I be of assistance?"
+    mage "I suppose I was getting a bit carried away... how may I be of assistance?"
+    show mage concern
     narrate "You announce that you are the chosen one foretold by the prophecy. A flash of unease crosses his face and his posture seems to stiffen up."
     voice "audio/voice/mage/line0003.ogg"
     mage "The… prophecy-? Good Amari. You know what you're claiming, don't you?"
@@ -52,20 +68,34 @@ label mage_encounter_tutorial:
     menu mage_tutorial:
         "Reassure him that it seems he is already rather looked up to by his peers.":
             narrate "You explain to him that from the moment you walked in the doors, you've already heard several passing conversations concerning him and his steady tutelage."
+            show mage neutral
             narrate "Surely someone as looked up to as he would have a place in the prophecy."
             narrate "Giving him a sincere look, you request that he assists you as well on your journey."
+            show mage sad
             voice "audio/voice/mage/line0006.ogg"
             mage "If you truly think you need my guidance.. I suppose I can try my best to aid you. But please do not be disappointed when my methods prove subpar."
+
+            $ empathy += 1
+
         "Assert the prophecy's undeniability and your determination to see it through.":
             narrate "You ask him if he was the one who read the prophecy or if it was you, as you clearly recall. What was written was not a question, but a demand."
             narrate "Standing firm, you tell him that he is who was called for whether he likes it or not."
+            show mage sad
             voice "audio/voice/mage/line0007.ogg"
             mage "... If you insist."
+
+            $ resolve += 1
+            $ mage_affection -= 1
         "Announce that you've already seen the number of study materials he's published as a knowledgeable mage.":
             narrate "You point to the books on the table and blatantly show that he is the author of the study material being referenced."
+            show mage neutral
             narrate "You ask him what he could even mean by a 'more promising' mage when he's already proven to be quite dedicated and knowledgeable."
             voice "audio/voice/mage/line0008.ogg"
+            show mage happy
             mage "... I suppose you're right. I have worked hard to get here.. I'll do my best to be of use."
+
+            $ fortitude += 1
+            $ mage_affection += 1
     narrate "The mage agrees to meet with you at the temple tonight with the rest of the companions."
     stop music fadeout 2.0
     scene black with Dissolve(0.5)

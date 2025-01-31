@@ -65,9 +65,9 @@ init python:
 transform left:
     yalign 1.0
     on replace:
-        linear 0.5 xalign 0.1
+        linear 0.5 xalign 0.05
     on show:
-        xalign 0.1
+        xalign 0.05
 
 transform slight_left:
     yalign 1.0
@@ -93,9 +93,9 @@ transform slight_right:
 transform right:
     yalign 1.0
     on replace:
-        linear 0.5 xalign 0.9
+        linear 0.5 xalign 0.95
     on show:
-        xalign 0.9
+        xalign 0.95
 
 # Declare the characters + sprites that will be used in the game.
 
@@ -105,50 +105,41 @@ define prophecy = Character('', kind=nvl, color="#c8ffc8")
 define butler = Character('Butler')
 
 define angel = Character('Angel')
+image angel neutral = "images/sprites/angel/Angel_Neutral_Sprite.png"
+image angel sad = "images/sprites/angel/Angel_Sad_Sprite.png"
 
 define devil = Character('[devil_name]')
-image devil angry = "images/sprites/devil/devil_angry.png"
-image devil fear = "images/sprites/devil/devil_fear.png"
-image devil happy = "images/sprites/devil/devil_happy.png"
-image devil love = "images/sprites/devil/devil_love.png"
-image devil malicious = "images/sprites/devil/devil_malicious.png"
-image devil neutral = "images/sprites/devil/devil_neutral.png"
-image devil pleading = "images/sprites/devil/devil_pleading.png"
-image devil sad = "images/sprites/devil/devil_sad.png"
+image devil malicious = "images/sprites/devil/Minerva_Malice_Sprite.png"
+image devil neutral = "images/sprites/devil/Minerva_Neutral_Sprite.png"
 
 define knight = Character('[knight_name]')
-image knight angry = "images/sprites/knight/KNIGHT_angry.png"
-image knight concern = "images/sprites/knight/KNIGHT_concern.png"
-image knight happy = "images/sprites/knight/KNIGHT_happy.png"
-image knight love = "images/sprites/knight/KNIGHT_love.png"
-image knight nervous = "images/sprites/knight/KNIGHT_nervous.png"
-image knight neutral = "images/sprites/knight/KNIGHT_neutral.png"
-image knight shock = "images/sprites/knight/KNIGHT_shock.png"
+image knight angry = "images/sprites/knight/Knight_Angry_Sprite.png"
+image knight concern = "images/sprites/knight/Knight_Concern_Sprite.png"
+image knight happy = "images/sprites/knight/Knight_Happy_Sprite.png"
+image knight love = "images/sprites/knight/Knight_Love_Sprite.png"
+image knight nervous = "images/sprites/knight/Knight_Nervous_Sprite.png"
+image knight neutral = "images/sprites/knight/Knight_Neutral_Sprite.png"
+image knight sad = "images/sprites/knight/Knight_Sad_Sprite.png"
+image knight shock = "images/sprites/knight/Knight_Shocked_Sprite.png"
+
 
 define mage = Character('[mage_name]')
-image mage angry = "images/sprites/mage/Mage_Angry_WOCane.png"
-image mage concern = "images/sprites/mage/Mage_Concerned_WOCane.png"
-image mage happy = "images/sprites/mage/Mage_Happy_WOCane.png"
-image mage love = "images/sprites/mage/Mage_Love_WOCane.png"
-image mage neutral = "images/sprites/mage/Mage_Neutral_WOCane.png"
-image mage sad = "images/sprites/mage/Mage_Sad_WOCane.png"
-
-image mage angry cane = "images/sprites/mage/Mage_Angry_WCane.png"
-image mage concern cane = "images/sprites/mage/Mage_Concerned_WCane.png"
-image mage happy cane = "images/sprites/mage/Mage_Happy_WCane.png"
-image mage love cane = "images/sprites/mage/Mage_Love_WCane.png"
-image mage neutral cane = "images/sprites/mage/Mage_Neutral_WCane.png"
-image mage sad cane = "images/sprites/mage/Mage_Sad_WCane.png"
+image mage angry = "images/sprites/mage/Mage_Angry_sprite.png"
+image mage concern = "images/sprites/mage/Mage_Concern_sprite.png"
+image mage happy = "images/sprites/mage/Mage_Happy_sprite.png"
+image mage love = "images/sprites/mage/Mage_Love_sprite.png"
+image mage neutral = "images/sprites/mage/Mage_Neutral_sprite.png"
+image mage sad = "images/sprites/mage/Mage_Sad_sprite.png"
 
 
 define duke = Character('[duke_name]')
-image duke angry = "images/sprites/duke/DUKE_angry.png"
-image duke concern = "images/sprites/duke/DUKE_concern.png"
-image duke happy = "images/sprites/duke/DUKE_happy.png"
-image duke love = "images/sprites/duke/DUKE_love.png"
-image duke neutral = "images/sprites/duke/DUKE_neutral.png"
-image duke sad = "images/sprites/duke/DUKE_sad.png"
-image duke shock = "images/sprites/duke/DUKE_shocked.png"
+image duke angry = "images/sprites/duke/Duke_Angry_Sprite.png"
+image duke concern = "images/sprites/duke/Duke_Concern_Sprite.png"
+image duke happy = "images/sprites/duke/Duke_Happy_Sprite.png"
+image duke love = "images/sprites/duke/Duke_Love_Sprite.png"
+image duke neutral = "images/sprites/duke/Duke_Neutral_Sprite.png"
+image duke sad = "images/sprites/duke/Duke_Sad_Sprite.png"
+image duke shock = "images/sprites/duke/Duke_Shock_Sprite.png"
 
 define player = Character('[player_name]')
 
@@ -188,16 +179,21 @@ label start:
     play music "audio/hook/angel_appears.mp3"
     scene white with Dissolve(0.5)
     narrate "Suddenly, the room around you is eclipsed in a flash of light and a figure emerges."
+
+    show angel sad at center
+    with Dissolve(0.5)
     voice "audio/voice/devil/line0001.ogg"
     angel "They're going to let you go. I'm sorry."
 
     menu question_angel:
         "Who are you?":
+            show angel neutral
             narrate "The figure smiles serenely."
             voice "audio/voice/devil/line0002.ogg"
             angel "I am what lies between you and the end of all things."
         "No, that can't be right.":
             narrate "The figure shakes her head, eyes filled with sympathy."
+
             show angel sad
             voice "audio/voice/devil/line0003.ogg"
             angel "They tried their best, but it won't be long now."
@@ -235,7 +231,9 @@ label start:
     voice "audio/voice/devil/line0006.ogg"
     angel "This is the Empire of Parcae. A land of peace, virtue, and balance. But it's in peril."
     voice "audio/voice/devil/line0007.ogg"
+    show angel sad
     angel "When winter comes, it will be the end of everything."
+    show angel neutral
     voice "audio/voice/devil/line0008.ogg"
     angel "I can offer you a second chance — to save this world and become the hero in the prophecy."
     narrate "A second chance... but why you? You don't understand."
@@ -257,7 +255,8 @@ label start:
         voice "audio/voice/devil/line009.ogg"
         angel "Because this world has chosen you. This is your second chance."
     voice "audio/voice/devil/line0013.ogg"
-    angel "But to join, you must let go of this life and {color=#8b67b0}sacrfice a piece of yourself{/color}."
+    show angel neutral
+    angel "But to join, you must let go of this life - {color=#8b67b0}sacrifice a piece of yourself{/color}."
 
     scene white with Dissolve(0.5)
     play sound "audio/hook/light_appear.mp3"
@@ -279,7 +278,6 @@ label start:
             prophecy "You've pushed too hard, too far, and left behind the people and moments that truly mattered."
             prophecy "What good is determination when it blinds you to everything else?"
             prophecy "Sacrificing resolve might be the only way to finally slow down and stop trading the things you truly care about. "
-            prophecy "{color=#8b67b0}{b}You close your eyes, and let the thought go.{/b}{/color}"
 
         # Courage sacrifice
         "Sacrifice a memory of Fortitude":
@@ -290,7 +288,6 @@ label start:
             prophecy "It makes you complacent, sticking with things that don't serve you because you don't think you deserve better."
             prophecy "Maybe it's time to let go of this endless endurance."
             prophecy "Sacrificing fortitude could mean gaining something new - a sense of standards, of self-worth."
-            prophecy "{color=#8b67b0}{b}You close your eyes, and let the thought go.{/b}{/color}"
 
         # Honesty
         "Sacrifice a memory of Empathy":
@@ -301,7 +298,16 @@ label start:
             prophecy "Always trying to please, always trying to make everyone else happy."
             prophecy "But where has it gotten you? Perhaps letting go could mean freedom from that constant inner tug-of-war."
             prophecy "It would give you some space to breathe - to prioritize yourself for once."
+
+    prophecy "Is this what you want to sacrifice?"
+    menu sacrifice_confirm:
+        "Yes":
             prophecy "{color=#8b67b0}{b}You close your eyes, and let the thought go.{/b}{/color}"
+        "No":
+            nvl clear
+            jump sacrifice
+            
+            
     prophecy "Your current stats are:\nFortitude: [fortitude]\nEmpathy: [empathy]\nResolve: [resolve]"
     nvl clear
     show angel neutral
@@ -325,10 +331,12 @@ label start:
     scene black with Dissolve(0.5)
     voice "audio/voice/devil/laugh.ogg"
     pause 2.5
+
+    # OH SHITTTTTT (scene change)
     play music "audio/hook/minerva_reveal.mp3" fadein 1.0
     scene black_smoke with Dissolve (0.5)  
     narrate "Suddenly, light drips from the walls around you and oozes down into a thick, viscous murkiness."
-    hide angel with Dissolve(0.5)
+
     show devil malicious with Dissolve(0.5)
     narrate "The angelic figure from before has morphed into something sinister."
     narrate "She looks at you with mirthful eyes."
@@ -341,7 +349,7 @@ label start:
     scene flatline 
     stop music fadeout 1.0
     pause(3)
-    centered "The doctor pronounced your time of death as {color=#8b67b0}[current_hour]:[minute] [ampm]{/color}" #insert actual time
+    centered "The doctor pronounced your time of death as {color=#8b67b0}[current_hour]:[minute] [ampm]{/color}." #insert actual time
     scene black with Dissolve (0.5)
     pause(3)
 
@@ -359,9 +367,10 @@ label tutorial_start:
     narrate "The material beneath your palms twist forward in impossible patterns of life. You are lost."
     unknown "Let them rest a moment..."
     unknown "Be at ease, you are in the Grand Temple of Amari. Welcome to Parcae."
-    scene knight_main with Dissolve(0.5)
+    scene knight_main with Dissolve(1.5)
     narrate "Your vision clears. When you look up, you are met with a grand hall bathed in candlelight."
     show knight neutral at center
+    with Dissolve(0.5)
     narrate "Two figures step forward. One dressed in fine armor stands at attention beside another in ceremonial robes."
     priest "Chosen One, blessed by our great deity Amari, we are so glad you've come to us."
     priest "Your arrival is a gift to the Empire. The Holy Order welcomes you."
@@ -450,8 +459,10 @@ label tutorial_start:
     nvl clear
     
     narrate "After you've read the scroll over, the Grand Priest appears almost anxious as he questions what the second half of the prophecy said."
+    show knight concern
     narrate "You recite it and his expression becomes puzzled, as does that of the knight beside him."
     narrate "For a moment, neither of them speak. "
+    show knight neutral
     narrate "Then the Grand Priest speaks up, calmer now than he had been a moment ago."
     priest "I see... so this is a task only you may undergo. Please forgive me for being unable to help you but know you may always seek solace in the temple if you so need."
     priest "For now, I hope Ser Lurien may be of help to you in my stead."
@@ -469,6 +480,7 @@ label tutorial_start:
     narrate "The tour ends with the both of you now outside the Grand Temple."
     narrate "From here, you're able to marvel about the rather massive temple of ivory, decorated with gold on the ionic columns and above the wide doorway which leads further into the home of worship."
     narrate "All of it seems pristine and almost unreal in a way that's unlike anything you've ever seen before."
+    show knight neutral with Dissolve(0.5)
     narrate "When your attention turns to the knight again, they seem to perk up as if realizing that now you might be looking to them for more guidance."
     
     show knight happy
@@ -505,6 +517,7 @@ label opening_knight_questions_explore:
     narrate "You thank the knight for the map and they bow, a curious smile on their face for what you might do next."
     narrate "You plan to explore some of the options within the capital and see if you can find a lead on who the other saviors of the prophecy are."
 
+    # add something here to note that stats have increased?
     $ resolve += 1
     $ fortitude += 1
 
@@ -571,7 +584,7 @@ label opening_map:
     stop music
     # From here player goes to knight.rpy -> knight_check -> knight_encounter_tutorial
     $ knight_available = True
-    show screen map
+    show screen map with Dissolve(0.5)
     window hide
     pause
 
