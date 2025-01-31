@@ -162,22 +162,6 @@ label splashscreen:
     play music "<loop 43.94 to 141.97>ForeverYoursTheme.ogg"
     $ renpy.movie_cutscene("gui/logo/gloamy_logo.webm")
     return
-
-image dying_1:
-    "images/bg/death_start.png"
-    .25
-    "images/bg/death_distorted.png"
-    .25
-    "images/bg/death_start.png"
-    2.0
-    repeat
-
-image dying_2:
-    "images/bg/death_distorted.png"
-    .25
-    "images/bg/red_distorted_black.png"
-    .25
-    repeat
 # The game starts here.
 
 label start:
@@ -280,11 +264,10 @@ label start:
     scene white with Dissolve(0.5)
     nurse "Charging to 200!"
     doctor "Pause compressions. Stand clear."
-    play sound "audio/hook/you_are_dying.mp3" fadein 1.0
     show angel sad with Dissolve(0.5)
     voice "audio/voice/devil/line0014.ogg"
     angel "Time is running out. The light will take you soon. What is your choice?"
-    stop sound fadeout 0.5
+    play sound "audio/hook/you_are_dying.mp3" fadein 1.0
         
     menu sacrifice:
         # Trust sacrifice
@@ -315,30 +298,34 @@ label start:
     menu kiss_her:
         "Kiss her":
             play sound "<loop 0.0>audio/hook/angel_spell.mp3"
+            scene kiss_cg with Dissolve(0.5)
+            pause 1.0
             narrate "You lean in, your lips brushing against hers."
+            narrate "As she cradles your face, something dances at the back of your mind - light and fleeting, like snowfall."
+            narrate "For a moment, everything is still."
             stop music
-            narrate "The moment the kiss lands, the air thickens, and something shifts inside you."
+            narrate "Then, something inside you cracks."
     play sound "audio/hook/dark_ambiance.mp3" 
     scene black with Dissolve(0.5)
     voice "audio/voice/devil/laugh.ogg"
-    play music "audio/hook/minerva_reveal.mp3" fadein 2.5
     pause 2.5
+    play music "audio/hook/minerva_reveal.mp3" fadein 1.0
     scene black_smoke with Dissolve (0.5)  
-    narrate "Suddenly, the light wilts and oozes down into thick, viscous liquid."
+    narrate "Suddenly, light drips from the walls around you and oozes down into a thick, viscous murkiness."
     hide angel with Dissolve(0.5)
     show devil malicious with Dissolve(0.5)
-    narrate "The angelic figure before you morphs into something sinister. She looks at you with mirthful eyes."
+    narrate "The angelic figure from before has morphed into something sinister."
+    narrate "She looks at you with mirthful eyes."
     voice "audio/voice/devil/line0017.ogg"
     devil "So naive, {i}as always{/i}. It's time you learned there are no second chances."
     play sound "audio/hook/you_died.mp3" fadeout 0.5
+    scene black with Dissolve (0.5)  
     narrate "Reality shatters around you. Darkness consumes the room and swallows you whole."
     # Current
-    scene black with Dissolve (0.5)  
-    pause 2
     scene flatline 
     stop music fadeout 1.0
     pause(3)
-    centered "The doctor declares your time of death at {color=#8b67b0}[current_hour]:[minute] [ampm]{/color}" #insert actual time
+    centered "The doctor declares you dead at {color=#8b67b0}[current_hour]:[minute] [ampm]{/color}" #insert actual time
     scene black with Dissolve (0.5)
     pause(3)
 

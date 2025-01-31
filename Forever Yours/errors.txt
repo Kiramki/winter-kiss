@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/mage.rpy", line 70: expected end of line
-    stop music with fadeout 2.0
-               ^
+File "game/script.rpy", line 169: end of line expected.
+    with camera(at=Transform(xalign=0, x=0), duration = 1):
+                                                          ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Thu Jan 30 13:15:52 2025
+Thu Jan 30 20:07:16 2025
